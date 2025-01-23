@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://ch7n85egx2wlq"]
+
+[ext_resource type="Shader" path="res://scripts/shaders/worm-hole-shader.gdshader" id="1_wx50o"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ytamo"]
+render_priority = 0
+shader = ExtResource("1_wx50o")
+shader_parameter/MainColor = Color(0.976471, 0.929412, 0.882353, 0.835294)
+shader_parameter/BackColor1 = Color(0.645754, 0.66235, 0.963637, 1)
+shader_parameter/BackColor2 = Color(0.204928, 0.447463, 0.705908, 1)
+shader_parameter/Brightness = 5.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_2cxsm"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_nbl2o"]
+
+[node name="WormHole" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+material_override = SubResource("ShaderMaterial_ytamo")
+mesh = SubResource("SphereMesh_2cxsm")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("SphereShape3D_nbl2o")
