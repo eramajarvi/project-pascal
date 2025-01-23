@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=4 uid="uid://no86c5jwk242"]
+[gd_scene load_steps=36 format=4 uid="uid://no86c5jwk242"]
 
 [ext_resource type="PackedScene" uid="uid://c2d8hjr2dm0y1" path="res://assets/blender/tower-square-top-color.glb" id="2_iiens"]
 [ext_resource type="PackedScene" uid="uid://cxu5mdx4w4oe0" path="res://assets/blender/tower-base.glb" id="3_fohew"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://bdr84ib4256bn" path="res://assets/blender/tower-hexagon-roof.glb" id="12_48dnk"]
 [ext_resource type="PackedScene" uid="uid://brpnmkvy6pw7x" path="res://assets/blender/door.glb" id="13_ke6ma"]
 [ext_resource type="PackedScene" uid="uid://0nylsh52k0up" path="res://assets/blender/stairs-stone-square.glb" id="14_johuj"]
+[ext_resource type="PackedScene" uid="uid://dmcv45w2ugu74" path="res://assets/blender/metal-gate.glb" id="15_rtxkg"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_whopv"]
 resource_name = "colormap"
@@ -318,7 +319,10 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 5.20385, 0, 0)
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 12.8709)
 
 [node name="door2" parent="." instance=ExtResource("13_ke6ma")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -7.38217, 0, 3.36355)
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -7.38217, 0, 3.36355)
 
 [node name="stairs-stone-square2" parent="." instance=ExtResource("14_johuj")]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 4.11694, 0, 10.1475)
+
+[node name="metal-gate2" parent="." instance=ExtResource("15_rtxkg")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -4.42719, -0.141984, 11.0219)
