@@ -1,0 +1,250 @@
+[gd_scene load_steps=21 format=3 uid="uid://dwdjc7e36qurr"]
+
+[ext_resource type="MeshLibrary" uid="uid://chfrso0bo8hn7" path="res://assets/levels/level2/gridmapLevel2.tres" id="1_klqym"]
+[ext_resource type="PackedScene" uid="uid://baepnmdpm01id" path="res://scenes/gotas_the_cat_3d.tscn" id="2_0nnnu"]
+[ext_resource type="PackedScene" uid="uid://cdusgdsupow8s" path="res://assets/levels/level2/blocks/shape-cube-half.glb" id="3_y25ok"]
+[ext_resource type="Script" path="res://assets/levels/level2/blocks/shape_cube_half.gd" id="4_pvtcg"]
+[ext_resource type="PackedScene" uid="uid://dmu3q6a8ydcx" path="res://assets/levels/level2/blocks/lantern.glb" id="5_0oyx8"]
+[ext_resource type="Script" path="res://assets/levels/level2/blocks/shape_cube_half2.gd" id="5_7sktv"]
+
+[sub_resource type="Animation" id="Animation_ba7m7"]
+resource_name = "shape"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(6.45521, 0.241175, 0.980599), Vector3(6.45521, 0.241175, 1.06643), Vector3(6.45521, 0.241175, 0.930714)]
+}
+
+[sub_resource type="Animation" id="Animation_bsnjb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(6.45521, 0.241175, 0.980599)]
+}
+
+[sub_resource type="Animation" id="Animation_p00wk"]
+resource_name = "fall"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7, 0.966667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(6.45521, 0.241175, 0.980599), Vector3(6.45521, -16.752, 0.980599), Vector3(6.45521, -24657.5, 0.980599)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_i62gd"]
+_data = {
+"RESET": SubResource("Animation_bsnjb"),
+"fall": SubResource("Animation_p00wk"),
+"shape": SubResource("Animation_ba7m7")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_63v55"]
+
+[sub_resource type="Animation" id="Animation_6csn6"]
+resource_name = "shape"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.280556, 0.5, 0.966667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(7.44252, 0.586896, 0.980599), Vector3(7.44252, 0.586896, 0.847173), Vector3(7.44252, 0.586896, 0.944879), Vector3(7.44252, 0.586896, 1.15612)]
+}
+
+[sub_resource type="Animation" id="Animation_acc2k"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(7.44252, 0.586896, 0.980599)]
+}
+
+[sub_resource type="Animation" id="Animation_3wp3l"]
+resource_name = "fall"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.533333, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(7.44252, 0.586896, 0.980599), Vector3(7.44252, 0.586896, 12.0904), Vector3(7.44252, 0.586896, 30.6759)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q0nrd"]
+_data = {
+"RESET": SubResource("Animation_acc2k"),
+"fall": SubResource("Animation_3wp3l"),
+"shape": SubResource("Animation_6csn6")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vrcuw"]
+size = Vector3(1, 1.24695, 1)
+
+[sub_resource type="Animation" id="Animation_217w0"]
+resource_name = "shape"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.133333, 0.266667, 0.5, 0.754758),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(8.4201, 1.12582, 1.50949), Vector3(8.4201, 0.946071, 1.50949), Vector3(8.4201, 0.76012, 1.24252), Vector3(8.4201, 0.946071, 0.951043)]
+}
+
+[sub_resource type="Animation" id="Animation_q4p7h"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(8.4201, 0.946071, 1.50949)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_msr55"]
+_data = {
+"RESET": SubResource("Animation_q4p7h"),
+"shape": SubResource("Animation_217w0")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tmhx3"]
+size = Vector3(1, 0.492188, 0.999573)
+
+[node name="Level2" type="Node3D"]
+
+[node name="GridMap" type="GridMap" parent="."]
+mesh_library = ExtResource("1_klqym")
+cell_size = Vector3(1, 0.495, 1)
+data = {
+"cells": PackedInt32Array(65534, 0, 1, 65535, 0, 1, 65535, 1, 1, 65534, 1, 1, 65533, 0, 1, 65533, 1, 1, 65533, 2, 1, 65534, 2, 1, 65535, 2, 1, 0, 2, 1, 0, 1, 1, 0, 0, 1, 0, 65535, 1, 65535, 65535, 1, 65534, 65535, 1, 65533, 65535, 1, 1, 0, 1, 1, 1, 1, 2, 0, 1, 2, 1, 1, 2, 65535, 1, 1, 65535, 1, 2, 2, 1, 1, 2, 1, 3, 1, 1, 3, 0, 1, 4, 0, 1, 4, 1, 1, 5, 1, 1, 5, 0, 1)
+}
+metadata/_editor_floor_ = Vector3(0, 1, 0)
+
+[node name="GotasTheCat3D" parent="." groups=["player"] instance=ExtResource("2_0nnnu")]
+transform = Transform3D(0.352342, 0, -0.354761, 0, 0.5, 0, 0.354761, 0, 0.352342, -0.806803, 1.35825, 0.775502)
+wall_min_slide_angle = 0.174533
+
+[node name="CameraController" type="Node3D" parent="GotasTheCat3D"]
+transform = Transform3D(1, 0, 0, 0, 0.866026, 0.5, 0, -0.5, 0.866026, 1, 4.5, 6)
+
+[node name="CameraTarget" type="Node3D" parent="GotasTheCat3D/CameraController"]
+
+[node name="Camera3D" type="Camera3D" parent="GotasTheCat3D/CameraController/CameraTarget"]
+transform = Transform3D(1, 2.98023e-08, 1.77636e-15, -2.98023e-08, 1, 2.98023e-08, -8.88179e-16, -2.98023e-08, 1, 0, 0, 26.155)
+keep_aspect = 0
+projection = 1
+current = true
+fov = 90.0
+size = 16.0
+far = 947.79
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.938356, 0.17795, 0.296346, -0.0740497, -0.940892, 0.330514, 0.337645, 0.288196, 0.896069, 1.71423, 5.53765, 10.8137)
+light_energy = 0.516
+sky_mode = 1
+
+[node name="Stair1" parent="." instance=ExtResource("3_y25ok")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.01099, 6.45521, 0.241175, 0.980599)
+script = ExtResource("4_pvtcg")
+
+[node name="stair1Animations" type="AnimationPlayer" parent="Stair1"]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_i62gd")
+}
+autoplay = "shape"
+
+[node name="Area3D" type="Area3D" parent="Stair1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0128852, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Stair1/Area3D"]
+shape = SubResource("BoxShape3D_63v55")
+
+[node name="Stair2" parent="." instance=ExtResource("3_y25ok")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.01099, 7.44252, 0.586896, 0.980599)
+script = ExtResource("5_7sktv")
+
+[node name="stair2Animations" type="AnimationPlayer" parent="Stair2"]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_q0nrd")
+}
+autoplay = "shape"
+
+[node name="Area3D" type="Area3D" parent="Stair2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Stair2/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.123474, -0.00324452)
+shape = SubResource("BoxShape3D_vrcuw")
+
+[node name="Stair3" parent="." instance=ExtResource("3_y25ok")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.01099, 8.4201, 0.946071, 1.50949)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Stair3"]
+libraries = {
+"": SubResource("AnimationLibrary_msr55")
+}
+autoplay = "shape"
+
+[node name="Stair4" parent="." instance=ExtResource("3_y25ok")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.01099, 13.6029, 0.946071, 1.50949)
+
+[node name="Area3D" type="Area3D" parent="Stair4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Stair4/Area3D"]
+transform = Transform3D(1.00159, 0, 0, 0, 1.00159, 0, 0, 0, 1.00159, 0, 0.253906, -0.000213444)
+shape = SubResource("BoxShape3D_tmhx3")
+
+[node name="lantern2" parent="." instance=ExtResource("5_0oyx8")]
+transform = Transform3D(1, 0, 0, 0, 0.656507, 0, 0, 0, 1, 13.6691, 1.44607, 0.82882)
+
+[connection signal="body_entered" from="Stair1/Area3D" to="Stair1" method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="Stair2/Area3D" to="Stair2" method="_on_area_3d_body_entered"]

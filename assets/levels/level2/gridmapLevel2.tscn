@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://cryxpxrjerpfp"]
+
+[ext_resource type="PackedScene" uid="uid://dmu3q6a8ydcx" path="res://assets/levels/level2/blocks/lantern.glb" id="1_hif5r"]
+[ext_resource type="PackedScene" uid="uid://cdusgdsupow8s" path="res://assets/levels/level2/blocks/shape-cube-half.glb" id="2_xaprj"]
+[ext_resource type="PackedScene" uid="uid://1srtuu30o4aj" path="res://assets/levels/level2/blocks/stairs.glb" id="3_di1cp"]
+
+[node name="GridmapLevel2" type="Node3D"]
+
+[node name="lantern2" parent="." instance=ExtResource("1_hif5r")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.00533271, 1.19209e-07, -0.00291324)
+
+[node name="shape-cube-half2" parent="." instance=ExtResource("2_xaprj")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1.78601, 0, 0.140494)
+
+[node name="stairs2" parent="." instance=ExtResource("3_di1cp")]
+transform = Transform3D(0.00488701, 0, 1.99999, 0, 2, 0, -1.99999, 0, 0.00488701, 4.42093, 0, 0.485904)
