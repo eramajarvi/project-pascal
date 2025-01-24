@@ -47,7 +47,7 @@ shape = SubResource("WorldBoundaryShape3D_0ylpb")
 curve = SubResource("Curve3D_nnixj")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
-transform = Transform3D(-0.000667613, -9.56871e-07, -0.999996, 5.68432e-14, 1, -9.56867e-07, 0.999996, -6.38879e-10, -0.000667613, -4.99104, 0.00398159, -5.00886)
+transform = Transform3D(-0.000667375, -9.57198e-07, -0.999996, 0, 1, -9.57194e-07, 0.999996, -6.38812e-10, -0.000667375, -4.99104, 0.00398159, -5.00886)
 
 [node name="DamageBubbleSpawner" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
