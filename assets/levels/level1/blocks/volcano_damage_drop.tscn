@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://c7h14k5d6kggr"]
+
+[ext_resource type="Shader" path="res://assets/levels/level1/blocks/volcano_bubble.gdshader" id="1_6prfv"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_005kc"]
+radius = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tfsr2"]
+render_priority = 0
+shader = ExtResource("1_6prfv")
+shader_parameter/fuwafuwa_speed = 1.5
+shader_parameter/fuwafuwa_size = 0.05
+shader_parameter/outline_color = Color(0.45, 0.7, 1, 1)
+shader_parameter/outline_ratio = 1.0
+shader_parameter/noise_speed = 0.2
+shader_parameter/noise_scale = 0.5
+
+[sub_resource type="SphereMesh" id="SphereMesh_v0ar8"]
+radius = 1.0
+height = 3.0
+
+[node name="VolcanoDamageDrop" type="Node3D"]
+
+[node name="RigidBody3D" type="RigidBody3D" parent="." groups=["volcanoDamageGroup"]]
+mass = 0.7
+gravity_scale = 0.5
+inertia = Vector3(0, 2, 0)
+angular_velocity = Vector3(0.174533, 0.244346, 0.174533)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+shape = SubResource("SphereShape3D_005kc")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+material_override = SubResource("ShaderMaterial_tfsr2")
+transparency = 0.4
+mesh = SubResource("SphereMesh_v0ar8")

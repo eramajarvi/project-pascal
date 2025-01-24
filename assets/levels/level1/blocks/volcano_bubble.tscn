@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://gobu4dd3loe5"]
+
+[ext_resource type="Shader" path="res://assets/levels/level1/blocks/volcano_bubble.gdshader" id="1_eraxj"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_t5evk"]
+radius = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2y5ch"]
+render_priority = 0
+shader = ExtResource("1_eraxj")
+shader_parameter/fuwafuwa_speed = 1.5
+shader_parameter/fuwafuwa_size = 0.05
+shader_parameter/outline_color = Color(0.844466, 0.283725, 0.215714, 1)
+shader_parameter/outline_ratio = 3.0
+shader_parameter/noise_speed = 0.2
+shader_parameter/noise_scale = 0.5
+
+[sub_resource type="SphereMesh" id="SphereMesh_l6yo6"]
+
+[node name="VolcanoBubble" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("SphereShape3D_t5evk")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+material_override = SubResource("ShaderMaterial_2y5ch")
+mesh = SubResource("SphereMesh_l6yo6")

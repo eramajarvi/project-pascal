@@ -1,11 +1,11 @@
 [gd_scene load_steps=9 format=3 uid="uid://d2q03qipr18r0"]
 
-[ext_resource type="FontFile" uid="uid://bmjgkuuiqppi2" path="res://assets/fonts/CharisSILR.ttf" id="1_1nhkm"]
+[ext_resource type="FontFile" uid="uid://b1iobu72ua0r" path="res://assets/fonts/CharisSILR.ttf" id="1_1nhkm"]
 [ext_resource type="Script" path="res://scenes/menu.gd" id="1_y68x1"]
 [ext_resource type="Shader" path="res://scripts/shaders/main_menu_shader.gdshader" id="2_bnq23"]
-[ext_resource type="Texture2D" uid="uid://bhp5pwmfqkjuq" path="res://assets/sprites/bubbles-main-menu.png" id="3_4qafo"]
+[ext_resource type="Texture2D" uid="uid://bkdgv0ogi5bqo" path="res://assets/sprites/bubbles-main-menu.png" id="3_4qafo"]
 [ext_resource type="Script" path="res://scripts/jugar_button.gd" id="5_ywa4q"]
-[ext_resource type="AudioStream" uid="uid://c1ffm4vxmblc1" path="res://assets/music/nin_999999.mp3" id="6_yvsi4"]
+[ext_resource type="AudioStream" uid="uid://cixm0dnhdxpww" path="res://assets/music/nin_999999.mp3" id="6_yvsi4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ya8x6"]
 shader = ExtResource("2_bnq23")
