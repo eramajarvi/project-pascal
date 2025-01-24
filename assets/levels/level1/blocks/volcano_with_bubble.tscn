@@ -1,0 +1,79 @@
+[gd_scene load_steps=6 format=3 uid="uid://ceraujg1gu877"]
+
+[ext_resource type="PackedScene" uid="uid://clvqr72qnrjfe" path="res://assets/levels/level1/blocks/geyser.glb" id="1_8jk75"]
+[ext_resource type="PackedScene" uid="uid://gobu4dd3loe5" path="res://assets/levels/level1/blocks/volcano_bubble.tscn" id="2_u7mgd"]
+
+[sub_resource type="Animation" id="Animation_bpc15"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.1, 0.1, 0.1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.92746, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_xrs3n"]
+resource_name = "bubbleGoingUp"
+length = 1.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.46667),
+"transitions": PackedFloat32Array(0.68302, 1.36604),
+"update": 0,
+"values": [Vector3(0.1, 0.1, 0.1), Vector3(3, 3, 3)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.46667),
+"transitions": PackedFloat32Array(0.870551, 1.68179),
+"update": 0,
+"values": [Vector3(0, 0.92746, 0), Vector3(0, 10, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h1ypo"]
+_data = {
+"RESET": SubResource("Animation_bpc15"),
+"bubbleGoingUp": SubResource("Animation_xrs3n")
+}
+
+[node name="VolcanoWithBubble" type="Node3D"]
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("1_8jk75")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+
+[node name="VolcanoBubble" parent="." instance=ExtResource("2_u7mgd")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.92746, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="VolcanoBubble"]
+libraries = {
+"": SubResource("AnimationLibrary_h1ypo")
+}

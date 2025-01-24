@@ -8,6 +8,5 @@ func _ready():
 	
 func _on_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player"):
-		print("body entered")
 		label1.visible = true
 		label1.text = text_to_display
