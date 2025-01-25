@@ -1,8 +1,8 @@
 [gd_scene load_steps=15 format=3 uid="uid://bvcxdv1lf3gjr"]
 
-[ext_resource type="Texture2D" uid="uid://b4h333l7mpxml" path="res://assets/sprites/arrow.png" id="1_fpniu"]
+[ext_resource type="Texture2D" uid="uid://ca5aa53eij3oi" path="res://assets/sprites/arrow.png" id="1_fpniu"]
 [ext_resource type="PackedScene" uid="uid://bueeg8ahb2ikv" path="res://scenes/gotas_the_cat.tscn" id="1_rnwd3"]
-[ext_resource type="FontFile" uid="uid://b1iobu72ua0r" path="res://assets/fonts/CharisSILR.ttf" id="2_fndro"]
+[ext_resource type="FontFile" uid="uid://bmjgkuuiqppi2" path="res://assets/fonts/CharisSILR.ttf" id="2_fndro"]
 [ext_resource type="Script" path="res://scripts/post-intro-changer.gd" id="4_g64ti"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_4afk8"]
