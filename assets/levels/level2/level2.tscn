@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://dwdjc7e36qurr"]
+[gd_scene load_steps=33 format=3 uid="uid://dwdjc7e36qurr"]
 
 [ext_resource type="MeshLibrary" uid="uid://chfrso0bo8hn7" path="res://assets/levels/level2/gridmapLevel2.tres" id="1_klqym"]
 [ext_resource type="PackedScene" uid="uid://baepnmdpm01id" path="res://scenes/gotas_the_cat_3d.tscn" id="2_0nnnu"]
@@ -231,7 +231,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_l4ls4"]
 resource_name = "move"
-length = 20.0
+length = 5.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -239,7 +239,7 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 19.8667),
+"times": PackedFloat32Array(0, 4.86667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(0.928082, -5.72302, -0.838742), Vector3(0.928082, 20.6836, -0.838742)]
@@ -250,6 +250,9 @@ _data = {
 "RESET": SubResource("Animation_h0ifn"),
 "move": SubResource("Animation_l4ls4")
 }
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vgy21"]
+size = Vector3(0.536835, 0.00727844, 0.213303)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gfmpq"]
 size = Vector3(15.1584, 12.0574, 13.4065)
@@ -393,6 +396,13 @@ unique_name_in_owner = true
 libraries = {
 "": SubResource("AnimationLibrary_nv052")
 }
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Area3D/Sketchfab_Scene"]
+transform = Transform3D(3.343, 0, 0, 0, 3.343, 0, 0, 0, 3.343, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D/Sketchfab_Scene/StaticBody3D"]
+transform = Transform3D(0.446425, -0.298314, -0.00670812, 0.124543, 1.06908, -0.007159, 0.00436775, 0.00635343, 0.889789, 0.0108707, 0.853935, 0.232062)
+shape = SubResource("BoxShape3D_vgy21")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.01057, -1.75281, 1.0199)
