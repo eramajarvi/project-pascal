@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bf358d35x0tt4" path="res://assets/sprites/FrontalGato (1).png" id="2_gyd0j"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_q4fvv"]
-size = Vector3(1.54923, 1.96903, 0.121582)
+size = Vector3(1.54923, 1.96903, 0.0383301)
 
 [node name="GotasTheCat3D" type="CharacterBody3D"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
@@ -14,7 +14,7 @@ script = ExtResource("1_a40kq")
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.95211, -0.00275227, -0.0110012, -0.0114746)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.95211, -0.00275227, -0.0110012, 0.0112118)
 shape = SubResource("BoxShape3D_q4fvv")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]

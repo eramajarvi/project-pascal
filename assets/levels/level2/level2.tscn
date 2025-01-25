@@ -253,7 +253,7 @@ _data = {
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3y6yv"]
-size = Vector3(2.19971, 0.0843506, 2.19241)
+size = Vector3(2.37997, 0.0109253, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gfmpq"]
 size = Vector3(15.1584, 12.0574, 13.4065)
@@ -398,10 +398,10 @@ libraries = {
 "": SubResource("AnimationLibrary_nv052")
 }
 
-[node name="Area3D" type="Area3D" parent="Area3D/Sketchfab_Scene"]
+[node name="Area3D" type="StaticBody3D" parent="Area3D/Sketchfab_Scene"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D/Sketchfab_Scene/Area3D"]
-transform = Transform3D(0.719955, -0.692343, -0.0482131, 0.693003, 0.720919, -0.00402408, 0.0375438, -0.0305146, 0.998829, -0.417948, 2.18384, 0.869237)
+transform = Transform3D(0.639015, -0.749074, 0.174769, 0.766867, 0.638037, -0.0692638, -0.059626, 0.178286, 0.982169, -0.522888, 2.18638, 1.02039)
 shape = SubResource("BoxShape3D_3y6yv")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
