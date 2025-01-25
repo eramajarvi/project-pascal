@@ -2,34 +2,46 @@ extends Node3D
 
 @export var sphere_scene: PackedScene
 @export var shadow_decal_scene: PackedScene  # Preload a Decal scene with the shadow texture
-@export var plane_size_x: float = 10.0
-@export var plane_size_z: float = 10.0
+@export var plane_size_x: float = 20.0
+@export var plane_size_z: float = 20.0
 @export var spawn_height: float = 5.0
 @export var spawn_interval: float = 1.0
 @export var spheres_per_spawn: int = 5
 
-var spawn_timer: float = 0.0
+# Reference to the instantiated Scene A (set in the editor or dynamically find it)
+@export var VolcanoScenePath: NodePath
+
+var spawn_timer: float = 1.0
+var isPlayerInArea: bool = false
 
 func _ready():
 	spawn_timer = spawn_interval
+	
 
 func _process(delta):
-	spawn_timer -= delta
-	if spawn_timer <= 0.0:
-		spawn_multiple_spheres()
-		spawn_timer = spawn_interval
+	if isPlayerInArea:
+		spawn_timer -= delta
+		if spawn_timer <= 0.0:
+			
+			spawn_multiple_spheres()
+			spawn_timer = spawn_interval
 
 func spawn_multiple_spheres():
 	for i in range(spheres_per_spawn):
 		spawn_sphere()
 
 func spawn_sphere():
+	var VolcanoWithBubblenimation = %AnimationPlayer
+	VolcanoWithBubblenimation.play("bubbleGoingUp")
+	await VolcanoWithBubblenimation.animation_finished
+	#await get_tree().create_timer(2.0).timeout
+		
 	if not sphere_scene or not shadow_decal_scene:
 		return
 	
 	# Generate random position within the plane bounds
-	var random_x = randf_range(-plane_size_x / 2.0, plane_size_x / 2.0)
-	var random_z = randf_range(-plane_size_z / 2.0, plane_size_z / 2.0)
+	var random_x = randf_range(-5.4, 5.5)
+	var random_z = randf_range(-8.4, 5.4)
 	var spawn_position = Vector3(random_x, spawn_height, random_z)
 	
 	# Instance the sphere
@@ -69,3 +81,8 @@ func _on_sphere_exited(shadow_decal: Node3D):
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body.is_in_group("volcanoDamageGroup"):
 		body.queue_free()
+		
+
+func _on_area_3d_player_entered(body: Node3D) -> void:
+	if body.is_in_group("player"):
+		isPlayerInArea = true

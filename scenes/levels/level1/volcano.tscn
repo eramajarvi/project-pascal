@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b0np4tfgfvkps"]
 
-[ext_resource type="PackedScene" uid="uid://beemix657im1w" path="res://assets/levels/level1/blocks/geyser.glb" id="1_en7x1"]
+[ext_resource type="PackedScene" uid="uid://clvqr72qnrjfe" path="res://assets/levels/level1/blocks/geyser.glb" id="1_en7x1"]
 
 [node name="Volcano" type="Node3D"]
 
