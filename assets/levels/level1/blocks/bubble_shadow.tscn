@@ -3,5 +3,5 @@
 [ext_resource type="Texture2D" uid="uid://bh81jfiwt8itd" path="res://assets/levels/level1/blocks/Textures/bubbleShadowTexture.png" id="1_chxab"]
 
 [node name="BubbleShadow" type="Decal"]
-size = Vector3(0.5, 0.5, 0.5)
+size = Vector3(0.5, 2, 0.5)
 texture_albedo = ExtResource("1_chxab")
