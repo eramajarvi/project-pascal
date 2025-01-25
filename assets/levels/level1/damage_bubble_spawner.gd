@@ -8,16 +8,21 @@ extends Node3D
 @export var spawn_interval: float = 1.0
 @export var spheres_per_spawn: int = 5
 
+# Reference to the instantiated Scene A (set in the editor or dynamically find it)
+@export var VolcanoScenePath: NodePath
+
 var spawn_timer: float = 1.0
 var isPlayerInArea: bool = false
 
-#func _ready():
-	#spawn_timer = spawn_interval
+func _ready():
+	spawn_timer = spawn_interval
+	
 
 func _process(delta):
 	if isPlayerInArea:
 		spawn_timer -= delta
 		if spawn_timer <= 0.0:
+			
 			spawn_multiple_spheres()
 			spawn_timer = spawn_interval
 
@@ -26,6 +31,11 @@ func spawn_multiple_spheres():
 		spawn_sphere()
 
 func spawn_sphere():
+	var VolcanoWithBubblenimation = %AnimationPlayer
+	VolcanoWithBubblenimation.play("bubbleGoingUp")
+	await VolcanoWithBubblenimation.animation_finished
+	#await get_tree().create_timer(2.0).timeout
+		
 	if not sphere_scene or not shadow_decal_scene:
 		return
 	

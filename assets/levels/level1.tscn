@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://bmnteft0o8yes"]
+[gd_scene load_steps=36 format=3 uid="uid://bmnteft0o8yes"]
 
 [ext_resource type="Script" path="res://assets/levels/level1/level_1.gd" id="1_jd7ih"]
 [ext_resource type="MeshLibrary" uid="uid://dy3vid1ttudqf" path="res://scenes/levels/level1/gridmapBlocks-level1.tres" id="2_8dpt5"]
@@ -10,7 +10,8 @@
 [ext_resource type="Script" path="res://assets/levels/level1/damage_bubble_spawner.gd" id="8_xbbal"]
 [ext_resource type="PackedScene" uid="uid://c7h14k5d6kggr" path="res://assets/levels/level1/blocks/volcano_damage_drop.tscn" id="9_kdslv"]
 [ext_resource type="PackedScene" uid="uid://vsg8mrevyd5a" path="res://assets/levels/level1/blocks/bubble_shadow.tscn" id="10_u2pur"]
-[ext_resource type="PackedScene" uid="uid://ceraujg1gu877" path="res://assets/levels/level1/blocks/volcano_with_bubble.tscn" id="11_eu841"]
+[ext_resource type="PackedScene" uid="uid://clvqr72qnrjfe" path="res://assets/levels/level1/blocks/geyser.glb" id="11_qj5aj"]
+[ext_resource type="PackedScene" uid="uid://gobu4dd3loe5" path="res://assets/levels/level1/blocks/volcano_bubble.tscn" id="12_mbx2j"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_r0wd2"]
 
@@ -121,8 +122,93 @@ _data = {
 [sub_resource type="BoxShape3D" id="BoxShape3D_d21x0"]
 size = Vector3(1, 0.8, 1)
 
+[sub_resource type="Animation" id="Animation_bpc15"]
+length = 2.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3, 0.4, 0.5, 0.7, 1.1, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.1, 0.1, 0.1), Vector3(0.2, 0.2, 0.2), Vector3(0.3, 0.3, 0.3), Vector3(0.4, 0.4, 0.4), Vector3(0.5, 0.5, 0.5), Vector3(0.7, 0.7, 0.7), Vector3(1.2, 1.2, 1.2), Vector3(2.5, 2.5, 2.5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3, 0.4, 0.5, 0.7, 1.1, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0.92746, 0), Vector3(0, 1.42746, 0), Vector3(0, 2.22746, 0), Vector3(0, 2.82746, 0), Vector3(0, 3.62746, 0), Vector3(0, 4.62746, 0), Vector3(0, 6.72746, 0), Vector3(0, 9.12746, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_xrs3n"]
+resource_name = "bubbleGoingUp"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(0.68302, 1.36604),
+"update": 0,
+"values": [Vector3(0.1, 0.1, 0.1), Vector3(3, 3, 3)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(0.870551, 1.68179),
+"update": 0,
+"values": [Vector3(0, 0.92746, 0), Vector3(0, 12, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h1ypo"]
+_data = {
+"RESET": SubResource("Animation_bpc15"),
+"bubbleGoingUp": SubResource("Animation_xrs3n")
+}
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_6ttox"]
-size = Vector3(1.2, 0.2, 2)
+size = Vector3(1.2, 0.3, 2)
 
 [sub_resource type="QuadMesh" id="QuadMesh_xgnkd"]
 flip_faces = true
@@ -482,9 +568,23 @@ plane_size_z = 5.0
 spawn_height = 10.0
 spawn_interval = 2.5
 spheres_per_spawn = 15
+VolcanoScenePath = NodePath("../VolcanoWithBubble/VolcanoBubble")
 
-[node name="VolcanoWithBubble" parent="." instance=ExtResource("11_eu841")]
+[node name="VolcanoWithBubble" type="Node3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.1, 0.9, -3)
+
+[node name="Sketchfab_Scene" parent="VolcanoWithBubble" instance=ExtResource("11_qj5aj")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+
+[node name="VolcanoBubble" parent="VolcanoWithBubble" instance=ExtResource("12_mbx2j")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.92746, 0)
+visible = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="VolcanoWithBubble/VolcanoBubble"]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_h1ypo")
+}
 
 [node name="Ground" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, -2.6)
@@ -492,7 +592,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, -2.6)
 [node name="Area3D" type="Area3D" parent="Ground"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/Area3D"]
-transform = Transform3D(10, 0, 0, 0, 19.0013, 0, 0, 0, 10, 1, -1.4, 0)
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 1, -1.3, 0)
 shape = SubResource("BoxShape3D_6ttox")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Ground/Area3D"]
@@ -509,5 +609,5 @@ shape = SubResource("WorldBoundaryShape3D_2qeqm")
 [connection signal="body_exited" from="PlataformasMovibles/PlataformaMovible2/Area3D" to="PlataformasMovibles/PlataformaMovible2" method="_on_area_3d_body_exited"]
 [connection signal="body_entered" from="PlataformasMovibles/PlataformaMovible3/Area3D" to="PlataformasMovibles/PlataformaMovible3" method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="PlataformasMovibles/PlataformaMovible3/Area3D" to="PlataformasMovibles/PlataformaMovible3" method="_on_area_3d_body_exited"]
-[connection signal="body_entered" from="Ground/Area3D" to="DamageBubbleSpawner" method="_on_area_3d_body_entered"]
 [connection signal="body_entered" from="Ground/Area3D" to="DamageBubbleSpawner" method="_on_area_3d_player_entered"]
+[connection signal="body_entered" from="Ground/Area3D" to="DamageBubbleSpawner" method="_on_area_3d_body_entered"]
