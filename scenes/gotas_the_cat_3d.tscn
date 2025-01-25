@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://baepnmdpm01id"]
 
 [ext_resource type="Script" path="res://scripts/gotas_the_cat_3d.gd" id="1_a40kq"]
-[ext_resource type="Texture2D" uid="uid://4ulec3jlh7eq" path="res://assets/sprites/FrontalGato (1).png" id="2_gyd0j"]
+[ext_resource type="Texture2D" uid="uid://bf358d35x0tt4" path="res://assets/sprites/FrontalGato (1).png" id="2_gyd0j"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_q4fvv"]
 size = Vector3(1.54923, 1.96903, 0.121582)

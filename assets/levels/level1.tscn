@@ -1,7 +1,8 @@
-[gd_scene load_steps=36 format=3 uid="uid://bmnteft0o8yes"]
+[gd_scene load_steps=37 format=3 uid="uid://bmnteft0o8yes"]
 
 [ext_resource type="Script" path="res://assets/levels/level1/level_1.gd" id="1_jd7ih"]
 [ext_resource type="MeshLibrary" uid="uid://dy3vid1ttudqf" path="res://scenes/levels/level1/gridmapBlocks-level1.tres" id="2_8dpt5"]
+[ext_resource type="Shader" path="res://scripts/shaders/sky-3.gdshader" id="2_xl2l1"]
 [ext_resource type="PackedScene" uid="uid://baepnmdpm01id" path="res://scenes/gotas_the_cat_3d.tscn" id="3_kedkm"]
 [ext_resource type="PackedScene" uid="uid://ch7n85egx2wlq" path="res://scenes/ambient/worm_hole.tscn" id="4_ptj1r"]
 [ext_resource type="PackedScene" uid="uid://mg8rie4r7nkb" path="res://assets/levels/level1/blocks/rocks.glb" id="5_hswq1"]
@@ -14,6 +15,16 @@
 [ext_resource type="PackedScene" uid="uid://gobu4dd3loe5" path="res://assets/levels/level1/blocks/volcano_bubble.tscn" id="12_mbx2j"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_r0wd2"]
+shader = ExtResource("2_xl2l1")
+shader_parameter/sky_color = Color(0.03, 0.05, 0.11, 1)
+shader_parameter/star_base_color = Color(0.8, 1, 0.3, 1)
+shader_parameter/star_hue_offset = 0.6
+shader_parameter/star_intensity = 0.08
+shader_parameter/star_twinkle_speed = 0.8
+shader_parameter/star_twinkle_intensity = 0.2
+shader_parameter/layer_scale = 20.0
+shader_parameter/layer_scale_step = 10.0
+shader_parameter/layers_count = 3
 
 [sub_resource type="Sky" id="Sky_wpoyl"]
 sky_material = SubResource("ShaderMaterial_r0wd2")
@@ -214,7 +225,8 @@ size = Vector3(1.2, 0.3, 2)
 flip_faces = true
 orientation = 1
 
-[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_2qeqm"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_hf65l"]
+size = Vector3(13, 1, 18)
 
 [node name="Level1" type="Node3D"]
 script = ExtResource("1_jd7ih")
@@ -232,7 +244,7 @@ data = {
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
 [node name="GotasTheCat3D" parent="." groups=["player"] instance=ExtResource("3_kedkm")]
-transform = Transform3D(0.352342, 0, -0.354761, 0, 0.5, 0, 0.354761, 0, 0.352342, -12.2248, 3.06492, -2.8333)
+transform = Transform3D(0.352342, 0, -0.354761, 0, 0.5, 0, 0.354761, 0, 0.352342, -14.7033, 3.06492, -1.78111)
 wall_min_slide_angle = 0.174533
 
 [node name="CameraController" type="Node3D" parent="GotasTheCat3D"]
@@ -601,7 +613,8 @@ mesh = SubResource("QuadMesh_xgnkd")
 skeleton = NodePath("../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
-shape = SubResource("WorldBoundaryShape3D_2qeqm")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -1, -0.5)
+shape = SubResource("BoxShape3D_hf65l")
 
 [connection signal="body_entered" from="PlataformasMovibles/PlataformaMovible1/Area3D" to="PlataformasMovibles/PlataformaMovible1" method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="PlataformasMovibles/PlataformaMovible1/Area3D" to="PlataformasMovibles/PlataformaMovible1" method="_on_area_3d_body_exited"]
