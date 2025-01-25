@@ -23,6 +23,7 @@ func _process(delta):
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player"):
+		print("jugador esta en la plataforma")
 		characters_on_platform.append(body)
 
 

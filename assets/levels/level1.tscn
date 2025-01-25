@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://bmnteft0o8yes"]
+[gd_scene load_steps=39 format=3 uid="uid://bmnteft0o8yes"]
 
 [ext_resource type="Script" path="res://assets/levels/level1/level_1.gd" id="1_jd7ih"]
 [ext_resource type="MeshLibrary" uid="uid://dy3vid1ttudqf" path="res://scenes/levels/level1/gridmapBlocks-level1.tres" id="2_8dpt5"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://vsg8mrevyd5a" path="res://assets/levels/level1/blocks/bubble_shadow.tscn" id="10_u2pur"]
 [ext_resource type="PackedScene" uid="uid://clvqr72qnrjfe" path="res://assets/levels/level1/blocks/geyser.glb" id="11_qj5aj"]
 [ext_resource type="PackedScene" uid="uid://gobu4dd3loe5" path="res://assets/levels/level1/blocks/volcano_bubble.tscn" id="12_mbx2j"]
+[ext_resource type="Script" path="res://assets/levels/fallzone.gd" id="14_wvv1o"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_r0wd2"]
 shader = ExtResource("2_xl2l1")
@@ -49,7 +50,7 @@ size = Vector3(7.96539, 4.29578, 0.147705)
 size = Vector3(6.31238, 4.83936, 0.13623)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3ohbj"]
-size = Vector3(1, 0.69187, 1)
+size = Vector3(1, 0.8, 1)
 
 [sub_resource type="Animation" id="Animation_iromb"]
 resource_name = "Move_Plataforma1"
@@ -90,7 +91,7 @@ _data = {
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_w4smc"]
-size = Vector3(1, 0.679419, 1)
+size = Vector3(1, 0.8, 1)
 
 [sub_resource type="Animation" id="Animation_8ay8v"]
 resource_name = "Move_Platforma2"
@@ -228,6 +229,8 @@ orientation = 1
 [sub_resource type="BoxShape3D" id="BoxShape3D_hf65l"]
 size = Vector3(13, 1, 18)
 
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_h1b0l"]
+
 [node name="Level1" type="Node3D"]
 script = ExtResource("1_jd7ih")
 
@@ -244,7 +247,7 @@ data = {
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
 [node name="GotasTheCat3D" parent="." groups=["player"] instance=ExtResource("3_kedkm")]
-transform = Transform3D(0.352342, 0, -0.354761, 0, 0.5, 0, 0.354761, 0, 0.352342, -14.7033, 3.06492, -1.78111)
+transform = Transform3D(0.352342, 0, -0.354761, 0, 0.5, 0, 0.354761, 0, 0.352342, -44.375, 2.06492, -9.66084)
 wall_min_slide_angle = 0.174533
 
 [node name="CameraController" type="Node3D" parent="GotasTheCat3D"]
@@ -535,7 +538,7 @@ script = ExtResource("7_nur7b")
 [node name="Area3D" type="Area3D" parent="PlataformasMovibles/PlataformaMovible1"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlataformasMovibles/PlataformaMovible1/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.154065, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
 shape = SubResource("BoxShape3D_3ohbj")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="PlataformasMovibles/PlataformaMovible1"]
@@ -551,7 +554,7 @@ script = ExtResource("7_nur7b")
 [node name="Area3D" type="Area3D" parent="PlataformasMovibles/PlataformaMovible2"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlataformasMovibles/PlataformaMovible2/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.160291, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.100001, 0)
 shape = SubResource("BoxShape3D_w4smc")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="PlataformasMovibles/PlataformaMovible2"]
@@ -598,23 +601,30 @@ libraries = {
 "": SubResource("AnimationLibrary_h1ypo")
 }
 
-[node name="Ground" type="StaticBody3D" parent="."]
+[node name="Volcano1Ground" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, -2.6)
 
-[node name="Area3D" type="Area3D" parent="Ground"]
+[node name="Area3D" type="Area3D" parent="Volcano1Ground"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Volcano1Ground/Area3D"]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 1, -1.3, 0)
 shape = SubResource("BoxShape3D_6ttox")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground/Area3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Volcano1Ground/Area3D"]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
 mesh = SubResource("QuadMesh_xgnkd")
 skeleton = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Volcano1Ground"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -1, -0.5)
 shape = SubResource("BoxShape3D_hf65l")
+
+[node name="LevelGround" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LevelGround"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
+shape = SubResource("WorldBoundaryShape3D_h1b0l")
+script = ExtResource("14_wvv1o")
 
 [connection signal="body_entered" from="PlataformasMovibles/PlataformaMovible1/Area3D" to="PlataformasMovibles/PlataformaMovible1" method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="PlataformasMovibles/PlataformaMovible1/Area3D" to="PlataformasMovibles/PlataformaMovible1" method="_on_area_3d_body_exited"]
@@ -622,5 +632,6 @@ shape = SubResource("BoxShape3D_hf65l")
 [connection signal="body_exited" from="PlataformasMovibles/PlataformaMovible2/Area3D" to="PlataformasMovibles/PlataformaMovible2" method="_on_area_3d_body_exited"]
 [connection signal="body_entered" from="PlataformasMovibles/PlataformaMovible3/Area3D" to="PlataformasMovibles/PlataformaMovible3" method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="PlataformasMovibles/PlataformaMovible3/Area3D" to="PlataformasMovibles/PlataformaMovible3" method="_on_area_3d_body_exited"]
-[connection signal="body_entered" from="Ground/Area3D" to="DamageBubbleSpawner" method="_on_area_3d_player_entered"]
-[connection signal="body_entered" from="Ground/Area3D" to="DamageBubbleSpawner" method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="Volcano1Ground/Area3D" to="DamageBubbleSpawner" method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="Volcano1Ground/Area3D" to="DamageBubbleSpawner" method="_on_area_3d_player_entered"]
+[connection signal="body_entered" from="LevelGround" to="LevelGround/CollisionShape3D" method="_on_level_ground_body_entered"]

@@ -1,9 +1,9 @@
 extends CharacterBody3D
 
-
 const SPEED = 3.0
 const JUMP_VELOCITY = 4.5
 
+var health: int = 3 # Example initial health
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -28,3 +28,10 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 	
+func take_damage(amount: int) -> void:
+	health -= amount
+	if health <= 0:
+		die()
+		
+func die() -> void:
+	print("jugador murió")
