@@ -10,21 +10,6 @@
 [ext_resource type="Script" path="res://assets/levels/level2/blocks/impossible_staircase.gd" id="9_u58ly"]
 [ext_resource type="PackedScene" uid="uid://bmajgwxf1y7xb" path="res://assets/levels/level2/blocks/impossible_staircase.glb" id="9_wyry1"]
 
-[sub_resource type="Animation" id="Animation_2vs78"]
-resource_name = "move"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(-0.523599, 0, 0), Vector3(-0.706858, -0.1309, 0)]
-}
-
 [sub_resource type="Animation" id="Animation_v330t"]
 length = 0.001
 tracks/0/type = "value"
@@ -38,6 +23,21 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector3(-0.523599, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_2vs78"]
+resource_name = "move"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.523599, 0, 0), Vector3(-0.706858, -0.1309, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gvxcm"]
@@ -198,10 +198,10 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.133333, 0.266667, 0.5, 0.754758),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(8.4201, 1.12582, 1.50949), Vector3(8.4201, 0.946071, 1.50949), Vector3(8.4201, 0.76012, 1.24252), Vector3(8.4201, 0.946071, 0.951043)]
+"values": [Vector3(8.4201, 0.946071, 1.50949), Vector3(11.0093, 0.946071, 1.50949)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_msr55"]
@@ -211,15 +211,27 @@ _data = {
 "shape": SubResource("Animation_217w0")
 }
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_twxch"]
-size = Vector3(1.0498, 0.661011, 1)
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_tmhx3"]
-size = Vector3(0.960449, 0.795166, 1.09988)
+size = Vector3(0.97583, 0.78125, 1.09988)
+
+[sub_resource type="Animation" id="Animation_h0ifn"]
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.928082, -5.72302, -0.838742), Vector3(74.5021, -5.72302, -0.838742)]
+}
 
 [sub_resource type="Animation" id="Animation_l4ls4"]
 resource_name = "move"
-length = 8.0
+length = 5.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -227,25 +239,10 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 7.96667),
-"transitions": PackedFloat32Array(4.14106, 1),
+"times": PackedFloat32Array(0, 4.86667),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(0.928082, -5.72302, -0.838742), Vector3(47.3117, -5.72302, -0.838742)]
-}
-
-[sub_resource type="Animation" id="Animation_h0ifn"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0.928082, -5.72302, -0.838742)]
+"values": [Vector3(0.928082, -5.72302, -0.838742), Vector3(0.928082, 20.6836, -0.838742)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_nv052"]
@@ -253,6 +250,9 @@ _data = {
 "RESET": SubResource("Animation_h0ifn"),
 "move": SubResource("Animation_l4ls4")
 }
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vgy21"]
+size = Vector3(0.536835, 0.00727844, 0.213303)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gfmpq"]
 size = Vector3(15.1584, 12.0574, 13.4065)
@@ -342,23 +342,17 @@ libraries = {
 }
 autoplay = "shape"
 
-[node name="Area3D" type="Area3D" parent="Stair3"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Stair3/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0249023, 0.389092, 0)
-shape = SubResource("BoxShape3D_twxch")
-
 [node name="Stair4" parent="." instance=ExtResource("3_y25ok")]
-transform = Transform3D(4.02691, 0, 0, 0, 1, 0, 0, 0, 2.01099, 13.6029, 0.946071, 1.50949)
+transform = Transform3D(3.3605, 0, 0, 0, 1, 0, 0, 0, 2.01099, 13.6029, 0.946071, 1.50949)
 
 [node name="Area3D" type="Area3D" parent="Stair4"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Stair4/Area3D"]
-transform = Transform3D(1.00159, 0, 0, 0, 1.00159, 0, 0, 0, 1.00159, 0, 0.253906, -0.000213444)
+transform = Transform3D(1.00159, 0, 0, 0, 1.00159, 0, 0, 0, 1.00159, -0.00770283, 0.246937, -0.000213683)
 shape = SubResource("BoxShape3D_tmhx3")
 
 [node name="lantern2" parent="Stair4" instance=ExtResource("5_0oyx8")]
-transform = Transform3D(0.36228, 0, 0, 0, 0.656507, 0, 0, 0, 0.497268, 0.0662003, 0.499999, -0.338475)
+transform = Transform3D(0.291365, 0, 0, 0, 0.656507, 0, 0, 0, 0.497268, 0.0662003, 0.499999, -0.338475)
 
 [node name="Stair5" parent="." instance=ExtResource("3_y25ok")]
 transform = Transform3D(2.13513, 0, 0, 0, 1, 0, 0, 0, 2.01099, 18.3219, 0.946071, 1.50949)
@@ -403,14 +397,19 @@ libraries = {
 "": SubResource("AnimationLibrary_nv052")
 }
 
+[node name="StaticBody3D" type="StaticBody3D" parent="Area3D/Sketchfab_Scene"]
+transform = Transform3D(3.343, 0, 0, 0, 3.343, 0, 0, 0, 3.343, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D/Sketchfab_Scene/StaticBody3D"]
+transform = Transform3D(0.446425, -0.298314, -0.00670812, 0.124543, 1.06908, -0.007159, 0.00436775, 0.00635343, 0.889789, 0.0108707, 0.853935, 0.232062)
+shape = SubResource("BoxShape3D_vgy21")
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.01057, -1.75281, 1.0199)
 shape = SubResource("BoxShape3D_gfmpq")
 
 [connection signal="body_entered" from="Stair1/Area3D" to="Stair1" method="_on_area_3d_body_entered"]
 [connection signal="body_entered" from="Stair2/Area3D" to="Stair2" method="_on_area_3d_body_entered"]
-[connection signal="body_entered" from="Stair3/Area3D" to="Stair3" method="_on_area_3d_body_entered"]
-[connection signal="body_exited" from="Stair3/Area3D" to="Stair3" method="_on_area_3d_body_exited"]
 [connection signal="body_entered" from="Stair4/Area3D" to="Stair1" method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Stair4/Area3D" to="Stair3" method="_on_area_3d_body_exited"]
 [connection signal="body_entered" from="Area3D" to="Area3D/Sketchfab_Scene" method="_on_area_3d_body_entered"]
