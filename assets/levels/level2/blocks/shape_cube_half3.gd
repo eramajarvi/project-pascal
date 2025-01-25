@@ -29,6 +29,7 @@ func _on_area_3d_body_entered(body: Node) -> void:
 		await get_tree().create_timer(1.0).timeout
 		characters_on_platform.append(body)
 		animation_player.play("fall")
+		print('La escalera se movio')
 
 func _on_area_3d_body_exited(body: Node3D) -> void:
 	if body.is_in_group("player"):
