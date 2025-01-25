@@ -27,6 +27,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_2vs78"]
 resource_name = "move"
+length = 5.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -34,7 +35,7 @@ tracks/0/path = NodePath(".:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(0, 4.96667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(-0.523599, 0, 0), Vector3(-0.706858, -0.1309, 0)]
@@ -251,8 +252,8 @@ _data = {
 "move": SubResource("Animation_l4ls4")
 }
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_vgy21"]
-size = Vector3(0.536835, 0.00727844, 0.213303)
+[sub_resource type="BoxShape3D" id="BoxShape3D_3y6yv"]
+size = Vector3(2.19971, 0.0843506, 2.19241)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gfmpq"]
 size = Vector3(15.1584, 12.0574, 13.4065)
@@ -397,12 +398,11 @@ libraries = {
 "": SubResource("AnimationLibrary_nv052")
 }
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Area3D/Sketchfab_Scene"]
-transform = Transform3D(3.343, 0, 0, 0, 3.343, 0, 0, 0, 3.343, 0, 0, 0)
+[node name="Area3D" type="Area3D" parent="Area3D/Sketchfab_Scene"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D/Sketchfab_Scene/StaticBody3D"]
-transform = Transform3D(0.446425, -0.298314, -0.00670812, 0.124543, 1.06908, -0.007159, 0.00436775, 0.00635343, 0.889789, 0.0108707, 0.853935, 0.232062)
-shape = SubResource("BoxShape3D_vgy21")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D/Sketchfab_Scene/Area3D"]
+transform = Transform3D(0.719955, -0.692343, -0.0482131, 0.693003, 0.720919, -0.00402408, 0.0375438, -0.0305146, 0.998829, -0.417948, 2.18384, 0.869237)
+shape = SubResource("BoxShape3D_3y6yv")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.01057, -1.75281, 1.0199)
