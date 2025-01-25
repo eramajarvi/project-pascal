@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dwdjc7e36qurr"]
+[gd_scene load_steps=29 format=3 uid="uid://dwdjc7e36qurr"]
 
 [ext_resource type="MeshLibrary" uid="uid://chfrso0bo8hn7" path="res://assets/levels/level2/gridmapLevel2.tres" id="1_klqym"]
 [ext_resource type="PackedScene" uid="uid://baepnmdpm01id" path="res://scenes/gotas_the_cat_3d.tscn" id="2_0nnnu"]
@@ -6,22 +6,9 @@
 [ext_resource type="Script" path="res://assets/levels/level2/blocks/shape_cube_half.gd" id="4_pvtcg"]
 [ext_resource type="PackedScene" uid="uid://dmu3q6a8ydcx" path="res://assets/levels/level2/blocks/lantern.glb" id="5_0oyx8"]
 [ext_resource type="Script" path="res://assets/levels/level2/blocks/shape_cube_half2.gd" id="5_7sktv"]
-
-[sub_resource type="Animation" id="Animation_ba7m7"]
-resource_name = "shape"
-loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 0.9),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(6.45521, 0.241175, 0.980599), Vector3(6.45521, 0.241175, 1.06643), Vector3(6.45521, 0.241175, 0.930714)]
-}
+[ext_resource type="Script" path="res://assets/levels/level2/blocks/shape_cube_half3.gd" id="6_gtups"]
+[ext_resource type="Script" path="res://assets/levels/level2/blocks/lastStair.gd" id="8_dao4o"]
+[ext_resource type="PackedScene" uid="uid://bmajgwxf1y7xb" path="res://assets/levels/level2/blocks/impossible_staircase.glb" id="9_wyry1"]
 
 [sub_resource type="Animation" id="Animation_bsnjb"]
 length = 0.001
@@ -53,16 +40,7 @@ tracks/0/keys = {
 "values": [Vector3(6.45521, 0.241175, 0.980599), Vector3(6.45521, -16.752, 0.980599), Vector3(6.45521, -24657.5, 0.980599)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_i62gd"]
-_data = {
-"RESET": SubResource("Animation_bsnjb"),
-"fall": SubResource("Animation_p00wk"),
-"shape": SubResource("Animation_ba7m7")
-}
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_63v55"]
-
-[sub_resource type="Animation" id="Animation_6csn6"]
+[sub_resource type="Animation" id="Animation_ba7m7"]
 resource_name = "shape"
 loop_mode = 2
 tracks/0/type = "value"
@@ -72,11 +50,20 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.280556, 0.5, 0.966667),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.5, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(7.44252, 0.586896, 0.980599), Vector3(7.44252, 0.586896, 0.847173), Vector3(7.44252, 0.586896, 0.944879), Vector3(7.44252, 0.586896, 1.15612)]
+"values": [Vector3(6.45521, 0.241175, 0.980599), Vector3(6.45521, 0.241175, 1.06643), Vector3(6.45521, 0.241175, 0.930714)]
 }
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_i62gd"]
+_data = {
+"RESET": SubResource("Animation_bsnjb"),
+"fall": SubResource("Animation_p00wk"),
+"shape": SubResource("Animation_ba7m7")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_63v55"]
 
 [sub_resource type="Animation" id="Animation_acc2k"]
 length = 0.001
@@ -108,6 +95,22 @@ tracks/0/keys = {
 "values": [Vector3(7.44252, 0.586896, 0.980599), Vector3(7.44252, 0.586896, 12.0904), Vector3(7.44252, 0.586896, 30.6759)]
 }
 
+[sub_resource type="Animation" id="Animation_6csn6"]
+resource_name = "shape"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.280556, 0.5, 0.966667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(7.44252, 0.586896, 0.980599), Vector3(7.44252, 0.586896, 0.847173), Vector3(7.44252, 0.586896, 0.944879), Vector3(7.44252, 0.586896, 1.15612)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_q0nrd"]
 _data = {
 "RESET": SubResource("Animation_acc2k"),
@@ -117,6 +120,37 @@ _data = {
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vrcuw"]
 size = Vector3(1, 1.24695, 1)
+
+[sub_resource type="Animation" id="Animation_q4p7h"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(8.4201, 0.946071, 1.50949)]
+}
+
+[sub_resource type="Animation" id="Animation_vkx0l"]
+resource_name = "fall"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.757857, 1.46409),
+"update": 0,
+"values": [Vector3(8.4201, 1.12582, 1.50949), Vector3(12.602, 1.12582, 1.50949)]
+}
 
 [sub_resource type="Animation" id="Animation_217w0"]
 resource_name = "shape"
@@ -134,7 +168,20 @@ tracks/0/keys = {
 "values": [Vector3(8.4201, 1.12582, 1.50949), Vector3(8.4201, 0.946071, 1.50949), Vector3(8.4201, 0.76012, 1.24252), Vector3(8.4201, 0.946071, 0.951043)]
 }
 
-[sub_resource type="Animation" id="Animation_q4p7h"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_msr55"]
+_data = {
+"RESET": SubResource("Animation_q4p7h"),
+"fall": SubResource("Animation_vkx0l"),
+"shape": SubResource("Animation_217w0")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_twxch"]
+size = Vector3(1, 0.661011, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tmhx3"]
+size = Vector3(0.960449, 0.795166, 1.09988)
+
+[sub_resource type="Animation" id="Animation_6cr8w"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -146,19 +193,34 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(8.4201, 0.946071, 1.50949)]
+"values": [Vector3(21.457, 2.05576, 1.50949)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_msr55"]
+[sub_resource type="Animation" id="Animation_8tn57"]
+resource_name = "shape"
+length = 2.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.966667, 1.53333, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(21.457, 2.05576, 1.50949), Vector3(21.457, 2.05576, 5.25419), Vector3(21.457, 2.05576, 1.6132), Vector3(21.457, 2.05576, -1.67691), Vector3(21.457, 2.05576, 1.5399)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xp5h2"]
 _data = {
-"RESET": SubResource("Animation_q4p7h"),
-"shape": SubResource("Animation_217w0")
+"RESET": SubResource("Animation_6cr8w"),
+"shape": SubResource("Animation_8tn57")
 }
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_tmhx3"]
-size = Vector3(1, 0.492188, 0.999573)
 
 [node name="Level2" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000411987, 0, 0.000213623)
 
 [node name="GridMap" type="GridMap" parent="."]
 mesh_library = ExtResource("1_klqym")
@@ -173,7 +235,7 @@ transform = Transform3D(0.352342, 0, -0.354761, 0, 0.5, 0, 0.354761, 0, 0.352342
 wall_min_slide_angle = 0.174533
 
 [node name="CameraController" type="Node3D" parent="GotasTheCat3D"]
-transform = Transform3D(1, 0, 0, 0, 0.866026, 0.5, 0, -0.5, 0.866026, 1, 4.5, 6)
+transform = Transform3D(0.991445, 0.08477, -0.0992529, 0, 0.760406, 0.649448, 0.130526, -0.643892, 0.753901, 1, 4.5, 6)
 
 [node name="CameraTarget" type="Node3D" parent="GotasTheCat3D/CameraController"]
 
@@ -227,15 +289,23 @@ shape = SubResource("BoxShape3D_vrcuw")
 
 [node name="Stair3" parent="." instance=ExtResource("3_y25ok")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.01099, 8.4201, 0.946071, 1.50949)
+script = ExtResource("6_gtups")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Stair3"]
+[node name="stair3Animations" type="AnimationPlayer" parent="Stair3"]
+unique_name_in_owner = true
 libraries = {
 "": SubResource("AnimationLibrary_msr55")
 }
 autoplay = "shape"
 
+[node name="Area3D" type="Area3D" parent="Stair3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Stair3/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.389092, 0)
+shape = SubResource("BoxShape3D_twxch")
+
 [node name="Stair4" parent="." instance=ExtResource("3_y25ok")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.01099, 13.6029, 0.946071, 1.50949)
+transform = Transform3D(1.79184, 0, 0, 0, 1, 0, 0, 0, 2.01099, 13.6029, 0.946071, 1.50949)
 
 [node name="Area3D" type="Area3D" parent="Stair4"]
 
@@ -243,8 +313,66 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.01099, 13.6029, 0.946071, 1.50
 transform = Transform3D(1.00159, 0, 0, 0, 1.00159, 0, 0, 0, 1.00159, 0, 0.253906, -0.000213444)
 shape = SubResource("BoxShape3D_tmhx3")
 
-[node name="lantern2" parent="." instance=ExtResource("5_0oyx8")]
-transform = Transform3D(1, 0, 0, 0, 0.656507, 0, 0, 0, 1, 13.6691, 1.44607, 0.82882)
+[node name="lantern2" parent="Stair4" instance=ExtResource("5_0oyx8")]
+transform = Transform3D(1, 0, 0, 0, 0.656507, 0, 0, 0, 0.497268, 0.0662003, 0.499999, -0.338475)
+
+[node name="Stair5" parent="." instance=ExtResource("3_y25ok")]
+transform = Transform3D(2.13513, 0, 0, 0, 1, 0, 0, 0, 2.01099, 18.3219, 0.946071, 1.50949)
+
+[node name="Area3D" type="Area3D" parent="Stair5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Stair5/Area3D"]
+transform = Transform3D(1.00159, 0, 0, 0, 1.00159, 0, 0, 0, 1.00159, 0, 0.253906, -0.000213444)
+shape = SubResource("BoxShape3D_tmhx3")
+
+[node name="lantern2" parent="Stair5" instance=ExtResource("5_0oyx8")]
+transform = Transform3D(0.468355, 0, 0, 0, 0.76784, 0, 0, 0, 0.497268, -0.0145712, 0.5, -0.321703)
+
+[node name="Stair6" parent="." instance=ExtResource("3_y25ok")]
+transform = Transform3D(0.840845, 0, 0, 0, 1, 0, 0, 0, 2.01099, 19.7687, 1.31281, 1.50949)
+
+[node name="Area3D" type="Area3D" parent="Stair6"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Stair6/Area3D"]
+transform = Transform3D(1.00159, 0, 0, 0, 1.00159, 0, 0, 0, 1.00159, 0, 0.253906, -0.000213444)
+shape = SubResource("BoxShape3D_tmhx3")
+
+[node name="Stair7" parent="." instance=ExtResource("3_y25ok")]
+transform = Transform3D(0.840845, 0, 0, 0, 1, 0, 0, 0, 2.01099, 20.6103, 1.71887, 1.50949)
+
+[node name="Area3D" type="Area3D" parent="Stair7"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Stair7/Area3D"]
+transform = Transform3D(1.00159, 0, 0, 0, 1.00159, 0, 0, 0, 1.00159, 0, 0.253906, -0.000213444)
+shape = SubResource("BoxShape3D_tmhx3")
+
+[node name="Stair8" parent="." instance=ExtResource("3_y25ok")]
+transform = Transform3D(0.840845, 0, 0, 0, 1, 0, 0, 0, 2.01099, 21.457, 2.05576, 1.50949)
+script = ExtResource("8_dao4o")
+
+[node name="lastStairAnimation" type="AnimationPlayer" parent="Stair8"]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_xp5h2")
+}
+
+[node name="Area3D" type="Area3D" parent="Stair8"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Stair8/Area3D"]
+transform = Transform3D(1.00159, 0, 0, 0, 1.00159, 0, 0, 0, 1.00159, 0.0198059, 0.405636, -0.0504488)
+shape = SubResource("BoxShape3D_tmhx3")
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("9_wyry1")]
+transform = Transform3D(-3.26427, -0.223719, -0.685667, -0.220422, 3.3355, -0.038935, 0.686734, 0.00719172, -3.2717, 38.0579, -5.72302, 1.33541)
+
+[node name="shape-cube-half3" parent="." instance=ExtResource("3_y25ok")]
+transform = Transform3D(8.83724, 0, 0, 0, 1, 0, 0, 0, 3.81693, 26.6161, 2.20348, 2.80629)
 
 [connection signal="body_entered" from="Stair1/Area3D" to="Stair1" method="_on_area_3d_body_entered"]
 [connection signal="body_entered" from="Stair2/Area3D" to="Stair2" method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="Stair3/Area3D" to="Stair3" method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Stair3/Area3D" to="Stair3" method="_on_area_3d_body_exited"]
+[connection signal="body_entered" from="Stair4/Area3D" to="Stair1" method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Stair4/Area3D" to="Stair3" method="_on_area_3d_body_exited"]
+[connection signal="body_entered" from="Stair8/Area3D" to="Stair8" method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Stair8/Area3D" to="Stair8" method="_on_area_3d_body_exited"]

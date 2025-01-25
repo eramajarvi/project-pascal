@@ -3,8 +3,8 @@
 [ext_resource type="MeshLibrary" uid="uid://dy3vid1ttudqf" path="res://scenes/levels/level1/gridmapBlocks-level1.tres" id="1_egn8e"]
 [ext_resource type="Script" path="res://assets/levels/level1/level_1.gd" id="1_n0apt"]
 [ext_resource type="PackedScene" uid="uid://baepnmdpm01id" path="res://scenes/gotas_the_cat_3d.tscn" id="2_r1c04"]
-[ext_resource type="PackedScene" uid="uid://mg8rie4r7nkb" path="res://assets/levels/level1/blocks/rocks.glb" id="4_2rqx2"]
-[ext_resource type="PackedScene" uid="uid://b4rjdx5qsmqcb" path="res://assets/levels/level1/blocks/platform.glb" id="6_3vl51"]
+[ext_resource type="PackedScene" uid="uid://cqv8kb38rffnx" path="res://assets/levels/level1/blocks/rocks.glb" id="4_2rqx2"]
+[ext_resource type="PackedScene" uid="uid://bbvdvt1hbp6de" path="res://assets/levels/level1/blocks/platform.glb" id="6_3vl51"]
 [ext_resource type="PackedScene" uid="uid://ch7n85egx2wlq" path="res://scenes/ambient/worm_hole.tscn" id="6_nbc32"]
 [ext_resource type="Script" path="res://assets/levels/level1/platform-wrapper.gd" id="6_syc8c"]
 
@@ -33,7 +33,7 @@ size = Vector3(7.96539, 4.29578, 0.147705)
 size = Vector3(6.31238, 4.83936, 0.13623)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3ohbj"]
-size = Vector3(1, 0.8, 1)
+size = Vector3(1, 0.69187, 1)
 
 [sub_resource type="Animation" id="Animation_iromb"]
 resource_name = "Move_Plataforma1"
@@ -74,7 +74,7 @@ _data = {
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_w4smc"]
-size = Vector3(1, 0.8, 1)
+size = Vector3(1, 0.679419, 1)
 
 [sub_resource type="Animation" id="Animation_8ay8v"]
 resource_name = "Move_Platforma2"
@@ -130,7 +130,7 @@ data = {
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
 [node name="GotasTheCat3D" parent="." groups=["player"] instance=ExtResource("2_r1c04")]
-transform = Transform3D(0.352342, 0, -0.354761, 0, 0.5, 0, 0.354761, 0, 0.352342, -26.6883, 2.30783, -1.16237)
+transform = Transform3D(0.352342, 0, -0.354761, 0, 0.5, 0, 0.354761, 0, 0.352342, -44.7298, 1.56492, -9.3085)
 wall_min_slide_angle = 0.174533
 
 [node name="CameraController" type="Node3D" parent="GotasTheCat3D"]
@@ -419,7 +419,7 @@ script = ExtResource("6_syc8c")
 [node name="Area3D" type="Area3D" parent="PlataformaMovible1"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlataformaMovible1/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.154065, 0)
 shape = SubResource("BoxShape3D_3ohbj")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="PlataformaMovible1"]
@@ -435,7 +435,7 @@ script = ExtResource("6_syc8c")
 [node name="Area3D" type="Area3D" parent="PlataformaMovible2"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlataformaMovible2/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.160291, 0)
 shape = SubResource("BoxShape3D_w4smc")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="PlataformaMovible2"]
