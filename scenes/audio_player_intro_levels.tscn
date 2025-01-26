@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cm6ub5k8idfnl"]
+
+[ext_resource type="Script" path="res://scripts/audio_player_intro_levels.gd" id="1_lobw4"]
+
+[node name="AudioPlayerIntroLevels" type="AudioStreamPlayer"]
+script = ExtResource("1_lobw4")
