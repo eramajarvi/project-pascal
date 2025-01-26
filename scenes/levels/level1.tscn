@@ -633,7 +633,7 @@ script = ExtResource("14_punwt")
 [connection signal="body_exited" from="PlataformasMovibles/PlataformaMovible2/Area3D" to="PlataformasMovibles/PlataformaMovible2" method="_on_area_3d_body_exited"]
 [connection signal="body_entered" from="PlataformasMovibles/PlataformaMovible3/Area3D" to="PlataformasMovibles/PlataformaMovible3" method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="PlataformasMovibles/PlataformaMovible3/Area3D" to="PlataformasMovibles/PlataformaMovible3" method="_on_area_3d_body_exited"]
-[connection signal="body_entered" from="Volcano1Ground/Area3D" to="DamageBubbleSpawner" method="_on_area_3d_body_entered"]
 [connection signal="body_entered" from="Volcano1Ground/Area3D" to="DamageBubbleSpawner" method="_on_area_3d_player_entered"]
+[connection signal="body_entered" from="Volcano1Ground/Area3D" to="DamageBubbleSpawner" method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Volcano1Ground/Area3D" to="DamageBubbleSpawner" method="_on_area_3d_body_exited"]
 [connection signal="body_entered" from="LevelGround" to="LevelGround/CollisionShape3D" method="_on_level_ground_body_entered"]
