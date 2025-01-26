@@ -29,9 +29,22 @@ func _physics_process(delta: float) -> void:
 	
 	
 func take_damage(amount: int) -> void:
+	var escenaActual = get_tree().current_scene
+	print("el jugador perdió salud en: ", escenaActual)
+	
+	GameoverRespawner.setSpawnScene(escenaActual)
+	
 	health -= amount
+	print("salud: ", health)
+	
 	if health <= 0:
 		die()
 		
 func die() -> void:
-	print("jugador murió")
+	var escenaActual = get_tree().current_scene
+	
+	print("el jugador murió en: ", escenaActual)
+	GameoverRespawner.setSpawnScene(escenaActual)
+	GameoverRespawner.precallGameOver()
+	
+	
