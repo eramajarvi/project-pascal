@@ -1,14 +1,14 @@
 [gd_scene load_steps=9 format=3 uid="uid://baepnmdpm01id"]
 
 [ext_resource type="Script" path="res://scripts/gotas_the_cat_3d.gd" id="1_a40kq"]
-[ext_resource type="Texture2D" uid="uid://x01xb1boxgc4" path="res://assets/sprites/Gato/FrontalGato (1).png" id="2_gyd0j"]
-[ext_resource type="Texture2D" uid="uid://k32kpnhdw6i6" path="res://assets/sprites/Gato/MoveGato Frame2.png" id="3_ni2yh"]
-[ext_resource type="Texture2D" uid="uid://ftbvvy4ut0oi" path="res://assets/sprites/Gato/GatoAtacando.png" id="3_vpeh3"]
-[ext_resource type="Texture2D" uid="uid://cnri1i1jn4vkq" path="res://assets/sprites/Gato/MoveGato Frame1.png" id="4_65yja"]
-[ext_resource type="Texture2D" uid="uid://c2qjaa747uvmx" path="res://assets/sprites/Gato/MoveGato Frame3.png" id="5_6nqkj"]
+[ext_resource type="Texture2D" uid="uid://bmeudpwjk80sy" path="res://assets/sprites/Gato/FrontalGato (1).png" id="2_gyd0j"]
+[ext_resource type="Texture2D" uid="uid://dx5mwoluh5f1m" path="res://assets/sprites/Gato/MoveGato Frame2.png" id="3_ni2yh"]
+[ext_resource type="Texture2D" uid="uid://bqn4rtgmnnpml" path="res://assets/sprites/Gato/GatoAtacando.png" id="3_vpeh3"]
+[ext_resource type="Texture2D" uid="uid://c5cvqrpr5ioda" path="res://assets/sprites/Gato/MoveGato Frame1.png" id="4_65yja"]
+[ext_resource type="Texture2D" uid="uid://csqg1vn1gg7t2" path="res://assets/sprites/Gato/MoveGato Frame3.png" id="5_6nqkj"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_q4fvv"]
-size = Vector3(1.54923, 1.96903, 0.0383301)
+size = Vector3(1, 1.49707, 0.0908203)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kwxst"]
 animations = [{
@@ -51,7 +51,7 @@ script = ExtResource("1_a40kq")
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.795, 0, 0, 0, 1.952, -0.003, -0.016, 0.016)
+transform = Transform3D(1, 0, 0, 0, 0.795, 0, 0, 0, 1.952, -0.003, -0.213585, 0.023625)
 shape = SubResource("BoxShape3D_q4fvv")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]

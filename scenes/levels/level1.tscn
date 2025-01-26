@@ -5,13 +5,13 @@
 [ext_resource type="MeshLibrary" uid="uid://dy3vid1ttudqf" path="res://scenes/levels/level1/gridmapBlocks-level1.tres" id="3_ineyi"]
 [ext_resource type="PackedScene" uid="uid://baepnmdpm01id" path="res://scenes/gotas_the_cat_3d.tscn" id="4_nhohl"]
 [ext_resource type="PackedScene" uid="uid://ch7n85egx2wlq" path="res://scenes/ambient/worm_hole.tscn" id="5_u8l3y"]
-[ext_resource type="PackedScene" uid="uid://cqv8kb38rffnx" path="res://assets/levels/level1/blocks/rocks.glb" id="6_mu7d5"]
-[ext_resource type="PackedScene" uid="uid://bbvdvt1hbp6de" path="res://assets/levels/level1/blocks/platform.glb" id="7_3migc"]
+[ext_resource type="PackedScene" uid="uid://mg8rie4r7nkb" path="res://assets/levels/level1/blocks/rocks.glb" id="6_mu7d5"]
+[ext_resource type="PackedScene" uid="uid://b4rjdx5qsmqcb" path="res://assets/levels/level1/blocks/platform.glb" id="7_3migc"]
 [ext_resource type="Script" path="res://assets/levels/level1/platform-wrapper.gd" id="8_5emy6"]
 [ext_resource type="Script" path="res://assets/levels/level1/damage_bubble_spawner.gd" id="9_bdfr2"]
 [ext_resource type="PackedScene" uid="uid://c7h14k5d6kggr" path="res://assets/levels/level1/blocks/volcano_damage_drop.tscn" id="10_dwtkl"]
 [ext_resource type="PackedScene" uid="uid://vsg8mrevyd5a" path="res://assets/levels/level1/blocks/bubble_shadow.tscn" id="11_54pa6"]
-[ext_resource type="PackedScene" uid="uid://beemix657im1w" path="res://assets/levels/level1/blocks/geyser.glb" id="12_o0dis"]
+[ext_resource type="PackedScene" uid="uid://clvqr72qnrjfe" path="res://assets/levels/level1/blocks/geyser.glb" id="12_o0dis"]
 [ext_resource type="PackedScene" uid="uid://gobu4dd3loe5" path="res://assets/levels/level1/blocks/volcano_bubble.tscn" id="13_unxll"]
 [ext_resource type="Script" path="res://assets/levels/fallzone.gd" id="14_punwt"]
 
@@ -50,7 +50,7 @@ size = Vector3(7.96539, 4.29578, 0.147705)
 size = Vector3(6.31238, 4.83936, 0.13623)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3ohbj"]
-size = Vector3(1, 0.8, 0.9)
+size = Vector3(1, 0.9, 1)
 
 [sub_resource type="Animation" id="Animation_iromb"]
 resource_name = "Move_Plataforma1"
@@ -539,7 +539,7 @@ script = ExtResource("8_5emy6")
 [node name="Area3D" type="Area3D" parent="PlataformasMovibles/PlataformaMovible1"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlataformasMovibles/PlataformaMovible1/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, -0.05)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.72205e-06, -0.05, 2.38419e-07)
 shape = SubResource("BoxShape3D_3ohbj")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="PlataformasMovibles/PlataformaMovible1"]
@@ -627,13 +627,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
 shape = SubResource("WorldBoundaryShape3D_h1b0l")
 script = ExtResource("14_punwt")
 
+[node name="WormHole2" parent="." instance=ExtResource("5_u8l3y")]
+transform = Transform3D(0.177085, 0, -0.984195, 0, 1, 0, 0.984195, 0, 0.177085, -47.6534, 1, -10.7309)
+
 [connection signal="body_entered" from="PlataformasMovibles/PlataformaMovible1/Area3D" to="PlataformasMovibles/PlataformaMovible1" method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="PlataformasMovibles/PlataformaMovible1/Area3D" to="PlataformasMovibles/PlataformaMovible1" method="_on_area_3d_body_exited"]
 [connection signal="body_entered" from="PlataformasMovibles/PlataformaMovible2/Area3D" to="PlataformasMovibles/PlataformaMovible2" method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="PlataformasMovibles/PlataformaMovible2/Area3D" to="PlataformasMovibles/PlataformaMovible2" method="_on_area_3d_body_exited"]
 [connection signal="body_entered" from="PlataformasMovibles/PlataformaMovible3/Area3D" to="PlataformasMovibles/PlataformaMovible3" method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="PlataformasMovibles/PlataformaMovible3/Area3D" to="PlataformasMovibles/PlataformaMovible3" method="_on_area_3d_body_exited"]
-[connection signal="body_entered" from="Volcano1Ground/Area3D" to="DamageBubbleSpawner" method="_on_area_3d_player_entered"]
 [connection signal="body_entered" from="Volcano1Ground/Area3D" to="DamageBubbleSpawner" method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="Volcano1Ground/Area3D" to="DamageBubbleSpawner" method="_on_area_3d_player_entered"]
 [connection signal="body_exited" from="Volcano1Ground/Area3D" to="DamageBubbleSpawner" method="_on_area_3d_body_exited"]
 [connection signal="body_entered" from="LevelGround" to="LevelGround/CollisionShape3D" method="_on_level_ground_body_entered"]

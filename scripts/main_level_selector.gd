@@ -35,4 +35,4 @@ func _level2_body_entered(body: Node3D) -> void:
 		call_deferred("change_scene_to_level2")
 		
 func change_scene_to_level2() -> void:
-	get_tree().change_scene_to_file("res://assets/levels/level2/level2.tscn")
+	get_tree().change_scene_to_file("res://scenes/levels/level2.tscn")

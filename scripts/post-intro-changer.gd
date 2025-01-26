@@ -7,5 +7,5 @@ func _on_body_entered(body: Node2D) -> void:
 		
 func change_scene_to_main_world() -> void:
 	AudioPlayerIntroLevels.stop_music()
-	get_tree().change_scene_to_file("res://scenes/main_level_selector.tscn")
+	get_tree().change_scene_to_file("res://scenes/levels/mainlevelselector.tscn")
 	

@@ -9,7 +9,6 @@ const JUMP_VELOCITY = 4.5
 
 var health: int = 3 # Vida inicial del personaje
 
-
 func _physics_process(delta: float) -> void:
 	# Aplicar gravedad.
 	if not is_on_floor():
@@ -19,7 +18,6 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("Jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		
-
 	# Obtener dirección del RayCast3D.
 	var ray_direction := (raycast.target_position).normalized()
 
@@ -44,33 +42,20 @@ func _physics_process(delta: float) -> void:
 	# Mover al personaje.
 	move_and_slide()
 	
-
-	
 	if velocity.x < 0:
 		animation_player.play("Walk_animation")
 		animation_player.scale = Vector3(-0.16, 0.16, 0.16)
+		
 	elif velocity.x > 0:
 		animation_player.play("Walk_animation")
 		animation_player.scale = Vector3(0.16, 0.16, 0.16)
+		
+	elif velocity.z != 0:
+		animation_player.play("Walk_animation") 
+	
 	else:
-	# Anidar otro if dentro del else
-		if velocity.z != 0:
-			animation_player.play("Walk_animation")  # Reproduce otra animación si Z tiene movimiento
-		else:
-			animation_player.play("default")  # Caso por defecto cuando X y Z son cero
+		animation_player.play("default") 
 		
-		
-	
-		
-		
-	print(str(velocity.x) + "_" + str(velocity.z))
-	
-	# Vectores en el plano XZ
-	
-	
-	
-
-
 func take_damage(amount: int) -> void:
 	var escenaActual = get_tree().current_scene
 	print("el jugador perdió salud en: ", escenaActual)

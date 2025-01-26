@@ -1,21 +1,21 @@
 [gd_scene load_steps=27 format=3 uid="uid://dgmw3juox25qr"]
 
 [ext_resource type="Script" path="res://scripts/intro-script.gd" id="1_00tl0"]
-[ext_resource type="Texture2D" uid="uid://dyvn0r3jv7nv0" path="res://assets/sprites/Pared A.png" id="2_xgfxi"]
-[ext_resource type="Texture2D" uid="uid://c2xv6ch6cv2o" path="res://assets/sprites/Piso.png" id="3_rpfsi"]
+[ext_resource type="Texture2D" uid="uid://d4mloywy3pup8" path="res://assets/sprites/Pared A.png" id="2_xgfxi"]
+[ext_resource type="Texture2D" uid="uid://dvtkq42iuq30e" path="res://assets/sprites/Piso.png" id="3_rpfsi"]
 [ext_resource type="PackedScene" uid="uid://baepnmdpm01id" path="res://scenes/gotas_the_cat_3d.tscn" id="3_xh2jo"]
 [ext_resource type="PackedScene" uid="uid://cijiqpxde2iv3" path="res://scenes/ambient/fence_straight.tscn" id="4_dxd7s"]
 [ext_resource type="Shader" path="res://scripts/shaders/sky-2.gdshader" id="5_iia1e"]
-[ext_resource type="Texture2D" uid="uid://khgggs7rrsgx" path="res://assets/sprites/Hubble_NGC1637_potw2449a.jpg" id="6_nak5c"]
-[ext_resource type="FontFile" uid="uid://dogky3a4mipuh" path="res://assets/fonts/CharisSILR.ttf" id="7_2gg2b"]
+[ext_resource type="Texture2D" uid="uid://bqfomr8b2tjsf" path="res://assets/sprites/Hubble_NGC1637_potw2449a.jpg" id="6_nak5c"]
 [ext_resource type="Script" path="res://scripts/texto1-intro.gd" id="7_keolf"]
 [ext_resource type="Script" path="res://scripts/texto2-intro.gd" id="9_02ye8"]
+[ext_resource type="FontFile" uid="uid://cgvqmmlv8csi8" path="res://assets/fonts/FuenteCatac-Regular.otf" id="9_7xtrn"]
 [ext_resource type="Script" path="res://scripts/texto3-intro.gd" id="10_0d584"]
 [ext_resource type="Script" path="res://scripts/texto4-intro.gd" id="11_5131s"]
 [ext_resource type="PackedScene" uid="uid://cbiqp0iutof3w" path="res://scenes/ambient/black_hole.tscn" id="12_riksv"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yumej"]
-size = Vector3(19.6643, 1.30774, 0.257202)
+size = Vector3(19.6188, 6.78891, 0.314636)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vddtv"]
 diffuse_mode = 3
@@ -75,7 +75,7 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.729865, 0)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.067749, 0.15387, -0.0238158)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0449838, 2.86501, 0.00490129)
 shape = SubResource("BoxShape3D_yumej")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Wall"]
@@ -149,8 +149,8 @@ script = ExtResource("7_keolf")
 
 [node name="Label3DTexto1" type="Label3D" parent="TextAreas/AreaTexto1"]
 text = "texto 1"
-font = ExtResource("7_2gg2b")
-font_size = 64
+font = ExtResource("9_7xtrn")
+font_size = 84
 
 [node name="CollisionShape3DTexto1" type="CollisionShape3D" parent="TextAreas/AreaTexto1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.5, 1.05396)
@@ -162,8 +162,8 @@ script = ExtResource("9_02ye8")
 
 [node name="Label3DTexto2" type="Label3D" parent="TextAreas/AreaTexto2"]
 text = "texto 2"
-font = ExtResource("7_2gg2b")
-font_size = 64
+font = ExtResource("9_7xtrn")
+font_size = 84
 
 [node name="CollisionShape3DTexto2" type="CollisionShape3D" parent="TextAreas/AreaTexto2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 1.05396)
@@ -175,8 +175,8 @@ script = ExtResource("10_0d584")
 
 [node name="Label3DTexto3" type="Label3D" parent="TextAreas/AreaTexto3"]
 text = "texto 3"
-font = ExtResource("7_2gg2b")
-font_size = 64
+font = ExtResource("9_7xtrn")
+font_size = 84
 
 [node name="CollisionShape3DTexto3" type="CollisionShape3D" parent="TextAreas/AreaTexto3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 1.05396)
@@ -188,8 +188,8 @@ script = ExtResource("11_5131s")
 
 [node name="Label3DTexto4" type="Label3D" parent="TextAreas/AreaTexto4"]
 text = "texto 3"
-font = ExtResource("7_2gg2b")
-font_size = 64
+font = ExtResource("9_7xtrn")
+font_size = 84
 
 [node name="CollisionShape3DTexto4" type="CollisionShape3D" parent="TextAreas/AreaTexto4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 1.05396)

@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://c2d8hjr2dm0y1" path="res://assets/blender/tower-square-top-color.glb" id="2_iiens"]
 [ext_resource type="PackedScene" uid="uid://cxu5mdx4w4oe0" path="res://assets/blender/tower-base.glb" id="3_fohew"]
-[ext_resource type="Texture2D" uid="uid://cdhtf07lrft4c" path="res://assets/blender/Textures/colormap.png" id="4_c5kah"]
+[ext_resource type="Texture2D" uid="uid://d3uoksks6ml5i" path="res://assets/blender/Textures/colormap.png" id="4_c5kah"]
 [ext_resource type="PackedScene" uid="uid://t1smqcjedfn3" path="res://assets/blender/ground.glb" id="4_yllml"]
 [ext_resource type="PackedScene" uid="uid://dasmehywekmb1" path="res://assets/blender/stairs-stone.glb" id="5_kf7y8"]
 [ext_resource type="PackedScene" uid="uid://cx6kqm323vgsd" path="res://assets/blender/tree-large.glb" id="6_wiyhe"]

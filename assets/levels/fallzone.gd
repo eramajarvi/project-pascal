@@ -28,7 +28,7 @@ func respawn_player(player: Node3D) -> void:
 		player.global_position = respawn_position
 		
 	elif CurrentScene == "level1":
-		var respawn_position = Vector3(-44.38, 2.0, -9.6)
+		var respawn_position = Vector3(-18.2, 1.5, 41.4)
 		player.global_position = respawn_position
 	
 	elif CurrentScene == "level2":
