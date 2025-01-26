@@ -1,0 +1,374 @@
+[gd_scene load_steps=15 format=3 uid="uid://bvcxdv1lf3gjr"]
+
+[ext_resource type="Texture2D" uid="uid://ca5aa53eij3oi" path="res://assets/sprites/arrow.png" id="1_fpniu"]
+[ext_resource type="PackedScene" uid="uid://bueeg8ahb2ikv" path="res://scenes/gotas_the_cat.tscn" id="1_rnwd3"]
+[ext_resource type="FontFile" uid="uid://bmjgkuuiqppi2" path="res://assets/fonts/CharisSILR.ttf" id="2_fndro"]
+[ext_resource type="Script" path="res://scripts/post-intro-changer.gd" id="4_g64ti"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_4afk8"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_46r3a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_23sfy"]
+size = Vector2(144, 1952)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j5hhm"]
+size = Vector2(104, 1635)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sqwos"]
+size = Vector2(590, 42)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_10hf0"]
+size = Vector2(204, 45)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3ju2h"]
+size = Vector2(103, 45)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4tuj7"]
+size = Vector2(278, 45)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ocdj3"]
+size = Vector2(453, 37)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t50sf"]
+size = Vector2(1327, 41)
+
+[node name="PostIntro" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 0
+offset_left = -426.0
+offset_top = -393.0
+offset_right = 5812.0
+offset_bottom = 6135.0
+color = Color(0, 0, 0, 1)
+
+[node name="RightArrow" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_left = 565.0
+offset_top = 316.0
+offset_right = 861.0
+offset_bottom = 551.0
+texture = ExtResource("1_fpniu")
+expand_mode = 1
+
+[node name="LeftArrow" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_left = 1621.0
+offset_top = 1825.0
+offset_right = 1917.0
+offset_bottom = 2060.0
+texture = ExtResource("1_fpniu")
+expand_mode = 1
+flip_h = true
+
+[node name="GotasTheCat" parent="." groups=["player"] instance=ExtResource("1_rnwd3")]
+position = Vector2(290, 454)
+metadata/_edit_group_ = true
+
+[node name="Camera2D" type="Camera2D" parent="GotasTheCat"]
+position = Vector2(1905, -385)
+scale = Vector2(5, 5)
+position_smoothing_enabled = true
+
+[node name="LeftWall" type="StaticBody2D" parent="."]
+position = Vector2(247, 697)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWall"]
+rotation = 1.5708
+shape = SubResource("WorldBoundaryShape2D_4afk8")
+
+[node name="RightWall" type="StaticBody2D" parent="."]
+position = Vector2(2380, 1282)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall"]
+rotation = -1.5708
+shape = SubResource("WorldBoundaryShape2D_46r3a")
+
+[node name="LeftWall2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWall2"]
+position = Vector2(918, 2701)
+shape = SubResource("RectangleShape2D_23sfy")
+
+[node name="RightWall2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall2"]
+position = Vector2(1653, 2832.5)
+shape = SubResource("RectangleShape2D_j5hhm")
+
+[node name="Labels" type="Node" parent="."]
+
+[node name="IntenteArreglar" type="StaticBody2D" parent="Labels"]
+position = Vector2(193, 410)
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="Labels/IntenteArreglar"]
+offset_left = 63.0
+offset_top = 272.0
+offset_right = 657.0
+offset_bottom = 352.0
+theme_override_fonts/font = ExtResource("2_fndro")
+theme_override_font_sizes/font_size = 48
+text = "yo intenté arreglar las cosas"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Labels/IntenteArreglar"]
+position = Vector2(358, 326)
+shape = SubResource("RectangleShape2D_sqwos")
+
+[node name="Intente1" type="StaticBody2D" parent="Labels"]
+position = Vector2(795, 487)
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="Labels/Intente1"]
+offset_left = 63.0
+offset_top = 272.0
+offset_right = 657.0
+offset_bottom = 352.0
+theme_override_fonts/font = ExtResource("2_fndro")
+theme_override_font_sizes/font_size = 48
+text = "lo intenté"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Labels/Intente1"]
+position = Vector2(163, 324.5)
+shape = SubResource("RectangleShape2D_10hf0")
+
+[node name="Intente2" type="StaticBody2D" parent="Labels"]
+position = Vector2(1013, 552)
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="Labels/Intente2"]
+offset_left = 63.0
+offset_top = 272.0
+offset_right = 657.0
+offset_bottom = 352.0
+theme_override_fonts/font = ExtResource("2_fndro")
+theme_override_font_sizes/font_size = 48
+text = "lo intenté"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Labels/Intente2"]
+position = Vector2(163, 324.5)
+shape = SubResource("RectangleShape2D_10hf0")
+
+[node name="Intente3" type="StaticBody2D" parent="Labels"]
+position = Vector2(1233, 619)
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="Labels/Intente3"]
+offset_left = 63.0
+offset_top = 272.0
+offset_right = 657.0
+offset_bottom = 352.0
+theme_override_fonts/font = ExtResource("2_fndro")
+theme_override_font_sizes/font_size = 48
+text = "lo intenté"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Labels/Intente3"]
+position = Vector2(163, 324.5)
+shape = SubResource("RectangleShape2D_10hf0")
+
+[node name="Intente4" type="StaticBody2D" parent="Labels"]
+position = Vector2(1457, 695)
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="Labels/Intente4"]
+offset_left = 63.0
+offset_top = 272.0
+offset_right = 657.0
+offset_bottom = 352.0
+theme_override_fonts/font = ExtResource("2_fndro")
+theme_override_font_sizes/font_size = 48
+text = "lo intenté"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Labels/Intente4"]
+position = Vector2(163, 324.5)
+shape = SubResource("RectangleShape2D_10hf0")
+
+[node name="Intente5" type="StaticBody2D" parent="Labels"]
+position = Vector2(1672, 767)
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="Labels/Intente5"]
+offset_left = 63.0
+offset_top = 272.0
+offset_right = 657.0
+offset_bottom = 352.0
+theme_override_fonts/font = ExtResource("2_fndro")
+theme_override_font_sizes/font_size = 48
+text = "lo intenté"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Labels/Intente5"]
+position = Vector2(163, 324.5)
+shape = SubResource("RectangleShape2D_10hf0")
+
+[node name="Intente6" type="StaticBody2D" parent="Labels"]
+position = Vector2(1890, 833)
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="Labels/Intente6"]
+offset_left = 63.0
+offset_top = 272.0
+offset_right = 657.0
+offset_bottom = 352.0
+theme_override_fonts/font = ExtResource("2_fndro")
+theme_override_font_sizes/font_size = 48
+text = "lo intenté"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Labels/Intente6"]
+position = Vector2(163, 324.5)
+shape = SubResource("RectangleShape2D_10hf0")
+
+[node name="Intente7" type="StaticBody2D" parent="Labels"]
+position = Vector2(2106, 1034)
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="Labels/Intente7"]
+offset_left = 63.0
+offset_top = 272.0
+offset_right = 657.0
+offset_bottom = 352.0
+theme_override_fonts/font = ExtResource("2_fndro")
+theme_override_font_sizes/font_size = 48
+text = "lo intenté"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Labels/Intente7"]
+position = Vector2(163, 324.5)
+shape = SubResource("RectangleShape2D_10hf0")
+
+[node name="Intente8" type="StaticBody2D" parent="Labels"]
+position = Vector2(1898, 1102)
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="Labels/Intente8"]
+offset_left = 63.0
+offset_top = 272.0
+offset_right = 657.0
+offset_bottom = 352.0
+theme_override_fonts/font = ExtResource("2_fndro")
+theme_override_font_sizes/font_size = 48
+text = "lo intenté"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Labels/Intente8"]
+position = Vector2(163, 324.5)
+shape = SubResource("RectangleShape2D_10hf0")
+
+[node name="Intente9" type="StaticBody2D" parent="Labels"]
+position = Vector2(1680, 1238)
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="Labels/Intente9"]
+offset_left = 63.0
+offset_top = 272.0
+offset_right = 657.0
+offset_bottom = 352.0
+theme_override_fonts/font = ExtResource("2_fndro")
+theme_override_font_sizes/font_size = 48
+text = "lo intenté"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Labels/Intente9"]
+position = Vector2(163, 324.5)
+shape = SubResource("RectangleShape2D_10hf0")
+
+[node name="Intente10" type="StaticBody2D" parent="Labels"]
+position = Vector2(1463, 1376)
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="Labels/Intente10"]
+offset_left = 63.0
+offset_top = 272.0
+offset_right = 657.0
+offset_bottom = 352.0
+theme_override_fonts/font = ExtResource("2_fndro")
+theme_override_font_sizes/font_size = 48
+text = "lo intenté"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Labels/Intente10"]
+position = Vector2(163, 324.5)
+shape = SubResource("RectangleShape2D_10hf0")
+
+[node name="Intente11" type="StaticBody2D" parent="Labels"]
+position = Vector2(1241, 1510)
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="Labels/Intente11"]
+offset_left = 63.0
+offset_top = 272.0
+offset_right = 657.0
+offset_bottom = 352.0
+theme_override_fonts/font = ExtResource("2_fndro")
+theme_override_font_sizes/font_size = 48
+text = "lo intenté"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Labels/Intente11"]
+position = Vector2(163, 324.5)
+shape = SubResource("RectangleShape2D_10hf0")
+
+[node name="No" type="StaticBody2D" parent="Labels"]
+position = Vector2(962, 1950)
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="Labels/No"]
+offset_left = 63.0
+offset_top = 272.0
+offset_right = 657.0
+offset_bottom = 352.0
+theme_override_fonts/font = ExtResource("2_fndro")
+theme_override_font_sizes/font_size = 48
+text = "no..."
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Labels/No"]
+position = Vector2(112.5, 324.5)
+shape = SubResource("RectangleShape2D_3ju2h")
+
+[node name="NoTeVayas" type="StaticBody2D" parent="Labels"]
+position = Vector2(1241, 2534)
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="Labels/NoTeVayas"]
+offset_left = 63.0
+offset_top = 272.0
+offset_right = 657.0
+offset_bottom = 352.0
+theme_override_fonts/font = ExtResource("2_fndro")
+theme_override_font_sizes/font_size = 48
+text = "no te vayas..."
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Labels/NoTeVayas"]
+position = Vector2(200, 324.5)
+shape = SubResource("RectangleShape2D_4tuj7")
+
+[node name="NoTeVayasTodavia" type="StaticBody2D" parent="Labels"]
+position = Vector2(937, 3334)
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="Labels/NoTeVayasTodavia"]
+offset_left = 63.0
+offset_top = 272.0
+offset_right = 657.0
+offset_bottom = 352.0
+theme_override_fonts/font = ExtResource("2_fndro")
+theme_override_font_sizes/font_size = 48
+text = "no te vayas todavía..."
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Labels/NoTeVayasTodavia"]
+position = Vector2(287.5, 320.5)
+shape = SubResource("RectangleShape2D_ocdj3")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(1528, 4037)
+script = ExtResource("4_g64ti")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(67.5, 10.5)
+shape = SubResource("RectangleShape2D_t50sf")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

@@ -1,0 +1,68 @@
+[gd_scene load_steps=9 format=4 uid="uid://cryxpxrjerpfp"]
+
+[ext_resource type="PackedScene" uid="uid://dmu3q6a8ydcx" path="res://assets/levels/level2/blocks/lantern.glb" id="1_hif5r"]
+[ext_resource type="Texture2D" uid="uid://b0j08ouoj7kv4" path="res://assets/levels/level2/blocks/Textures/colormap.png" id="2_011kc"]
+[ext_resource type="Material" uid="uid://cmmkx7gmn3aq7" path="res://assets/Materiales/PavingStone_Mat.tres" id="3_6kf44"]
+[ext_resource type="PackedScene" uid="uid://1srtuu30o4aj" path="res://assets/levels/level2/blocks/stairs.glb" id="3_di1cp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3v0ew"]
+resource_name = "colormap"
+cull_mode = 2
+albedo_texture = ExtResource("2_011kc")
+texture_filter = 2
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_yomnd"]
+_surfaces = [{
+"aabb": AABB(-0.5, 0, -0.5, 1, 0.5, 1),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AgAAAAEAAQADAAIABAAAAAIAAgAFAAQABAAGAAEAAQAAAAQABwAGAAQABAAFAAcABwADAAEAAQAGAAcAAgADAAcABwAFAAIA"),
+"name": "colormap",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAAAAAAAAAD//wAAAAAAAAAA//8AAAAA/////wAAAAAAAAAA//8AAAAA/////wAA//8AAP//AAD///////8AAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_cxjre"]
+resource_name = "shape-cube-half_shape-cube-half"
+_surfaces = [{
+"aabb": AABB(-0.5, 0, -0.5, 1, 0.5, 1),
+"attribute_data": PackedByteArray("/3eY+f93mPn/d2XG/3dlxv93mPn/d2XG/3eY+f93Zcb/d5j5/3eY+f93mPn/d5j5/3eY+f93mPn/d2XG/3dlxv93Zcb/d5j5/3dlxv93mPn/d2XG/3dlxv93Zcb/d2XG"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AgAAAAEAAQADAAIABgAEAAUABQAHAAYACgAIAAkACQALAAoADgAMAA0ADQAPAA4AEgAQABEAEQATABIAFgAUABUAFQAXABYA"),
+"material": SubResource("StandardMaterial3D_3v0ew"),
+"name": "colormap",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("AAAAAAAA/////wAAAAD//wAA//8AAP///////wAA//8AAAAAAAD/vwAA//8AAP+/AAAAAP///78AAP//////v///AAD///+///8AAAAA/78AAAAA////vwAAAAAAAP+///8AAP//AIAAAAAA//8AgP///////wCAAAD/////AID/////AAD/v///AAAAAP+//////////7///wAA////v/////8AAP////////////8AAP//AAD//wAA/////////3////9/////f////3////9/////f////3////9///8AAP9/AAD/fwAA/38AAP9//3////9/////f////3////9/AAD/fwAA/38AAP9/AAD/f/+//3//v/9//7//f/+/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_yomnd")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_kuuxx"]
+data = PackedVector3Array(-0.5, 0.5, -0.5, -0.5, 0, -0.5, 0.5, 0, -0.5, 0.5, 0, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0, 0.5, -0.5, 0, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0, 0.5, -0.5, 0, 0.5, 0.5, 0, 0.5, 0.5, 0, -0.5, 0.5, 0, -0.5, -0.5, 0, -0.5, -0.5, 0, 0.5, 0.5, 0.5, 0.5, 0.5, 0, 0.5, -0.5, 0, 0.5, -0.5, 0, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0, -0.5, 0.5, 0, -0.5, 0.5, 0, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5)
+
+[node name="GridmapLevel2" type="Node3D"]
+
+[node name="lantern2" parent="." instance=ExtResource("1_hif5r")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.00533271, 1.19209e-07, -0.00291324)
+
+[node name="shape-cube-half2" type="Node3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1.78601, 0, 0.140494)
+
+[node name="shape-cube-half" type="MeshInstance3D" parent="shape-cube-half2"]
+mesh = SubResource("ArrayMesh_cxjre")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_6kf44")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="shape-cube-half2/shape-cube-half"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="shape-cube-half2/shape-cube-half/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_kuuxx")
+
+[node name="stairs2" parent="." instance=ExtResource("3_di1cp")]
+transform = Transform3D(0.00488701, 0, 1.99999, 0, 2, 0, -1.99999, 0, 0.00488701, 4.42093, 0, 0.485904)

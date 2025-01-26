@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://bstdc5521veac"]
+
+[ext_resource type="Texture2D" uid="uid://dmawhyv24xyss" path="res://assets/Materiales/Texturas/Gravel/Gravel040_1K-JPG_Color.jpg" id="1_dyj7f"]
+[ext_resource type="Texture2D" uid="uid://djb1ojdpx0lss" path="res://assets/Materiales/Texturas/Gravel/Gravel040_1K-JPG_AmbientOcclusion.jpg" id="2_yrkxi"]
+[ext_resource type="Texture2D" uid="uid://btkk8l8ehj6kx" path="res://assets/Materiales/Texturas/Gravel/Gravel040_1K-JPG_NormalGL.jpg" id="3_2ppmf"]
+[ext_resource type="Texture2D" uid="uid://cxcdiob37whck" path="res://assets/Materiales/Texturas/Gravel/Gravel040_1K-JPG_Roughness.jpg" id="4_7h0y1"]
+
+[resource]
+albedo_texture = ExtResource("1_dyj7f")
+roughness_texture = ExtResource("4_7h0y1")
+normal_enabled = true
+normal_texture = ExtResource("3_2ppmf")
+ao_enabled = true
+ao_texture = ExtResource("2_yrkxi")
+uv1_triplanar = true
