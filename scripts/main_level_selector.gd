@@ -18,3 +18,21 @@ func _process(delta: float) -> void:
 	camera_position.y = lerp_angle(camera_position.y, atan2(player_position.z, player_position.x), 0.1)
 
 	$GotasTheCat3D/CameraController.position = camera_position
+
+
+
+func _level1_body_entered(body: Node3D) -> void:
+	if body.is_in_group("player"):
+		call_deferred("change_scene_to_level1")
+		
+
+func change_scene_to_level1() -> void:
+	get_tree().change_scene_to_file("res://scenes/levels/level1.tscn")
+
+
+func _level2_body_entered(body: Node3D) -> void:
+	if body.is_in_group("player"):
+		call_deferred("change_scene_to_level2")
+		
+func change_scene_to_level2() -> void:
+	get_tree().change_scene_to_file("res://assets/levels/level2/level2.tscn")

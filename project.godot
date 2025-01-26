@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 AudioPlayerIntroLevels="*res://scenes/audio_player_intro_levels.tscn"
+GameoverRespawner="*res://scenes/gameover_respawner.gd"
 
 [display]
 

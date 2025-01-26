@@ -50,7 +50,7 @@ size = Vector3(7.96539, 4.29578, 0.147705)
 size = Vector3(6.31238, 4.83936, 0.13623)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3ohbj"]
-size = Vector3(1, 0.8, 1)
+size = Vector3(1, 0.8, 0.9)
 
 [sub_resource type="Animation" id="Animation_iromb"]
 resource_name = "Move_Plataforma1"
@@ -538,7 +538,7 @@ script = ExtResource("7_nur7b")
 [node name="Area3D" type="Area3D" parent="PlataformasMovibles/PlataformaMovible1"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlataformasMovibles/PlataformaMovible1/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, -0.05)
 shape = SubResource("BoxShape3D_3ohbj")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="PlataformasMovibles/PlataformaMovible1"]
@@ -634,4 +634,5 @@ script = ExtResource("14_wvv1o")
 [connection signal="body_exited" from="PlataformasMovibles/PlataformaMovible3/Area3D" to="PlataformasMovibles/PlataformaMovible3" method="_on_area_3d_body_exited"]
 [connection signal="body_entered" from="Volcano1Ground/Area3D" to="DamageBubbleSpawner" method="_on_area_3d_body_entered"]
 [connection signal="body_entered" from="Volcano1Ground/Area3D" to="DamageBubbleSpawner" method="_on_area_3d_player_entered"]
+[connection signal="body_exited" from="Volcano1Ground/Area3D" to="DamageBubbleSpawner" method="_on_area_3d_body_exited"]
 [connection signal="body_entered" from="LevelGround" to="LevelGround/CollisionShape3D" method="_on_level_ground_body_entered"]
