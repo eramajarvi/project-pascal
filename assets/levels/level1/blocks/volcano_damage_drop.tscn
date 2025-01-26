@@ -19,15 +19,14 @@ shader_parameter/noise_scale = 0.5
 radius = 1.0
 height = 3.0
 
-[node name="VolcanoDamageDrop" type="Node3D"]
+[node name="VolcanoDamageDrop" type="Node3D" groups=["damage_drop", "volcanoDamageGroup"]]
 
-[node name="RigidBody3D" type="RigidBody3D" parent="." groups=["volcanoDamageGroup"]]
-collision_mask = 2
+[node name="RigidBody3D" type="RigidBody3D" parent="." groups=["damage_drop", "volcanoDamageGroup"]]
+collision_mask = 4
 mass = 0.5
 gravity_scale = 0.5
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 shape = SubResource("SphereShape3D_005kc")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]

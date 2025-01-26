@@ -1,6 +1,6 @@
 extends Area3D
 
-@export var text_to_display: String = "sabía que algo malo estaba pasado."
+@export var text_to_display: String = "sabía que algo malo estaba pasando."
 @onready var label4 = $Label3DTexto4
 
 func _ready():

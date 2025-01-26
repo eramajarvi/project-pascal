@@ -1,9 +1,10 @@
-[gd_scene load_steps=45 format=3 uid="uid://bmnteft0o8yes"]
+[gd_scene load_steps=51 format=3 uid="uid://bmnteft0o8yes"]
 
 [ext_resource type="Script" path="res://assets/levels/level1/level_1.gd" id="1_endjd"]
 [ext_resource type="Shader" path="res://scripts/shaders/sky-3.gdshader" id="2_08jcl"]
 [ext_resource type="MeshLibrary" uid="uid://dy3vid1ttudqf" path="res://scenes/levels/level1/gridmapBlocks-level1.tres" id="3_ineyi"]
 [ext_resource type="PackedScene" uid="uid://baepnmdpm01id" path="res://scenes/gotas_the_cat_3d.tscn" id="4_nhohl"]
+[ext_resource type="PackedScene" uid="uid://cc6cwwxxh6yd4" path="res://assets/levels/level1/blocks/player_shadow.tscn" id="5_3eebn"]
 [ext_resource type="PackedScene" uid="uid://ch7n85egx2wlq" path="res://scenes/ambient/worm_hole.tscn" id="5_u8l3y"]
 [ext_resource type="PackedScene" uid="uid://mg8rie4r7nkb" path="res://assets/levels/level1/blocks/rocks.glb" id="6_mu7d5"]
 [ext_resource type="PackedScene" uid="uid://b4rjdx5qsmqcb" path="res://assets/levels/level1/blocks/platform.glb" id="7_3migc"]
@@ -16,6 +17,8 @@
 [ext_resource type="Script" path="res://assets/levels/fallzone.gd" id="14_punwt"]
 [ext_resource type="Script" path="res://scenes/levels/DoorLevel1.gd" id="15_2e4ii"]
 [ext_resource type="Texture2D" uid="uid://crs3qxmaeyllw" path="res://assets/Materiales/Texturas/cloth.jpg" id="15_mukdc"]
+[ext_resource type="AudioStream" uid="uid://cpenrimkq66kc" path="res://assets/music/nin-03-ghosts-I.mp3" id="17_vmyqv"]
+[ext_resource type="FontFile" uid="uid://cgvqmmlv8csi8" path="res://assets/fonts/FuenteCatac-Regular.otf" id="19_1rsdw"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_r0wd2"]
 shader = ExtResource("2_08jcl")
@@ -274,6 +277,16 @@ size = Vector3(13, 1, 18)
 [sub_resource type="BoxShape3D" id="BoxShape3D_wcvwv"]
 size = Vector3(1.2, 2, 3)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tl5fq"]
+albedo_texture = ExtResource("15_mukdc")
+
+[sub_resource type="BoxMesh" id="BoxMesh_l0i6f"]
+lightmap_size_hint = Vector2i(14, 21)
+material = SubResource("StandardMaterial3D_tl5fq")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_11jj0"]
+size = Vector3(2.86685, 4.1853, 2.3735)
+
 [node name="Level1" type="Node3D"]
 transform = Transform3D(0.177085, 0, 0.984196, 0, 1, 0, -0.984196, 0, 0.177085, 0, 0, 0)
 script = ExtResource("1_endjd")
@@ -291,8 +304,9 @@ data = {
 metadata/_editor_floor_ = Vector3(0, 1, 0)
 
 [node name="GotasTheCat3D" parent="." groups=["player"] instance=ExtResource("4_nhohl")]
-transform = Transform3D(0.352317, 0, -0.354786, 0, 0.5, 0, 0.354786, 0, 0.352317, -4.79945, 2.06492, -3.15865)
+transform = Transform3D(0.352317, 0, -0.354786, 0, 0.5, 0, 0.354786, 0, 0.352317, -46.015, 2.06492, -9.98798)
 wall_min_slide_angle = 0.174533
+shadow_scene = ExtResource("5_3eebn")
 
 [node name="CameraController" type="Node3D" parent="GotasTheCat3D"]
 transform = Transform3D(1, 0, 0, 0, 0.866026, 0.5, 0, -0.5, 0.866026, 1, 4.5, 6)
@@ -309,7 +323,7 @@ size = 16.0
 far = 947.79
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.938356, 0.17795, 0.296346, -0.0740497, -0.940892, 0.330514, 0.337645, 0.288196, 0.896069, 3.19596, 7.19022, 15.294)
+transform = Transform3D(-0.725822, 0.17795, -0.664468, -0.323259, -0.940892, 0.101128, -0.607195, 0.288196, 0.740443, 1.41788, 5.20714, 9.91759)
 light_energy = 0.8
 sky_mode = 1
 
@@ -624,7 +638,7 @@ libraries = {
 autoplay = "Move_Plataforma3"
 
 [node name="DamageBubbleSpawner" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.936233, 1.6, -21.8135)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.936233, 1.2, -21.8135)
 script = ExtResource("9_bdfr2")
 sphere_scene = ExtResource("10_dwtkl")
 shadow_decal_scene = ExtResource("11_54pa6")
@@ -687,9 +701,32 @@ script = ExtResource("15_2e4ii")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 1.2, 9.53674e-07)
 shape = SubResource("BoxShape3D_wcvwv")
 
-[node name="Sprite3D" type="Sprite3D" parent="StaticBody3D"]
-transform = Transform3D(7.45058e-09, 0, 0.4, 0, 0.4, 0, -0.4, 0, 7.45058e-09, 0, 1.2, 0)
-texture = ExtResource("15_mukdc")
+[node name="DoorSprite" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(0.6, 0, 7.7486e-08, 0, 3.25, 0, -2.23517e-08, 0, 2.99, 0.42, 1.52, -1.56462e-08)
+mesh = SubResource("BoxMesh_l0i6f")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_vmyqv")
+volume_db = -9.0
+autoplay = true
+parameters/looping = true
+
+[node name="Text1" type="Area3D" parent="."]
+transform = Transform3D(0.824946, 0, -0.565212, 0, 1, 0, 0.565212, 0, 0.824946, -39.7596, 3.67079, -11.0245)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Text1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.230029, -2.03862, 0.926032)
+shape = SubResource("BoxShape3D_11jj0")
+
+[node name="SoloUnosPocos" type="Label3D" parent="Text1"]
+transform = Transform3D(0.872206, 0, -0.489139, 0, 1, 0, 0.489139, 0, 0.872206, 0, 0.192654, 1.48642)
+visible = false
+modulate = Color(0.286275, 0.941176, 0.941176, 1)
+outline_modulate = Color(1, 1, 1, 1)
+text = "text1"
+font = ExtResource("19_1rsdw")
+font_size = 167
+outline_size = 127
 
 [connection signal="attack_door" from="GotasTheCat3D" to="StaticBody3D" method="take_damage"]
 [connection signal="body_entered" from="PlataformasMovibles/PlataformaMovible1/Area3D" to="PlataformasMovibles/PlataformaMovible1" method="_on_area_3d_body_entered"]
@@ -698,7 +735,7 @@ texture = ExtResource("15_mukdc")
 [connection signal="body_exited" from="PlataformasMovibles/PlataformaMovible2/Area3D" to="PlataformasMovibles/PlataformaMovible2" method="_on_area_3d_body_exited"]
 [connection signal="body_entered" from="PlataformasMovibles/PlataformaMovible3/Area3D" to="PlataformasMovibles/PlataformaMovible3" method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="PlataformasMovibles/PlataformaMovible3/Area3D" to="PlataformasMovibles/PlataformaMovible3" method="_on_area_3d_body_exited"]
-[connection signal="body_entered" from="Volcano1Ground/Area3D" to="DamageBubbleSpawner" method="_on_area_3d_body_entered"]
 [connection signal="body_entered" from="Volcano1Ground/Area3D" to="DamageBubbleSpawner" method="_on_area_3d_player_entered"]
+[connection signal="body_entered" from="Volcano1Ground/Area3D" to="DamageBubbleSpawner" method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Volcano1Ground/Area3D" to="DamageBubbleSpawner" method="_on_area_3d_body_exited"]
 [connection signal="body_entered" from="LevelGround" to="LevelGround/CollisionShape3D" method="_on_level_ground_body_entered"]

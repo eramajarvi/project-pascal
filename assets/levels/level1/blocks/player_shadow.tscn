@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://cc6cwwxxh6yd4"]
+
+[ext_resource type="Texture2D" uid="uid://bh81jfiwt8itd" path="res://assets/levels/level1/blocks/Textures/bubbleShadowTexture.png" id="1_ta303"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_v07cv"]
+
+[sub_resource type="Gradient" id="Gradient_yc0yd"]
+offsets = PackedFloat32Array(0, 0.312903, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.0580645, 0.0580645, 0.0580645, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_dyhnk"]
+gradient = SubResource("Gradient_yc0yd")
+
+[node name="BubbleShadow" type="Decal"]
+size = Vector3(0.5, 2, 0.5)
+texture_albedo = ExtResource("1_ta303")
+texture_normal = SubResource("NoiseTexture2D_v07cv")
+texture_emission = SubResource("GradientTexture1D_dyhnk")
+distance_fade_enabled = true

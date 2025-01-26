@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://c6g1dvieckomj"]
+[gd_scene load_steps=19 format=3 uid="uid://c6g1dvieckomj"]
 
 [ext_resource type="Script" path="res://scripts/main_level_selector.gd" id="1_ki22f"]
 [ext_resource type="MeshLibrary" uid="uid://dcm037ggbxqcx" path="res://assets/blender/castle-mesh-library.tres" id="2_pmx4q"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://dyygv46281ey6" path="res://assets/blender/tower-square-top.glb" id="6_jd6dw"]
 [ext_resource type="PackedScene" uid="uid://baepnmdpm01id" path="res://scenes/gotas_the_cat_3d.tscn" id="7_p3mdi"]
 [ext_resource type="Script" path="res://assets/levels/fallzone.gd" id="7_vx4vf"]
+[ext_resource type="PackedScene" uid="uid://cc6cwwxxh6yd4" path="res://assets/levels/level1/blocks/player_shadow.tscn" id="8_yrvq0"]
+[ext_resource type="AudioStream" uid="uid://ckhkego6pfefg" path="res://assets/music/nin-the-four-of-us-are-dying.mp3" id="9_kgle6"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6qqmn"]
 shader = ExtResource("4_2iacu")
@@ -171,6 +173,7 @@ script = ExtResource("7_vx4vf")
 [node name="GotasTheCat3D" parent="." groups=["player"] instance=ExtResource("7_p3mdi")]
 transform = Transform3D(0.409576, 0, 0.286788, 0, 0.5, 0, -0.286788, 0, 0.409576, 2.6, 8.1, 3.2)
 wall_min_slide_angle = 0.174533
+shadow_scene = ExtResource("8_yrvq0")
 
 [node name="CameraController" type="Node3D" parent="GotasTheCat3D"]
 transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866026, 1, 4.5, 6)
@@ -185,6 +188,12 @@ current = true
 fov = 90.0
 size = 16.0
 far = 947.79
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_kgle6")
+volume_db = -6.0
+autoplay = true
+parameters/looping = true
 
 [connection signal="body_entered" from="WormHoleLevel1/Area3D" to="." method="_level1_body_entered"]
 [connection signal="body_entered" from="WormHoleLevel2/Area3D" to="." method="_level2_body_entered"]

@@ -10,7 +10,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	
 	
-	await get_tree().create_timer(4.0).timeout
+	await get_tree().create_timer(5.0).timeout
 	call_deferred("loadLevel1")
 	
 func loadLevel1(): 

@@ -1,10 +1,11 @@
-[gd_scene load_steps=27 format=3 uid="uid://dgmw3juox25qr"]
+[gd_scene load_steps=28 format=3 uid="uid://dgmw3juox25qr"]
 
 [ext_resource type="Script" path="res://scripts/intro-script.gd" id="1_00tl0"]
 [ext_resource type="Texture2D" uid="uid://d4mloywy3pup8" path="res://assets/sprites/Pared A.png" id="2_xgfxi"]
 [ext_resource type="Texture2D" uid="uid://dvtkq42iuq30e" path="res://assets/sprites/Piso.png" id="3_rpfsi"]
 [ext_resource type="PackedScene" uid="uid://baepnmdpm01id" path="res://scenes/gotas_the_cat_3d.tscn" id="3_xh2jo"]
 [ext_resource type="PackedScene" uid="uid://cijiqpxde2iv3" path="res://scenes/ambient/fence_straight.tscn" id="4_dxd7s"]
+[ext_resource type="PackedScene" uid="uid://vsg8mrevyd5a" path="res://assets/levels/level1/blocks/bubble_shadow.tscn" id="5_8ci78"]
 [ext_resource type="Shader" path="res://scripts/shaders/sky-2.gdshader" id="5_iia1e"]
 [ext_resource type="Texture2D" uid="uid://bqfomr8b2tjsf" path="res://assets/sprites/Hubble_NGC1637_potw2449a.jpg" id="6_nak5c"]
 [ext_resource type="Script" path="res://scripts/texto1-intro.gd" id="7_keolf"]
@@ -107,6 +108,7 @@ shape = SubResource("BoxShape3D_scagp")
 
 [node name="GotasTheCat3D" parent="." groups=["player"] instance=ExtResource("3_xh2jo")]
 transform = Transform3D(0.999759, 0, -0.021937, 0, 1, 0, 0.021937, 0, 0.999759, -19.0276, 0.895345, 3.16726)
+shadow_scene = ExtResource("5_8ci78")
 
 [node name="CameraController" type="Node3D" parent="GotasTheCat3D"]
 transform = Transform3D(0.999742, 0.00958808, -0.0205617, 0, 0.906307, 0.422618, 0.0226873, -0.422509, 0.906074, -13.9129, 0.895345, 2.5972)
