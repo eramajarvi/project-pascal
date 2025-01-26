@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=4 uid="uid://dwdjc7e36qurr"]
+[gd_scene load_steps=61 format=4 uid="uid://dwdjc7e36qurr"]
 
 [ext_resource type="Script" path="res://assets/levels/level2/level_2.gd" id="1_gv0ox"]
 [ext_resource type="MeshLibrary" uid="uid://chfrso0bo8hn7" path="res://assets/levels/level2/gridmapLevel2.tres" id="1_klqym"]
@@ -13,10 +13,7 @@
 [ext_resource type="Script" path="res://assets/levels/level2/blocks/shape_cube_half3.gd" id="6_gtups"]
 [ext_resource type="Material" uid="uid://bstdc5521veac" path="res://assets/Materiales/Gravel_Mat.tres" id="7_5qoaa"]
 [ext_resource type="Script" path="res://assets/levels/level2/blocks/impossible_staircase.gd" id="9_u58ly"]
-[ext_resource type="Script" path="res://assets/levels/level2/lastStairLigth.gd" id="13_3gy1i"]
 [ext_resource type="FontFile" uid="uid://clduqdylc60gl" path="res://assets/fonts/FuenteCatac-Regular.otf" id="14_a5tyi"]
-[ext_resource type="Script" path="res://assets/levels/level2/penrose_stairs.gd" id="14_c8d24"]
-[ext_resource type="Script" path="res://assets/levels/level2/blocks/middleLantern.gd" id="15_srpqr"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rwy4q"]
 render_priority = -1
@@ -283,46 +280,6 @@ _data = {
 [sub_resource type="BoxShape3D" id="BoxShape3D_vrcuw"]
 size = Vector3(1, 1.24695, 1)
 
-[sub_resource type="Animation" id="Animation_bh7wm"]
-resource_name = "shape"
-loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:light_energy")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.133333, 0.4, 0.533333, 0.666667, 0.833333, 0.933333),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [0.0, 0.417, 0.139, 2.365, 0.974, 2.504, 0.0]
-}
-
-[sub_resource type="Animation" id="Animation_s5lpl"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:light_energy")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_so3p5"]
-_data = {
-"RESET": SubResource("Animation_s5lpl"),
-"shape": SubResource("Animation_bh7wm")
-}
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_bxbc4"]
-size = Vector3(1.84612, 2.10156, 2.00891)
-
 [sub_resource type="Animation" id="Animation_q4p7h"]
 length = 0.001
 tracks/0/type = "value"
@@ -378,7 +335,7 @@ _data = {
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tmhx3"]
-size = Vector3(2.07715, 2.32434, 1.09988)
+size = Vector3(0.97583, 0.78125, 1.09988)
 
 [sub_resource type="Animation" id="Animation_ml0n2"]
 resource_name = "shape"
@@ -538,9 +495,6 @@ _data = {
 [sub_resource type="BoxShape3D" id="BoxShape3D_3y6yv"]
 size = Vector3(1.78445, 0.0109253, 1.38901)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_tbeg0"]
-size = Vector3(5, 1.74695, 3.15382)
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_gfmpq"]
 size = Vector3(15.1584, 12.0574, 13.4065)
 
@@ -548,16 +502,16 @@ size = Vector3(15.1584, 12.0574, 13.4065)
 background_mode = 1
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6jevg"]
-size = Vector3(2.86685, 4.1853, 2.3735)
+size = Vector3(2.18121, 4.1853, 2.3735)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yan5t"]
 size = Vector3(1.80859, 3.46484, 2.12848)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1whun"]
-size = Vector3(2.57092, 2.04114, 1.33801)
+size = Vector3(1.6123, 2.04114, 1.33801)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_2nsby"]
-size = Vector3(2.76514, 1.94421, 1.82996)
+[sub_resource type="BoxShape3D" id="BoxShape3D_bxbc4"]
+size = Vector3(1.54199, 2.10156, 1)
 
 [node name="Level2" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000411987, 0, 0.000213623)
@@ -572,7 +526,7 @@ data = {
 metadata/_editor_floor_ = Vector3(0, 1, 0)
 
 [node name="GotasTheCat3D" parent="." groups=["player"] instance=ExtResource("2_0nnnu")]
-transform = Transform3D(0.352342, 0, -0.354761, 0, 0.5, 0, 0.354761, 0, 0.352342, 18.6983, 1.97098, 1.49716)
+transform = Transform3D(0.352342, 0, -0.354761, 0, 0.5, 0, 0.354761, 0, 0.352342, -0.806803, 1.35825, 0.775502)
 wall_min_slide_angle = 0.174533
 
 [node name="CameraController" type="Node3D" parent="GotasTheCat3D"]
@@ -670,26 +624,6 @@ shape = SubResource("BoxShape3D_vrcuw")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.01099, 8.4201, 0.946071, 1.50949)
 script = ExtResource("6_gtups")
 
-[node name="platformMovementLantern" parent="Stair3" instance=ExtResource("5_0oyx8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.497268, 0.0668049, 0.179749, -0.431229)
-
-[node name="Area3D" type="Area3D" parent="Stair3/platformMovementLantern"]
-
-[node name="SpotLight3D" type="SpotLight3D" parent="Stair3/platformMovementLantern/Area3D"]
-transform = Transform3D(0.0349377, 0.998876, -0.0320354, -0.0110507, 0.0324392, 0.999413, 0.999328, -0.0345632, 0.0121716, 0, 1.43106, 0)
-light_color = Color(0.72549, 0.92549, 0.929412, 1)
-light_energy = 0.0
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Stair3/platformMovementLantern/Area3D/SpotLight3D"]
-libraries = {
-"": SubResource("AnimationLibrary_so3p5")
-}
-autoplay = "shape"
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Stair3/platformMovementLantern/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.032074, 0.550781, 0.504456)
-shape = SubResource("BoxShape3D_bxbc4")
-
 [node name="shape-cube-half" type="MeshInstance3D" parent="Stair3"]
 mesh = SubResource("ArrayMesh_cxjre")
 skeleton = NodePath("")
@@ -726,9 +660,17 @@ shape = SubResource("ConcavePolygonShape3D_kuuxx")
 transform = Transform3D(1.00159, 0, 0, 0, 1.00159, 0, 0, 0, 1.00159, -0.00770283, 0.246937, -0.000213683)
 shape = SubResource("BoxShape3D_tmhx3")
 
+[node name="lantern2" parent="Stair4" instance=ExtResource("5_0oyx8")]
+transform = Transform3D(0.291365, 0, 0, 0, 0.656507, 0, 0, 0, 0.497268, 0.0662003, 0.499999, -0.338475)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Stair4/lantern2"]
+transform = Transform3D(1.02131, 0, 0, 0, 0.0116241, 1.52317, 0, -0.99997, 0.0076313, 0, 1.58682, 0)
+light_color = Color(0.724901, 0.92684, 0.928595, 1)
+light_energy = 2.119
+spot_angle = 59.6702
+
 [node name="Stair5" type="Node3D" parent="."]
 transform = Transform3D(2.13513, 0, 0, 0, 1, 0, 0, 0, 2.01099, 18.3219, 0.946071, 1.50949)
-script = ExtResource("13_3gy1i")
 
 [node name="shape-cube-half" type="MeshInstance3D" parent="Stair5"]
 mesh = SubResource("ArrayMesh_cxjre")
@@ -742,20 +684,12 @@ shape = SubResource("ConcavePolygonShape3D_kuuxx")
 
 [node name="Area3D" type="Area3D" parent="Stair5"]
 
-[node name="middleNextLantern" parent="Stair5/Area3D" instance=ExtResource("5_0oyx8")]
-transform = Transform3D(0.468356, 0, 0, 0, 1, 0, 0, 0, 0.497268, -0.0213518, 0.5, -0.257435)
-
-[node name="SpotLight3D" type="SpotLight3D" parent="Stair5/Area3D/middleNextLantern"]
-transform = Transform3D(0.811013, 0.00547959, -0.585003, 0.585028, -0.00759625, 0.810977, 0, -0.999956, -0.00936637, 0.0144787, 1.45067, -0.129243)
-visible = false
-light_color = Color(0.72549, 0.92549, 0.929412, 1)
-light_energy = 2.119
-spot_range = 4.9849
-spot_angle = 66.3732
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Stair5/Area3D"]
-transform = Transform3D(1.00159, 0, 0, 0, 1.00159, 0, 0, 0, 1.00159, 0.551534, 1.02668, -0.000213802)
+transform = Transform3D(1.00159, 0, 0, 0, 1.00159, 0, 0, 0, 1.00159, 0, 0.253906, -0.000213444)
 shape = SubResource("BoxShape3D_tmhx3")
+
+[node name="lantern2" parent="Stair5" instance=ExtResource("5_0oyx8")]
+transform = Transform3D(0.468355, 0, 0, 0, 0.76784, 0, 0, 0, 0.497268, -0.0145712, 0.5, -0.321703)
 
 [node name="Stair6" type="Node3D" parent="."]
 transform = Transform3D(0.840845, 0, 0, 0, 1, 0, 0, 0, 2.01099, 19.7687, 1.31281, 1.50949)
@@ -807,82 +741,47 @@ libraries = {
 }
 autoplay = "shape"
 
-[node name="PenroseStairs" type="Area3D" parent="."]
+[node name="Area3D" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.3527, 1.05306, 2.17415)
-script = ExtResource("14_c8d24")
 
-[node name="Sketchfab_Scene" type="Node3D" parent="PenroseStairs"]
+[node name="Sketchfab_Scene" type="Node3D" parent="Area3D"]
 transform = Transform3D(-3.26427, -0.223719, -0.685667, -0.220422, 3.3355, -0.038935, 0.686734, 0.00719172, -3.2717, 0.928082, -5.72302, -0.838742)
 script = ExtResource("9_u58ly")
 
-[node name="Sketchfab_model" type="Node3D" parent="PenroseStairs/Sketchfab_Scene"]
+[node name="Sketchfab_model" type="Node3D" parent="Area3D/Sketchfab_Scene"]
 transform = Transform3D(1, 0, 0, 0, 2.22045e-16, 1, 0, -1, 2.22045e-16, 0, 0, 0)
 
-[node name="root" type="Node3D" parent="PenroseStairs/Sketchfab_Scene/Sketchfab_model"]
+[node name="root" type="Node3D" parent="Area3D/Sketchfab_Scene/Sketchfab_model"]
 
-[node name="GLTF_SceneRootNode" type="Node3D" parent="PenroseStairs/Sketchfab_Scene/Sketchfab_model/root"]
+[node name="GLTF_SceneRootNode" type="Node3D" parent="Area3D/Sketchfab_Scene/Sketchfab_model/root"]
 transform = Transform3D(1, 0, 0, 0, 2.22045e-16, -1, 0, 1, 2.22045e-16, 0, 0, 0)
 
-[node name="stairs 4_2" type="Node3D" parent="PenroseStairs/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode"]
+[node name="stairs 4_2" type="Node3D" parent="Area3D/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.721783, 0, 0.782779)
 
-[node name="Object_4" type="MeshInstance3D" parent="PenroseStairs/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/stairs 4_2"]
+[node name="Object_4" type="MeshInstance3D" parent="Area3D/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/stairs 4_2"]
 mesh = SubResource("ArrayMesh_erwke")
 skeleton = NodePath("")
 surface_material_override/0 = ExtResource("7_5qoaa")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="PenroseStairs/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/stairs 4_2/Object_4"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Area3D/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/stairs 4_2/Object_4"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PenroseStairs/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/stairs 4_2/Object_4/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/stairs 4_2/Object_4/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_0o6af")
 
-[node name="PenroseStairs" type="AnimationPlayer" parent="PenroseStairs/Sketchfab_Scene"]
+[node name="PenroseStairs" type="AnimationPlayer" parent="Area3D/Sketchfab_Scene"]
 unique_name_in_owner = true
 libraries = {
 "": SubResource("AnimationLibrary_nv052")
 }
 
-[node name="Area3D" type="StaticBody3D" parent="PenroseStairs/Sketchfab_Scene"]
+[node name="Area3D" type="StaticBody3D" parent="Area3D/Sketchfab_Scene"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PenroseStairs/Sketchfab_Scene/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D/Sketchfab_Scene/Area3D"]
 transform = Transform3D(0.997578, -0.00863877, 0.0688465, 0.00878489, 0.999951, -0.00195854, -0.0688255, 0.00255979, 0.997624, -0.171616, 2.96558, 1.04558)
 shape = SubResource("BoxShape3D_3y6yv")
 
-[node name="AreaLantern1" type="Area3D" parent="PenroseStairs/Sketchfab_Scene"]
-transform = Transform3D(-0.292088, -0.0197234, 0.0614491, -0.0200184, 0.298461, 0.000643511, -0.0613536, -0.00348391, -0.292752, 1.76635, 2.98408, 1.10608)
-
-[node name="lantern1" parent="PenroseStairs/Sketchfab_Scene/AreaLantern1" instance=ExtResource("5_0oyx8")]
-transform = Transform3D(0.996632, -0.0820081, 0, 0.0820081, 0.996632, 0, 0, 0, 1, 0.112007, -0.360239, 0.0271199)
-
-[node name="SpotLight3D" type="SpotLight3D" parent="PenroseStairs/Sketchfab_Scene/AreaLantern1/lantern1"]
-transform = Transform3D(0.716648, -0.498712, -0.487546, 0.0843715, -0.631929, 0.77042, -0.692313, -0.593255, -0.410794, -0.0440559, 1.45795, 0)
-visible = false
-light_color = Color(0.72549, 0.92549, 0.929412, 1)
-light_energy = 2.119
-spot_range = 6.74321
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PenroseStairs/Sketchfab_Scene/AreaLantern1"]
-transform = Transform3D(1, 4.16334e-17, 0, 0, 1, 0, 0, 0, 1, 0.784943, 0.373474, 1.08694)
-shape = SubResource("BoxShape3D_tbeg0")
-
-[node name="AreaLantern2" type="Area3D" parent="PenroseStairs/Sketchfab_Scene"]
-transform = Transform3D(-0.292088, -0.0197234, 0.061449, -0.0200184, 0.298461, 0.000643512, -0.0613536, -0.00348391, -0.292752, 1.72514, 2.61607, -1.71458)
-
-[node name="lantern2" parent="PenroseStairs/Sketchfab_Scene/AreaLantern2" instance=ExtResource("5_0oyx8")]
-transform = Transform3D(0.996632, -0.0820081, 0, 0.0820081, 0.996632, 0, 0, 0, 1, 0.112007, -0.360239, 0.0271199)
-
-[node name="SpotLight3D" type="SpotLight3D" parent="PenroseStairs/Sketchfab_Scene/AreaLantern2/lantern2"]
-transform = Transform3D(-0.736518, -0.605768, -0.300975, 0.203946, -0.62312, 0.755068, -0.64494, 0.494739, 0.582483, -0.0440559, 1.45795, 0)
-visible = false
-light_color = Color(0.72549, 0.92549, 0.929412, 1)
-light_energy = 2.119
-spot_range = 6.74321
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PenroseStairs/Sketchfab_Scene/AreaLantern2"]
-transform = Transform3D(1, -2.77556e-17, 0, 0, 1, 0, 0, 0, 1, 2, 0.373474, -0.956745)
-shape = SubResource("BoxShape3D_tbeg0")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PenroseStairs"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.01057, -1.75281, 1.0199)
 shape = SubResource("BoxShape3D_gfmpq")
 
@@ -893,7 +792,7 @@ environment = SubResource("Environment_pdk4m")
 transform = Transform3D(0.824946, 0, -0.565212, 0, 1, 0, 0.565212, 0, 0.824946, 6.97158, 3.67079, 0.385931)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Text1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.230029, -2.03862, 0.926032)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.572848, -2.03862, 0.926033)
 shape = SubResource("BoxShape3D_6jevg")
 
 [node name="CuidadoConElVacio" type="Label3D" parent="Text1"]
@@ -926,7 +825,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.70027, 0.7475, 0.250149)
 [node name="Area3D" type="Area3D" parent="leftLanter1Platform"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="leftLanter1Platform/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.173157, 0.520569, 0.169006)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.306152, 0.520569, 0.169006)
 shape = SubResource("BoxShape3D_1whun")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="leftLanter1Platform/Area3D"]
@@ -947,36 +846,14 @@ light_color = Color(0.72549, 0.92549, 0.929412, 1)
 light_energy = 2.119
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="rightLanter1Platform/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.319328, 0.550781, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.270996, 0.550781, 0)
 shape = SubResource("BoxShape3D_bxbc4")
-
-[node name="middleLantern" parent="." instance=ExtResource("5_0oyx8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5244, 1.44607, 0.795521)
-script = ExtResource("15_srpqr")
-
-[node name="Area3D" type="Area3D" parent="middleLantern"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="middleLantern/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0856934, 0.472107, 0.414978)
-shape = SubResource("BoxShape3D_2nsby")
-
-[node name="SpotLight3D" type="SpotLight3D" parent="middleLantern/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 0.018639, 0.999826, 0, -0.999826, 0.018639, 0, 1.51349, 0.0530496)
-visible = false
-light_color = Color(0.72549, 0.92549, 0.929412, 1)
-light_energy = 2.119
 
 [connection signal="body_entered" from="Stair1/Area3D" to="Stair1" method="_on_area_3d_body_entered"]
 [connection signal="body_entered" from="Stair2/Area3D" to="Stair2" method="_on_area_3d_body_entered"]
 [connection signal="body_entered" from="Stair4/Area3D" to="Stair1" method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Stair4/Area3D" to="Stair3" method="_on_area_3d_body_exited"]
-[connection signal="body_entered" from="Stair5/Area3D" to="Stair5" method="_on_area_3d_body_entered"]
-[connection signal="body_exited" from="Stair5/Area3D" to="Stair5" method="_on_area_3d_body_exited"]
-[connection signal="body_entered" from="PenroseStairs" to="PenroseStairs/Sketchfab_Scene" method="_on_area_3d_body_entered"]
-[connection signal="body_entered" from="PenroseStairs/Sketchfab_Scene/AreaLantern1" to="PenroseStairs" method="_on_area_3d_body_entered"]
-[connection signal="body_exited" from="PenroseStairs/Sketchfab_Scene/AreaLantern1" to="PenroseStairs" method="_on_area_3d_body_exited"]
-[connection signal="body_entered" from="PenroseStairs/Sketchfab_Scene/AreaLantern2" to="PenroseStairs" method="_on_area_lantern_2_body_entered"]
-[connection signal="body_exited" from="PenroseStairs/Sketchfab_Scene/AreaLantern2" to="PenroseStairs" method="_on_area_lantern_2_body_exited"]
+[connection signal="body_entered" from="Area3D" to="Area3D/Sketchfab_Scene" method="_on_area_3d_body_entered"]
 [connection signal="body_entered" from="Text1" to="." method="_on_text_1_body_entered"]
 [connection signal="body_exited" from="Text1" to="." method="_on_text_1_body_exited"]
 [connection signal="body_entered" from="Text2" to="." method="_on_text_2_body_entered"]
@@ -985,5 +862,3 @@ light_energy = 2.119
 [connection signal="body_exited" from="leftLanter1Platform/Area3D" to="." method="_on_area_3d_body_exited"]
 [connection signal="body_entered" from="rightLanter1Platform/Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="rightLanter1Platform/Area3D" to="." method="_on_area_3d_body_exited"]
-[connection signal="body_entered" from="middleLantern/Area3D" to="middleLantern" method="_on_area_3d_body_entered"]
-[connection signal="body_exited" from="middleLantern/Area3D" to="middleLantern" method="_on_area_3d_body_exited"]
