@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bwrrs67qxxds2"]
+[gd_scene load_steps=25 format=3 uid="uid://bwrrs67qxxds2"]
 
 [ext_resource type="Texture2D" uid="uid://pumdnh5thavr" path="res://assets/sprites/paticas.png" id="1_1wejf"]
 [ext_resource type="PackedScene" uid="uid://bueeg8ahb2ikv" path="res://scenes/gotas_the_cat.tscn" id="1_d40u3"]
@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cs353xsjf6cwc" path="res://assets/sprites/ggj00-roundlogo-900x900.png" id="5_nunq5"]
 [ext_resource type="Script" path="res://scenes/bubble_movement.gd" id="6_j0myt"]
 
-[sub_resource type="Shader" id="Shader_iunnu"]
+[sub_resource type="Shader" id="Shader_npk8r"]
 code = "shader_type canvas_item;
 
 uniform float timeScale = 20;
@@ -24,7 +24,7 @@ void vertex() {
 "
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_idlkg"]
-shader = SubResource("Shader_iunnu")
+shader = SubResource("Shader_npk8r")
 shader_parameter/timeScale = 1.0
 shader_parameter/amplitude = 50.0
 
@@ -48,6 +48,18 @@ size = Vector2(377, 28)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xmqqn"]
 size = Vector2(164, 40)
+
+[sub_resource type="Shader" id="Shader_iunnu"]
+code = "shader_type canvas_item;
+
+uniform float timeScale = 20;
+uniform float amplitude = 1000.0f;
+
+void vertex() {
+
+	VERTEX.y += sin(TIME * timeScale + VERTEX.y + VERTEX.x) * amplitude;
+}
+"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_sh8wc"]
 shader = SubResource("Shader_iunnu")

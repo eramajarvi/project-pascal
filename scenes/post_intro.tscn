@@ -1,8 +1,8 @@
 [gd_scene load_steps=15 format=3 uid="uid://bvcxdv1lf3gjr"]
 
-[ext_resource type="Texture2D" uid="uid://ca5aa53eij3oi" path="res://assets/sprites/arrow.png" id="1_fpniu"]
+[ext_resource type="Texture2D" uid="uid://dkvkety4wva76" path="res://assets/sprites/arrow.png" id="1_fpniu"]
 [ext_resource type="PackedScene" uid="uid://bueeg8ahb2ikv" path="res://scenes/gotas_the_cat.tscn" id="1_rnwd3"]
-[ext_resource type="FontFile" uid="uid://bmjgkuuiqppi2" path="res://assets/fonts/CharisSILR.ttf" id="2_fndro"]
+[ext_resource type="FontFile" uid="uid://3pk7rbg12vvi" path="res://assets/fonts/FuenteCatac-Regular.otf" id="3_5xhqx"]
 [ext_resource type="Script" path="res://scripts/post-intro-changer.gd" id="4_g64ti"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_4afk8"]
@@ -116,7 +116,7 @@ offset_left = 63.0
 offset_top = 272.0
 offset_right = 657.0
 offset_bottom = 352.0
-theme_override_fonts/font = ExtResource("2_fndro")
+theme_override_fonts/font = ExtResource("3_5xhqx")
 theme_override_font_sizes/font_size = 48
 text = "yo intenté arreglar las cosas"
 
@@ -133,7 +133,7 @@ offset_left = 63.0
 offset_top = 272.0
 offset_right = 657.0
 offset_bottom = 352.0
-theme_override_fonts/font = ExtResource("2_fndro")
+theme_override_fonts/font = ExtResource("3_5xhqx")
 theme_override_font_sizes/font_size = 48
 text = "lo intenté"
 
@@ -150,7 +150,7 @@ offset_left = 63.0
 offset_top = 272.0
 offset_right = 657.0
 offset_bottom = 352.0
-theme_override_fonts/font = ExtResource("2_fndro")
+theme_override_fonts/font = ExtResource("3_5xhqx")
 theme_override_font_sizes/font_size = 48
 text = "lo intenté"
 
@@ -167,7 +167,7 @@ offset_left = 63.0
 offset_top = 272.0
 offset_right = 657.0
 offset_bottom = 352.0
-theme_override_fonts/font = ExtResource("2_fndro")
+theme_override_fonts/font = ExtResource("3_5xhqx")
 theme_override_font_sizes/font_size = 48
 text = "lo intenté"
 
@@ -184,7 +184,7 @@ offset_left = 63.0
 offset_top = 272.0
 offset_right = 657.0
 offset_bottom = 352.0
-theme_override_fonts/font = ExtResource("2_fndro")
+theme_override_fonts/font = ExtResource("3_5xhqx")
 theme_override_font_sizes/font_size = 48
 text = "lo intenté"
 
@@ -201,7 +201,7 @@ offset_left = 63.0
 offset_top = 272.0
 offset_right = 657.0
 offset_bottom = 352.0
-theme_override_fonts/font = ExtResource("2_fndro")
+theme_override_fonts/font = ExtResource("3_5xhqx")
 theme_override_font_sizes/font_size = 48
 text = "lo intenté"
 
@@ -218,7 +218,7 @@ offset_left = 63.0
 offset_top = 272.0
 offset_right = 657.0
 offset_bottom = 352.0
-theme_override_fonts/font = ExtResource("2_fndro")
+theme_override_fonts/font = ExtResource("3_5xhqx")
 theme_override_font_sizes/font_size = 48
 text = "lo intenté"
 
@@ -235,7 +235,7 @@ offset_left = 63.0
 offset_top = 272.0
 offset_right = 657.0
 offset_bottom = 352.0
-theme_override_fonts/font = ExtResource("2_fndro")
+theme_override_fonts/font = ExtResource("3_5xhqx")
 theme_override_font_sizes/font_size = 48
 text = "lo intenté"
 
@@ -252,7 +252,7 @@ offset_left = 63.0
 offset_top = 272.0
 offset_right = 657.0
 offset_bottom = 352.0
-theme_override_fonts/font = ExtResource("2_fndro")
+theme_override_fonts/font = ExtResource("3_5xhqx")
 theme_override_font_sizes/font_size = 48
 text = "lo intenté"
 
@@ -269,7 +269,7 @@ offset_left = 63.0
 offset_top = 272.0
 offset_right = 657.0
 offset_bottom = 352.0
-theme_override_fonts/font = ExtResource("2_fndro")
+theme_override_fonts/font = ExtResource("3_5xhqx")
 theme_override_font_sizes/font_size = 48
 text = "lo intenté"
 
@@ -286,7 +286,7 @@ offset_left = 63.0
 offset_top = 272.0
 offset_right = 657.0
 offset_bottom = 352.0
-theme_override_fonts/font = ExtResource("2_fndro")
+theme_override_fonts/font = ExtResource("3_5xhqx")
 theme_override_font_sizes/font_size = 48
 text = "lo intenté"
 
@@ -303,7 +303,7 @@ offset_left = 63.0
 offset_top = 272.0
 offset_right = 657.0
 offset_bottom = 352.0
-theme_override_fonts/font = ExtResource("2_fndro")
+theme_override_fonts/font = ExtResource("3_5xhqx")
 theme_override_font_sizes/font_size = 48
 text = "lo intenté"
 
@@ -320,7 +320,7 @@ offset_left = 63.0
 offset_top = 272.0
 offset_right = 657.0
 offset_bottom = 352.0
-theme_override_fonts/font = ExtResource("2_fndro")
+theme_override_fonts/font = ExtResource("3_5xhqx")
 theme_override_font_sizes/font_size = 48
 text = "no..."
 
@@ -337,7 +337,7 @@ offset_left = 63.0
 offset_top = 272.0
 offset_right = 657.0
 offset_bottom = 352.0
-theme_override_fonts/font = ExtResource("2_fndro")
+theme_override_fonts/font = ExtResource("3_5xhqx")
 theme_override_font_sizes/font_size = 48
 text = "no te vayas..."
 
@@ -354,7 +354,7 @@ offset_left = 63.0
 offset_top = 272.0
 offset_right = 657.0
 offset_bottom = 352.0
-theme_override_fonts/font = ExtResource("2_fndro")
+theme_override_fonts/font = ExtResource("3_5xhqx")
 theme_override_font_sizes/font_size = 48
 text = "no te vayas todavía..."
 
