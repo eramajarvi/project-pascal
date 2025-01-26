@@ -2,8 +2,13 @@
 
 [ext_resource type="PackedScene" uid="uid://dr6jr2828d7hv" path="res://scenes/antropomorfia/persona1.tscn" id="1_4p28k"]
 
+<<<<<<< Updated upstream
 [sub_resource type="BoxShape3D" id="BoxShape3D_bg82c"]
 size = Vector3(3.55273, 32.6091, 1)
+=======
+[sub_resource type="BoxShape3D" id="BoxShape3D_o3sl1"]
+size = Vector3(15.067, 23.8283, 2.59229)
+>>>>>>> Stashed changes
 
 [node name="CharacterBody3D" type="CharacterBody3D"]
 
@@ -11,4 +16,13 @@ size = Vector3(3.55273, 32.6091, 1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.349609, -12.8905, 0)
 shape = SubResource("BoxShape3D_bg82c")
 
+<<<<<<< Updated upstream
 [node name="Persona1" parent="." instance=ExtResource("1_4p28k")]
+=======
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 4.54485e-07, 0, -4.54485e-07, 1, 0, 0, 0, 1, -0.491859, -2.40227, -0.796143)
+shape = SubResource("BoxShape3D_o3sl1")
+
+[node name="ElectricBubble" parent="." instance=ExtResource("2_juusq")]
+transform = Transform3D(-20.0197, -0.781677, 0, 0.781677, -20.0197, 0, 0, 0, 20.035, 0.75021, 0.760618, 0.5)
+>>>>>>> Stashed changes

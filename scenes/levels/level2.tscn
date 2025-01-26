@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=4 uid="uid://dwdjc7e36qurr"]
+[gd_scene load_steps=79 format=4 uid="uid://dwdjc7e36qurr"]
 
 [ext_resource type="Script" path="res://assets/levels/level2/level_2.gd" id="1_d1oqe"]
 [ext_resource type="MeshLibrary" uid="uid://chfrso0bo8hn7" path="res://assets/levels/level2/gridmapLevel2.tres" id="2_8l00e"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bvere2l0msls5" path="res://icon.svg" id="5_efcnf"]
 [ext_resource type="Script" path="res://assets/levels/level2/blocks/shape_cube_half.gd" id="6_flg3t"]
 [ext_resource type="Texture2D" uid="uid://b0j08ouoj7kv4" path="res://assets/levels/level2/blocks/Textures/colormap.png" id="7_1v73h"]
+[ext_resource type="PackedScene" uid="uid://cj51ptvn7e7yk" path="res://scenes/antropomorfia/persona4.tscn" id="7_beq63"]
 [ext_resource type="Material" uid="uid://bstdc5521veac" path="res://assets/Materiales/Gravel_Mat.tres" id="8_flbek"]
 [ext_resource type="Script" path="res://assets/levels/level2/blocks/shape_cube_half2.gd" id="9_hpwdx"]
 [ext_resource type="Script" path="res://assets/levels/level2/blocks/shape_cube_half3.gd" id="10_k2le8"]
@@ -21,6 +22,10 @@
 [ext_resource type="PackedScene" uid="uid://ch7n85egx2wlq" path="res://scenes/ambient/worm_hole.tscn" id="18_wms0o"]
 [ext_resource type="Script" path="res://assets/levels/fallzone.gd" id="19_stwi4"]
 [ext_resource type="AudioStream" uid="uid://cfc78yybnp8o0" path="res://assets/music/nin-07-ghosts-I.mp3" id="21_dqf4a"]
+[ext_resource type="PackedScene" uid="uid://dr6jr2828d7hv" path="res://scenes/antropomorfia/persona1.tscn" id="23_21ha4"]
+[ext_resource type="PackedScene" uid="uid://b0nac334pdt0e" path="res://scenes/antropomorfia/persona2.tscn" id="24_6bng8"]
+[ext_resource type="PackedScene" uid="uid://cg7n2cixcwl24" path="res://scenes/antropomorfia/persona3.tscn" id="25_nknct"]
+[ext_resource type="PackedScene" uid="uid://bgfa3bt6f4yw6" path="res://scenes/antropomorfia/persona5.tscn" id="26_vvc1u"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rwy4q"]
 render_priority = -1
@@ -608,6 +613,9 @@ libraries = {
 }
 autoplay = "move"
 
+[node name="Persona4" parent="GotasTheCat3D/CameraController/CameraTarget/Camera3D" instance=ExtResource("7_beq63")]
+transform = Transform3D(0.0331399, 0.00153328, -0.0304039, -0.0169869, 0.0382269, -0.0165877, 0.0252625, 0.0236929, 0.0287307, 27.9229, 19.9884, -30.9946)
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="GotasTheCat3D/CameraController"]
 libraries = {
 "": SubResource("AnimationLibrary_gvxcm")
@@ -1025,6 +1033,33 @@ script = ExtResource("19_stwi4")
 stream = ExtResource("21_dqf4a")
 volume_db = -7.0
 autoplay = true
+
+[node name="Persona1" parent="." instance=ExtResource("23_21ha4")]
+transform = Transform3D(-0.00180456, 7.04594e-05, -0.0449637, -0.0017557, -0.0449657, 6.54338e-12, -0.0449295, 0.00175429, 0.00180593, 25.2017, 14.5963, 5.79732)
+
+[node name="Persona2" parent="." instance=ExtResource("24_6bng8")]
+transform = Transform3D(0.001804, 8.34655e-05, -0.0449637, -0.00207978, 0.0449519, 0, 0.0449157, 0.00207811, 0.00180593, 23.5777, 12.4197, -0.0200806)
+
+[node name="Persona3" parent="." instance=ExtResource("25_nknct")]
+transform = Transform3D(0.001804, 8.34655e-05, -0.0449637, -0.00207978, 0.0449519, 0, 0.0449157, 0.00207811, 0.00180593, 26.2168, 12.5263, -0.483688)
+
+[node name="Persona5" parent="." instance=ExtResource("26_vvc1u")]
+transform = Transform3D(0.001804, 8.34655e-05, -0.0449637, -0.00207978, 0.0449519, 0, 0.0449157, 0.00207811, 0.00180593, 25.0836, 14.9334, 6.95726)
+
+[node name="Persona4" parent="." instance=ExtResource("24_6bng8")]
+transform = Transform3D(0.001804, 8.34655e-05, -0.0449637, -0.00207978, 0.0449519, 0, 0.0449157, 0.00207811, 0.00180593, 23.7793, 13.4606, 2.60188)
+
+[node name="Persona6" parent="." instance=ExtResource("25_nknct")]
+transform = Transform3D(0.001804, 8.34655e-05, -0.0449637, -0.00207978, 0.0449519, 0, 0.0449157, 0.00207811, 0.00180593, 33.2073, 15.0905, -3.50593)
+
+[node name="Persona7" parent="." instance=ExtResource("7_beq63")]
+transform = Transform3D(0.001804, 8.34655e-05, -0.0449637, -0.00207978, 0.0449519, 0, 0.0449157, 0.00207811, 0.00180593, 34.0805, 15.8165, 2.21966)
+
+[node name="Persona8" parent="." instance=ExtResource("24_6bng8")]
+transform = Transform3D(0.001804, 8.34655e-05, -0.0449637, -0.00207978, 0.0449519, -3.14338e-12, 0.0449157, 0.00207811, 0.00180593, 30.9926, 21.8081, 5.40932)
+
+[node name="Persona9" parent="." instance=ExtResource("24_6bng8")]
+transform = Transform3D(0.00400889, 0.000185479, -0.0999194, -0.00462174, 0.0998932, 0, 0.0998127, 0.00461801, 0.00401318, 33.3825, 14.6536, 5.12686)
 
 [connection signal="body_entered" from="Stair1/Area3D" to="Stair1" method="_on_area_3d_body_entered"]
 [connection signal="body_entered" from="Stair2/Area3D" to="Stair2" method="_on_area_3d_body_entered"]
