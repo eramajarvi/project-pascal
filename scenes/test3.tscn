@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://cyx0yfxhm7sn3"]
-
-[ext_resource type="Texture2D" uid="uid://b332cerd5vp17" path="res://assets/sprites/isoGato1.png" id="1_arvcm"]
-
-[node name="Test3" type="Sprite3D"]
-texture = ExtResource("1_arvcm")
