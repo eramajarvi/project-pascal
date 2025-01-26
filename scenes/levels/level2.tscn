@@ -564,7 +564,7 @@ size = Vector3(2.76514, 1.94421, 1.82996)
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_ih6ck"]
 
 [node name="Level2" type="Node3D"]
-transform = Transform3D(0.177085, 0, 0.984196, 0, 1, 0, -0.984196, 0, 0.177085, 0.000411987, 0, 0.000213623)
+transform = Transform3D(0.0401318, 0, 0.999195, 0, 1, 0, -0.999195, 0, 0.0401318, 0.000411987, 0, 0.000213623)
 script = ExtResource("1_d1oqe")
 
 [node name="GridMap" type="GridMap" parent="."]
@@ -1006,7 +1006,7 @@ light_color = Color(0.72549, 0.92549, 0.929412, 1)
 light_energy = 2.119
 
 [node name="WormHole" parent="." instance=ExtResource("18_wms0o")]
-transform = Transform3D(0.177085, 0, -0.984195, 0, 1, 0, 0.984195, 0, 0.177085, -3.68421, 0.432188, 0.712272)
+transform = Transform3D(0.177085, 0, -0.984195, 0, 1, 0, 0.984195, 0, 0.177085, -2.6863, 0.432188, 0.672192)
 
 [node name="LevelGround" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.77247, 0)
