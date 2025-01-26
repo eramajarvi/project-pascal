@@ -1,13 +1,39 @@
-[gd_scene load_steps=5 format=3 uid="uid://bueeg8ahb2ikv"]
+[gd_scene load_steps=9 format=3 uid="uid://bueeg8ahb2ikv"]
 
-[ext_resource type="Texture2D" uid="uid://wi8tpo7h1man" path="res://assets/sprites/cat-placeholder1.png" id="1_203nj"]
 [ext_resource type="Script" path="res://scripts/gotas_the_cat2d.gd" id="1_xxju1"]
+[ext_resource type="Texture2D" uid="uid://ftbvvy4ut0oi" path="res://assets/sprites/Gato/GatoAtacando.png" id="2_qefrt"]
+[ext_resource type="Texture2D" uid="uid://k32kpnhdw6i6" path="res://assets/sprites/Gato/MoveGato Frame2.png" id="3_1vwet"]
+[ext_resource type="Texture2D" uid="uid://cnri1i1jn4vkq" path="res://assets/sprites/Gato/MoveGato Frame1.png" id="4_ewnlg"]
+[ext_resource type="Texture2D" uid="uid://c2qjaa747uvmx" path="res://assets/sprites/Gato/MoveGato Frame3.png" id="5_lbbid"]
+[ext_resource type="Texture2D" uid="uid://x01xb1boxgc4" path="res://assets/sprites/Gato/FrontalGato (1).png" id="6_32qw3"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_e4g4g"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_203nj")
+"texture": ExtResource("2_qefrt")
+}],
+"loop": true,
+"name": &"Ataque",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_1vwet")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ewnlg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_lbbid")
+}],
+"loop": true,
+"name": &"Walk_animation",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_32qw3")
 }],
 "loop": true,
 "name": &"default",
@@ -22,8 +48,8 @@ scale = Vector2(0.2, 0.2)
 script = ExtResource("1_xxju1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -200)
-scale = Vector2(0.5, 0.5)
+position = Vector2(0, -170)
+scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_e4g4g")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

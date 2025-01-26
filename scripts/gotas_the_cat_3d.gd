@@ -16,8 +16,9 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 
 	# Manejar salto.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+	if Input.is_action_just_pressed("Jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+		
 
 	# Obtener dirección del RayCast3D.
 	var ray_direction := (raycast.target_position).normalized()
@@ -47,10 +48,10 @@ func _physics_process(delta: float) -> void:
 	
 	if velocity.x < 0:
 		animation_player.play("Walk_animation")
-		animation_player.scale = Vector3(-0.1, 0.1, 0.1)
+		animation_player.scale = Vector3(-0.16, 0.16, 0.16)
 	elif velocity.x > 0:
 		animation_player.play("Walk_animation")
-		animation_player.scale = Vector3(0.1, 0.1, 0.1)
+		animation_player.scale = Vector3(0.16, 0.16, 0.16)
 	else:
 	# Anidar otro if dentro del else
 		if velocity.z != 0:
