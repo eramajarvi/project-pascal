@@ -3,9 +3,12 @@ extends CharacterBody3D
 const SPEED = 3.0
 const JUMP_VELOCITY = 4.5
 
+@onready var animation_player =  $AnimatedSprite3D
+
 @onready var raycast: RayCast3D = $RayCast3D
 
 var health: int = 3 # Vida inicial del personaje
+
 
 func _physics_process(delta: float) -> void:
 	# Aplicar gravedad.
@@ -13,8 +16,9 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 
 	# Manejar salto.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+	if Input.is_action_just_pressed("Jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+		
 
 	# Obtener dirección del RayCast3D.
 	var ray_direction := (raycast.target_position).normalized()
@@ -29,14 +33,43 @@ func _physics_process(delta: float) -> void:
 
 	# Actualizar velocidad según dirección.
 	if direction != Vector3.ZERO:
+		
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
 	else:
+		
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	# Mover al personaje.
 	move_and_slide()
+	
+
+	
+	if velocity.x < 0:
+		animation_player.play("Walk_animation")
+		animation_player.scale = Vector3(-0.16, 0.16, 0.16)
+	elif velocity.x > 0:
+		animation_player.play("Walk_animation")
+		animation_player.scale = Vector3(0.16, 0.16, 0.16)
+	else:
+	# Anidar otro if dentro del else
+		if velocity.z != 0:
+			animation_player.play("Walk_animation")  # Reproduce otra animación si Z tiene movimiento
+		else:
+			animation_player.play("default")  # Caso por defecto cuando X y Z son cero
+		
+		
+	
+		
+		
+	print(str(velocity.x) + "_" + str(velocity.z))
+	
+	# Vectores en el plano XZ
+	
+	
+	
+
 
 func take_damage(amount: int) -> void:
 	var escenaActual = get_tree().current_scene
