@@ -1,10 +1,47 @@
-[gd_scene load_steps=4 format=3 uid="uid://baepnmdpm01id"]
+[gd_scene load_steps=9 format=3 uid="uid://baepnmdpm01id"]
 
 [ext_resource type="Script" path="res://scripts/gotas_the_cat_3d.gd" id="1_a40kq"]
-[ext_resource type="Texture2D" uid="uid://x01xb1boxgc4" path="res://assets/sprites/FrontalGato (1).png" id="2_gyd0j"]
+[ext_resource type="Texture2D" uid="uid://x01xb1boxgc4" path="res://assets/sprites/Gato/FrontalGato (1).png" id="2_gyd0j"]
+[ext_resource type="Texture2D" uid="uid://k32kpnhdw6i6" path="res://assets/sprites/Gato/MoveGato Frame2.png" id="3_ni2yh"]
+[ext_resource type="Texture2D" uid="uid://ftbvvy4ut0oi" path="res://assets/sprites/Gato/GatoAtacando.png" id="3_vpeh3"]
+[ext_resource type="Texture2D" uid="uid://cnri1i1jn4vkq" path="res://assets/sprites/Gato/MoveGato Frame1.png" id="4_65yja"]
+[ext_resource type="Texture2D" uid="uid://c2qjaa747uvmx" path="res://assets/sprites/Gato/MoveGato Frame3.png" id="5_6nqkj"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_q4fvv"]
 size = Vector3(1.54923, 1.96903, 0.0383301)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kwxst"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_vpeh3")
+}],
+"loop": true,
+"name": &"Ataque",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ni2yh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_65yja")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_6nqkj")
+}],
+"loop": false,
+"name": &"Walk_animation",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_gyd0j")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="GotasTheCat3D" type="CharacterBody3D"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
@@ -19,8 +56,14 @@ shape = SubResource("BoxShape3D_q4fvv")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(0.0999986, 0, 0.000520108, 0, 0.1, 0, -0.000520108, 0, 0.0999986, 0, 0, 0)
+visible = false
 texture = ExtResource("2_gyd0j")
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
 target_position = Vector3(1, 0, 0)
 debug_shape_thickness = 5
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.122613, 0, 0)
+sprite_frames = SubResource("SpriteFrames_kwxst")
+animation = &"Walk_animation"
