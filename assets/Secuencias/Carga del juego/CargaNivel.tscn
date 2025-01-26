@@ -1,0 +1,130 @@
+[gd_scene load_steps=16 format=3 uid="uid://ceoa7fjq72b8w"]
+
+[ext_resource type="Script" path="res://assets/Secuencias/Carga del juego/carga_nivel.gd" id="1_0uvjg"]
+[ext_resource type="Texture2D" uid="uid://013dem6cvd0k" path="res://assets/Secuencias/Carga del juego/Timeline CARGANDO EL JUEGO_0001.png" id="1_n75x2"]
+[ext_resource type="Texture2D" uid="uid://lxhg6pcpb8uo" path="res://assets/Secuencias/Carga del juego/Timeline CARGANDO EL JUEGO_0002.png" id="2_2qp8t"]
+[ext_resource type="Texture2D" uid="uid://rm3qexgeiyj6" path="res://assets/Secuencias/Carga del juego/Timeline CARGANDO EL JUEGO_0003.png" id="3_6s5p3"]
+[ext_resource type="Texture2D" uid="uid://c5vpav3aqe" path="res://assets/Secuencias/Carga del juego/Timeline CARGANDO EL JUEGO_0004.png" id="4_dnreq"]
+[ext_resource type="Texture2D" uid="uid://dwgimsyt10o2e" path="res://assets/Secuencias/Carga del juego/Timeline CARGANDO EL JUEGO_0005.png" id="5_jwmbs"]
+[ext_resource type="Texture2D" uid="uid://mikwkm1gyi60" path="res://assets/Secuencias/Carga del juego/Timeline CARGANDO EL JUEGO_0006.png" id="6_kqufm"]
+[ext_resource type="Texture2D" uid="uid://b3grhiibdimj6" path="res://assets/Secuencias/Carga del juego/Timeline CARGANDO EL JUEGO_0007.png" id="7_t40f1"]
+[ext_resource type="Texture2D" uid="uid://w22t2l6ehueg" path="res://assets/Secuencias/Carga del juego/Timeline CARGANDO EL JUEGO_0008.png" id="8_swbtu"]
+[ext_resource type="Texture2D" uid="uid://dwogsjhqe0cf4" path="res://assets/Secuencias/Carga del juego/Timeline CARGANDO EL JUEGO_0009.png" id="9_cba0s"]
+[ext_resource type="Texture2D" uid="uid://bpe3hmam8yl62" path="res://assets/Secuencias/Carga del juego/Timeline CARGANDO EL JUEGO_0010.png" id="10_vlkd0"]
+[ext_resource type="Texture2D" uid="uid://c55dea4fph6e8" path="res://assets/Secuencias/Carga del juego/Timeline CARGANDO EL JUEGO_0011.png" id="11_8vut6"]
+[ext_resource type="Texture2D" uid="uid://caflwhiwe85v0" path="res://assets/Secuencias/Carga del juego/Timeline CARGANDO EL JUEGO_0012.png" id="12_1lhoe"]
+[ext_resource type="FontFile" uid="uid://3pk7rbg12vvi" path="res://assets/fonts/FuenteCatac-Regular.otf" id="13_csso4"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kilm4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_n75x2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_2qp8t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_6s5p3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_dnreq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_jwmbs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_kqufm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_t40f1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_swbtu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_cba0s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_vlkd0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_8vut6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_1lhoe")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[node name="CargaNivel" type="Node2D"]
+script = ExtResource("1_0uvjg")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -728.0
+offset_top = -414.0
+offset_right = 4320.0
+offset_bottom = 4822.0
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -74.0
+offset_top = -30.0
+offset_right = -74.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_group_ = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Control2" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1170.0
+offset_bottom = 665.0
+metadata/_edit_use_anchors_ = true
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="Control2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Control2/AspectRatioContainer"]
+position = Vector2(-5, -5.5)
+scale = Vector2(0.52, 0.52)
+sprite_frames = SubResource("SpriteFrames_kilm4")
+autoplay = "default"
+frame_progress = 0.458245
+
+[node name="Label" type="Label" parent="Control2"]
+layout_mode = 2
+anchor_left = -0.025641
+anchor_top = 0.129323
+anchor_right = -0.025641
+anchor_bottom = 0.129323
+offset_left = 448.0
+offset_top = 363.0
+offset_right = 778.0
+offset_bottom = 472.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("13_csso4")
+theme_override_font_sizes/font_size = 28
+text = "Cargando...
+"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true

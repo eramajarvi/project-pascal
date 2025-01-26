@@ -4,11 +4,11 @@
 [ext_resource type="MeshLibrary" uid="uid://dcm037ggbxqcx" path="res://assets/blender/castle-mesh-library.tres" id="2_pmx4q"]
 [ext_resource type="Shader" path="res://scripts/shaders/sky-3.gdshader" id="4_2iacu"]
 [ext_resource type="PackedScene" uid="uid://ch7n85egx2wlq" path="res://scenes/ambient/worm_hole.tscn" id="5_descy"]
-[ext_resource type="PackedScene" uid="uid://dyygv46281ey6" path="res://assets/blender/tower-square-top.glb" id="6_jd6dw"]
+[ext_resource type="PackedScene" uid="uid://cp6p6olpcllj8" path="res://assets/blender/tower-square-top.glb" id="6_jd6dw"]
 [ext_resource type="PackedScene" uid="uid://baepnmdpm01id" path="res://scenes/gotas_the_cat_3d.tscn" id="7_p3mdi"]
 [ext_resource type="Script" path="res://assets/levels/fallzone.gd" id="7_vx4vf"]
 [ext_resource type="PackedScene" uid="uid://cc6cwwxxh6yd4" path="res://assets/levels/level1/blocks/player_shadow.tscn" id="8_yrvq0"]
-[ext_resource type="AudioStream" uid="uid://ckhkego6pfefg" path="res://assets/music/nin-the-four-of-us-are-dying.mp3" id="9_kgle6"]
+[ext_resource type="AudioStream" uid="uid://b3vayw5i2tt4v" path="res://assets/music/nin-the-four-of-us-are-dying.mp3" id="9_kgle6"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6qqmn"]
 shader = ExtResource("4_2iacu")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bueeg8ahb2ikv"]
+[gd_scene load_steps=12 format=3 uid="uid://bueeg8ahb2ikv"]
 
 [ext_resource type="Script" path="res://scripts/gotas_the_cat2d.gd" id="1_xxju1"]
 [ext_resource type="Texture2D" uid="uid://ftbvvy4ut0oi" path="res://assets/sprites/Gato/GatoAtacando.png" id="2_qefrt"]
@@ -6,6 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://cnri1i1jn4vkq" path="res://assets/sprites/Gato/MoveGato Frame1.png" id="4_ewnlg"]
 [ext_resource type="Texture2D" uid="uid://c2qjaa747uvmx" path="res://assets/sprites/Gato/MoveGato Frame3.png" id="5_lbbid"]
 [ext_resource type="Texture2D" uid="uid://x01xb1boxgc4" path="res://assets/sprites/Gato/FrontalGato (1).png" id="6_32qw3"]
+[ext_resource type="AudioStream" uid="uid://dcsh88ay8wo6c" path="res://assets/music/meow.wav" id="7_d3fg1"]
+[ext_resource type="AudioStream" uid="uid://c8l2upd353up3" path="res://assets/music/papel arrugandose.wav" id="8_u3aul"]
+[ext_resource type="AudioStream" uid="uid://cl42uj0ppw03i" path="res://assets/music/GatoSaltoPapel.wav" id="9_0eo5f"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_e4g4g"]
 animations = [{
@@ -55,3 +58,13 @@ sprite_frames = SubResource("SpriteFrames_e4g4g")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-9, -197)
 shape = SubResource("CircleShape2D_uguhc")
+
+[node name="AudioAtaque" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("7_d3fg1")
+volume_db = 34.524
+
+[node name="AudioPasos" type="AudioStreamPlayer3D" parent="AudioAtaque"]
+stream = ExtResource("8_u3aul")
+
+[node name="AudioSalto" type="AudioStreamPlayer3D" parent="AudioAtaque"]
+stream = ExtResource("9_0eo5f")
