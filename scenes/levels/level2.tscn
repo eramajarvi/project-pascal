@@ -1,27 +1,29 @@
-[gd_scene load_steps=69 format=4 uid="uid://dwdjc7e36qurr"]
+[gd_scene load_steps=72 format=4 uid="uid://dwdjc7e36qurr"]
 
-[ext_resource type="Script" path="res://assets/levels/level2/level_2.gd" id="1_gv0ox"]
-[ext_resource type="MeshLibrary" uid="uid://chfrso0bo8hn7" path="res://assets/levels/level2/gridmapLevel2.tres" id="1_klqym"]
-[ext_resource type="PackedScene" uid="uid://baepnmdpm01id" path="res://scenes/gotas_the_cat_3d.tscn" id="2_0nnnu"]
-[ext_resource type="Shader" path="res://scripts/shaders/grid-ground-shadergdshader.gdshader" id="3_kl6m3"]
-[ext_resource type="Texture2D" uid="uid://ccmkn0jmrmsi1" path="res://icon.svg" id="4_773w6"]
-[ext_resource type="Script" path="res://assets/levels/level2/blocks/shape_cube_half.gd" id="4_pvtcg"]
-[ext_resource type="Texture2D" uid="uid://duk786a7fcilw" path="res://assets/levels/level2/blocks/Textures/colormap.png" id="4_t1rik"]
-[ext_resource type="PackedScene" uid="uid://c5vtwvm5xqukl" path="res://assets/levels/level2/blocks/lantern.glb" id="5_0oyx8"]
-[ext_resource type="Script" path="res://assets/levels/level2/blocks/shape_cube_half2.gd" id="5_7sktv"]
-[ext_resource type="Material" uid="uid://cmmkx7gmn3aq7" path="res://assets/Materiales/PavingStone_Mat.tres" id="5_bakbw"]
-[ext_resource type="Script" path="res://assets/levels/level2/blocks/shape_cube_half3.gd" id="6_gtups"]
-[ext_resource type="Material" uid="uid://bstdc5521veac" path="res://assets/Materiales/Gravel_Mat.tres" id="7_5qoaa"]
-[ext_resource type="Script" path="res://assets/levels/level2/blocks/impossible_staircase.gd" id="9_u58ly"]
-[ext_resource type="Script" path="res://assets/levels/level2/lastStairLigth.gd" id="13_3gy1i"]
-[ext_resource type="FontFile" uid="uid://3pk7rbg12vvi" path="res://assets/fonts/FuenteCatac-Regular.otf" id="14_a5tyi"]
-[ext_resource type="Script" path="res://assets/levels/level2/penrose_stairs.gd" id="14_c8d24"]
-[ext_resource type="Script" path="res://assets/levels/level2/blocks/middleLantern.gd" id="15_srpqr"]
+[ext_resource type="Script" path="res://assets/levels/level2/level_2.gd" id="1_d1oqe"]
+[ext_resource type="MeshLibrary" uid="uid://chfrso0bo8hn7" path="res://assets/levels/level2/gridmapLevel2.tres" id="2_8l00e"]
+[ext_resource type="PackedScene" uid="uid://baepnmdpm01id" path="res://scenes/gotas_the_cat_3d.tscn" id="3_njx3n"]
+[ext_resource type="Shader" path="res://scripts/shaders/grid-ground-shadergdshader.gdshader" id="4_j6054"]
+[ext_resource type="Texture2D" uid="uid://bvere2l0msls5" path="res://icon.svg" id="5_efcnf"]
+[ext_resource type="Script" path="res://assets/levels/level2/blocks/shape_cube_half.gd" id="6_flg3t"]
+[ext_resource type="Texture2D" uid="uid://b0j08ouoj7kv4" path="res://assets/levels/level2/blocks/Textures/colormap.png" id="7_1v73h"]
+[ext_resource type="Material" uid="uid://bstdc5521veac" path="res://assets/Materiales/Gravel_Mat.tres" id="8_flbek"]
+[ext_resource type="Script" path="res://assets/levels/level2/blocks/shape_cube_half2.gd" id="9_hpwdx"]
+[ext_resource type="Script" path="res://assets/levels/level2/blocks/shape_cube_half3.gd" id="10_k2le8"]
+[ext_resource type="PackedScene" uid="uid://dmu3q6a8ydcx" path="res://assets/levels/level2/blocks/lantern.glb" id="11_7ytkc"]
+[ext_resource type="Material" uid="uid://cmmkx7gmn3aq7" path="res://assets/Materiales/PavingStone_Mat.tres" id="12_y0p2o"]
+[ext_resource type="Script" path="res://assets/levels/level2/lastStairLigth.gd" id="13_kska0"]
+[ext_resource type="Script" path="res://assets/levels/level2/penrose_stairs.gd" id="14_wo3fo"]
+[ext_resource type="Script" path="res://assets/levels/level2/blocks/impossible_staircase.gd" id="15_akrhm"]
+[ext_resource type="FontFile" uid="uid://clduqdylc60gl" path="res://assets/fonts/FuenteCatac-Regular.otf" id="16_hf16a"]
+[ext_resource type="Script" path="res://assets/levels/level2/blocks/middleLantern.gd" id="17_eqw5p"]
+[ext_resource type="PackedScene" uid="uid://ch7n85egx2wlq" path="res://scenes/ambient/worm_hole.tscn" id="18_wms0o"]
+[ext_resource type="Script" path="res://assets/levels/fallzone.gd" id="19_stwi4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rwy4q"]
 render_priority = -1
-shader = ExtResource("3_kl6m3")
-shader_parameter/gridColor = Color(1, 1, 1, 1)
+shader = ExtResource("4_j6054")
+shader_parameter/gridColor = Color(0.641934, 0.641934, 0.641934, 1)
 shader_parameter/checkerColor = Color(0.054902, 0.00392157, 0, 0)
 shader_parameter/fadeStart = 150.0
 shader_parameter/fadeEnd = 150.0
@@ -134,7 +136,7 @@ _data = {
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3v0ew"]
 resource_name = "colormap"
 cull_mode = 2
-albedo_texture = ExtResource("4_t1rik")
+albedo_texture = ExtResource("7_1v73h")
 texture_filter = 2
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_yomnd"]
@@ -539,7 +541,7 @@ _data = {
 size = Vector3(1.78445, 0.0109253, 1.38901)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tbeg0"]
-size = Vector3(5, 1.74695, 3.15382)
+size = Vector3(5, 1.74695, 6.34302)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gfmpq"]
 size = Vector3(15.1584, 12.0574, 13.4065)
@@ -559,20 +561,22 @@ size = Vector3(2.57092, 2.04114, 1.33801)
 [sub_resource type="BoxShape3D" id="BoxShape3D_2nsby"]
 size = Vector3(2.76514, 1.94421, 1.82996)
 
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_ih6ck"]
+
 [node name="Level2" type="Node3D"]
-transform = Transform3D(0.177085, 0, 0.984196, 0, 1, 0, -0.984196, 0, 0.177085, 0.000411987, 0, 0.000213623)
-script = ExtResource("1_gv0ox")
+transform = Transform3D(0.0401318, 0, 0.999195, 0, 1, 0, -0.999195, 0, 0.0401318, 0.000411987, 0, 0.000213623)
+script = ExtResource("1_d1oqe")
 
 [node name="GridMap" type="GridMap" parent="."]
-mesh_library = ExtResource("1_klqym")
+mesh_library = ExtResource("2_8l00e")
 cell_size = Vector3(1, 0.495, 1)
 data = {
 "cells": PackedInt32Array(65534, 0, 1, 65535, 0, 1, 65535, 1, 1, 65534, 1, 1, 65533, 0, 1, 65533, 1, 1, 65533, 2, 1, 65534, 2, 1, 65535, 2, 1, 0, 2, 1, 0, 1, 1, 0, 0, 1, 0, 65535, 1, 65535, 65535, 1, 65534, 65535, 1, 65533, 65535, 1, 1, 0, 1, 1, 1, 1, 2, 0, 1, 2, 1, 1, 2, 65535, 1, 1, 65535, 1, 2, 2, 1, 1, 2, 1, 3, 1, 1, 3, 0, 1, 4, 0, 1, 4, 1, 1, 5, 1, 1, 5, 0, 1)
 }
 metadata/_editor_floor_ = Vector3(0, 1, 0)
 
-[node name="GotasTheCat3D" parent="." groups=["player"] instance=ExtResource("2_0nnnu")]
-transform = Transform3D(0.352342, 0, -0.354761, 0, 0.5, 0, 0.354761, 0, 0.352342, 18.6983, 1.97098, 1.49716)
+[node name="GotasTheCat3D" parent="." groups=["player"] instance=ExtResource("3_njx3n")]
+transform = Transform3D(0.352342, 0, -0.354761, 0, 0.5, 0, 0.354761, 0, 0.352342, -1.49553, 1.30873, 0.983415)
 wall_min_slide_angle = 0.174533
 
 [node name="CameraController" type="Node3D" parent="GotasTheCat3D"]
@@ -593,7 +597,7 @@ far = 947.79
 transform = Transform3D(75.5418, 16.6205, -9.70019, -7.33471, 126.633, 7.58129, 17.9565, -18.1945, 43.9047, -3.15197, -17.6487, -17.0834)
 layers = 2
 material_override = SubResource("ShaderMaterial_rwy4q")
-texture = ExtResource("4_773w6")
+texture = ExtResource("5_efcnf")
 
 [node name="GrillaMovement" type="AnimationPlayer" parent="GotasTheCat3D/CameraController/CameraTarget/Camera3D/Sprite3D"]
 libraries = {
@@ -614,12 +618,12 @@ sky_mode = 1
 
 [node name="Stair1" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.01099, 6.45521, 0.241175, 0.980599)
-script = ExtResource("4_pvtcg")
+script = ExtResource("6_flg3t")
 
 [node name="shape-cube-half" type="MeshInstance3D" parent="Stair1"]
 mesh = SubResource("ArrayMesh_cxjre")
 skeleton = NodePath("")
-surface_material_override/0 = ExtResource("7_5qoaa")
+surface_material_override/0 = ExtResource("8_flbek")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Stair1/shape-cube-half"]
 
@@ -641,12 +645,12 @@ shape = SubResource("BoxShape3D_63v55")
 
 [node name="Stair2" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.01099, 7.44252, 0.586896, 0.980599)
-script = ExtResource("5_7sktv")
+script = ExtResource("9_hpwdx")
 
 [node name="shape-cube-half" type="MeshInstance3D" parent="Stair2"]
 mesh = SubResource("ArrayMesh_cxjre")
 skeleton = NodePath("")
-surface_material_override/0 = ExtResource("7_5qoaa")
+surface_material_override/0 = ExtResource("8_flbek")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Stair2/shape-cube-half"]
 
@@ -668,9 +672,9 @@ shape = SubResource("BoxShape3D_vrcuw")
 
 [node name="Stair3" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.01099, 8.4201, 0.946071, 1.50949)
-script = ExtResource("6_gtups")
+script = ExtResource("10_k2le8")
 
-[node name="platformMovementLantern" parent="Stair3" instance=ExtResource("5_0oyx8")]
+[node name="platformMovementLantern" parent="Stair3" instance=ExtResource("11_7ytkc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.497268, 0.0668049, 0.179749, -0.431229)
 
 [node name="Area3D" type="Area3D" parent="Stair3/platformMovementLantern"]
@@ -693,7 +697,7 @@ shape = SubResource("BoxShape3D_bxbc4")
 [node name="shape-cube-half" type="MeshInstance3D" parent="Stair3"]
 mesh = SubResource("ArrayMesh_cxjre")
 skeleton = NodePath("")
-surface_material_override/0 = ExtResource("7_5qoaa")
+surface_material_override/0 = ExtResource("8_flbek")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Stair3/shape-cube-half"]
 
@@ -713,7 +717,7 @@ transform = Transform3D(3.3605, 0, 0, 0, 1, 0, 0, 0, 2.01099, 13.6029, 0.946071,
 [node name="shape-cube-half" type="MeshInstance3D" parent="Stair4"]
 mesh = SubResource("ArrayMesh_cxjre")
 skeleton = NodePath("")
-surface_material_override/0 = ExtResource("5_bakbw")
+surface_material_override/0 = ExtResource("12_y0p2o")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Stair4/shape-cube-half"]
 
@@ -728,12 +732,12 @@ shape = SubResource("BoxShape3D_tmhx3")
 
 [node name="Stair5" type="Node3D" parent="."]
 transform = Transform3D(2.13513, 0, 0, 0, 1, 0, 0, 0, 2.01099, 18.3219, 0.946071, 1.50949)
-script = ExtResource("13_3gy1i")
+script = ExtResource("13_kska0")
 
 [node name="shape-cube-half" type="MeshInstance3D" parent="Stair5"]
 mesh = SubResource("ArrayMesh_cxjre")
 skeleton = NodePath("")
-surface_material_override/0 = ExtResource("5_bakbw")
+surface_material_override/0 = ExtResource("12_y0p2o")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Stair5/shape-cube-half"]
 
@@ -742,7 +746,7 @@ shape = SubResource("ConcavePolygonShape3D_kuuxx")
 
 [node name="Area3D" type="Area3D" parent="Stair5"]
 
-[node name="middleNextLantern" parent="Stair5/Area3D" instance=ExtResource("5_0oyx8")]
+[node name="middleNextLantern" parent="Stair5/Area3D" instance=ExtResource("11_7ytkc")]
 transform = Transform3D(0.468356, 0, 0, 0, 1, 0, 0, 0, 0.497268, -0.0213518, 0.5, -0.257435)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Stair5/Area3D/middleNextLantern"]
@@ -763,7 +767,7 @@ transform = Transform3D(0.840845, 0, 0, 0, 1, 0, 0, 0, 2.01099, 19.7687, 1.31281
 [node name="shape-cube-half" type="MeshInstance3D" parent="Stair6"]
 mesh = SubResource("ArrayMesh_cxjre")
 skeleton = NodePath("")
-surface_material_override/0 = ExtResource("7_5qoaa")
+surface_material_override/0 = ExtResource("8_flbek")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Stair6/shape-cube-half"]
 
@@ -788,7 +792,7 @@ transform = Transform3D(0.840845, 0, 0, 0, 1, 0, 0, 0, 2.01099, 20.6103, 1.70436
 [node name="shape-cube-half" type="MeshInstance3D" parent="Stair7"]
 mesh = SubResource("ArrayMesh_cxjre")
 skeleton = NodePath("")
-surface_material_override/0 = ExtResource("7_5qoaa")
+surface_material_override/0 = ExtResource("8_flbek")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Stair7/shape-cube-half"]
 
@@ -809,11 +813,11 @@ autoplay = "shape"
 
 [node name="PenroseStairs" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.3527, 1.05306, 2.17415)
-script = ExtResource("14_c8d24")
+script = ExtResource("14_wo3fo")
 
 [node name="Sketchfab_Scene" type="Node3D" parent="PenroseStairs"]
 transform = Transform3D(-3.26427, -0.223719, -0.685667, -0.220422, 3.3355, -0.038935, 0.686734, 0.00719172, -3.2717, 0.928082, -5.72302, -0.838742)
-script = ExtResource("9_u58ly")
+script = ExtResource("15_akrhm")
 
 [node name="Sketchfab_model" type="Node3D" parent="PenroseStairs/Sketchfab_Scene"]
 transform = Transform3D(1, 0, 0, 0, 2.22045e-16, 1, 0, -1, 2.22045e-16, 0, 0, 0)
@@ -829,7 +833,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.721783, 0, 0.782779)
 [node name="Object_4" type="MeshInstance3D" parent="PenroseStairs/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/stairs 4_2"]
 mesh = SubResource("ArrayMesh_erwke")
 skeleton = NodePath("")
-surface_material_override/0 = ExtResource("7_5qoaa")
+surface_material_override/0 = ExtResource("8_flbek")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="PenroseStairs/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/stairs 4_2/Object_4"]
 
@@ -851,7 +855,7 @@ shape = SubResource("BoxShape3D_3y6yv")
 [node name="AreaLantern1" type="Area3D" parent="PenroseStairs/Sketchfab_Scene"]
 transform = Transform3D(-0.292088, -0.0197234, 0.0614491, -0.0200184, 0.298461, 0.000643511, -0.0613536, -0.00348391, -0.292752, 1.76635, 2.98408, 1.10608)
 
-[node name="lantern1" parent="PenroseStairs/Sketchfab_Scene/AreaLantern1" instance=ExtResource("5_0oyx8")]
+[node name="lantern1" parent="PenroseStairs/Sketchfab_Scene/AreaLantern1" instance=ExtResource("11_7ytkc")]
 transform = Transform3D(0.996632, -0.0820081, 0, 0.0820081, 0.996632, 0, 0, 0, 1, 0.112007, -0.360239, 0.0271199)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="PenroseStairs/Sketchfab_Scene/AreaLantern1/lantern1"]
@@ -868,7 +872,7 @@ shape = SubResource("BoxShape3D_tbeg0")
 [node name="AreaLantern2" type="Area3D" parent="PenroseStairs/Sketchfab_Scene"]
 transform = Transform3D(-0.292088, -0.0197234, 0.061449, -0.0200184, 0.298461, 0.000643512, -0.0613536, -0.00348391, -0.292752, 1.72514, 2.61607, -1.71458)
 
-[node name="lantern2" parent="PenroseStairs/Sketchfab_Scene/AreaLantern2" instance=ExtResource("5_0oyx8")]
+[node name="lantern2" parent="PenroseStairs/Sketchfab_Scene/AreaLantern2" instance=ExtResource("11_7ytkc")]
 transform = Transform3D(0.996632, -0.0820081, 0, 0.0820081, 0.996632, 0, 0, 0, 1, 0.112007, -0.360239, 0.0271199)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="PenroseStairs/Sketchfab_Scene/AreaLantern2/lantern2"]
@@ -880,6 +884,41 @@ spot_range = 6.74321
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PenroseStairs/Sketchfab_Scene/AreaLantern2"]
 transform = Transform3D(1, -2.77556e-17, 0, 0, 1, 0, 0, 0, 1, 2, 0.373474, -0.956745)
+shape = SubResource("BoxShape3D_tbeg0")
+
+[node name="AreaLantern3" type="Area3D" parent="PenroseStairs/Sketchfab_Scene"]
+transform = Transform3D(-0.292088, -0.0197234, 0.061449, -0.0200184, 0.298461, 0.000643512, -0.0613536, -0.00348391, -0.292752, -1.81336, 2.06382, -1.73888)
+
+[node name="lantern3" parent="PenroseStairs/Sketchfab_Scene/AreaLantern3" instance=ExtResource("11_7ytkc")]
+transform = Transform3D(0.99881, -0.048774, 9.97931e-05, 0.0487726, 0.998792, 0.00599174, -0.000391915, -0.00597975, 0.999982, 0.112007, -0.360239, 0.0271196)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="PenroseStairs/Sketchfab_Scene/AreaLantern3/lantern3"]
+transform = Transform3D(-0.668361, 0.441445, 0.598681, 0.192438, -0.674836, 0.712435, 0.718512, 0.591372, 0.366084, -0.0440559, 1.45795, 4.76837e-07)
+visible = false
+light_color = Color(0.72549, 0.92549, 0.929412, 1)
+light_energy = 2.119
+spot_range = 11.133
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PenroseStairs/Sketchfab_Scene/AreaLantern3"]
+transform = Transform3D(1, 0, 2.98023e-08, 1.06581e-14, 1, 2.66454e-15, -1.49012e-08, -1.77636e-15, 1, -0.487995, 0.373475, -0.509084)
+shape = SubResource("BoxShape3D_tbeg0")
+
+[node name="AreaLantern4" type="Area3D" parent="PenroseStairs/Sketchfab_Scene"]
+transform = Transform3D(-0.292088, -0.0197234, 0.061449, -0.0200184, 0.298461, 0.000643512, -0.0613535, -0.00348391, -0.292752, -1.77163, 1.58513, 1.75311)
+
+[node name="lantern4" parent="PenroseStairs/Sketchfab_Scene/AreaLantern4" instance=ExtResource("11_7ytkc")]
+transform = Transform3D(0.99881, -0.048774, 9.97931e-05, 0.0487726, 0.998792, 0.00599174, -0.000391915, -0.00597975, 0.999982, 0.112007, -0.360239, 0.0271196)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="PenroseStairs/Sketchfab_Scene/AreaLantern4/lantern4"]
+transform = Transform3D(0.918598, 0.355196, 0.173233, 0.11699, -0.663124, 0.73931, 0.377476, -0.658862, -0.650701, -0.0440559, 1.45795, 1.43051e-06)
+visible = false
+light_color = Color(0.72549, 0.92549, 0.929412, 1)
+light_energy = 2.119
+spot_range = 11.133
+spot_angle = 59.5979
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PenroseStairs/Sketchfab_Scene/AreaLantern4"]
+transform = Transform3D(1, 0, 1.49012e-08, -3.76588e-13, 1, -1.9007e-13, -1.49012e-08, -1.77636e-15, 1, -0.487995, 0.373475, 1.08552)
 shape = SubResource("BoxShape3D_tbeg0")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PenroseStairs"]
@@ -902,7 +941,7 @@ visible = false
 modulate = Color(0.286275, 0.941176, 0.941176, 1)
 outline_modulate = Color(1, 1, 1, 1)
 text = "text1"
-font = ExtResource("14_a5tyi")
+font = ExtResource("16_hf16a")
 font_size = 167
 outline_size = 127
 
@@ -916,11 +955,11 @@ shape = SubResource("BoxShape3D_yan5t")
 [node name="NoTodoEsLoQueParece" type="Label3D" parent="Text2"]
 modulate = Color(0.286275, 0.941176, 0.941176, 1)
 outline_modulate = Color(1, 1, 1, 1)
-font = ExtResource("14_a5tyi")
+font = ExtResource("16_hf16a")
 font_size = 142
 outline_size = 127
 
-[node name="leftLanter1Platform" parent="." instance=ExtResource("5_0oyx8")]
+[node name="leftLanter1Platform" parent="." instance=ExtResource("11_7ytkc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.70027, 0.7475, 0.250149)
 
 [node name="Area3D" type="Area3D" parent="leftLanter1Platform"]
@@ -935,7 +974,7 @@ visible = false
 light_color = Color(0.72549, 0.92549, 0.929412, 1)
 light_energy = 2.119
 
-[node name="rightLanter1Platform" parent="." instance=ExtResource("5_0oyx8")]
+[node name="rightLanter1Platform" parent="." instance=ExtResource("11_7ytkc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.70027, 0.7475, 1.86388)
 
 [node name="Area3D" type="Area3D" parent="rightLanter1Platform"]
@@ -950,9 +989,9 @@ light_energy = 2.119
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.319328, 0.550781, 0)
 shape = SubResource("BoxShape3D_bxbc4")
 
-[node name="middleLantern" parent="." instance=ExtResource("5_0oyx8")]
+[node name="middleLantern" parent="." instance=ExtResource("11_7ytkc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5244, 1.44607, 0.795521)
-script = ExtResource("15_srpqr")
+script = ExtResource("17_eqw5p")
 
 [node name="Area3D" type="Area3D" parent="middleLantern"]
 
@@ -966,6 +1005,17 @@ visible = false
 light_color = Color(0.72549, 0.92549, 0.929412, 1)
 light_energy = 2.119
 
+[node name="WormHole" parent="." instance=ExtResource("18_wms0o")]
+transform = Transform3D(0.177085, 0, -0.984195, 0, 1, 0, 0.984195, 0, 0.177085, -2.6863, 0.432188, 0.672192)
+
+[node name="LevelGround" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.77247, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LevelGround"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
+shape = SubResource("WorldBoundaryShape3D_ih6ck")
+script = ExtResource("19_stwi4")
+
 [connection signal="body_entered" from="Stair1/Area3D" to="Stair1" method="_on_area_3d_body_entered"]
 [connection signal="body_entered" from="Stair2/Area3D" to="Stair2" method="_on_area_3d_body_entered"]
 [connection signal="body_entered" from="Stair4/Area3D" to="Stair1" method="_on_area_3d_body_entered"]
@@ -977,6 +1027,10 @@ light_energy = 2.119
 [connection signal="body_exited" from="PenroseStairs/Sketchfab_Scene/AreaLantern1" to="PenroseStairs" method="_on_area_3d_body_exited"]
 [connection signal="body_entered" from="PenroseStairs/Sketchfab_Scene/AreaLantern2" to="PenroseStairs" method="_on_area_lantern_2_body_entered"]
 [connection signal="body_exited" from="PenroseStairs/Sketchfab_Scene/AreaLantern2" to="PenroseStairs" method="_on_area_lantern_2_body_exited"]
+[connection signal="body_entered" from="PenroseStairs/Sketchfab_Scene/AreaLantern3" to="PenroseStairs" method="_on_area_lantern_3_body_entered"]
+[connection signal="body_exited" from="PenroseStairs/Sketchfab_Scene/AreaLantern3" to="PenroseStairs" method="_on_area_lantern_3_body_exited"]
+[connection signal="body_entered" from="PenroseStairs/Sketchfab_Scene/AreaLantern4" to="PenroseStairs" method="_on_area_lantern_4_body_entered"]
+[connection signal="body_exited" from="PenroseStairs/Sketchfab_Scene/AreaLantern4" to="PenroseStairs" method="_on_area_lantern_4_body_exited"]
 [connection signal="body_entered" from="Text1" to="." method="_on_text_1_body_entered"]
 [connection signal="body_exited" from="Text1" to="." method="_on_text_1_body_exited"]
 [connection signal="body_entered" from="Text2" to="." method="_on_text_2_body_entered"]
@@ -987,3 +1041,4 @@ light_energy = 2.119
 [connection signal="body_exited" from="rightLanter1Platform/Area3D" to="." method="_on_area_3d_body_exited"]
 [connection signal="body_entered" from="middleLantern/Area3D" to="middleLantern" method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="middleLantern/Area3D" to="middleLantern" method="_on_area_3d_body_exited"]
+[connection signal="body_entered" from="LevelGround" to="LevelGround/CollisionShape3D" method="_on_level_ground_body_entered"]

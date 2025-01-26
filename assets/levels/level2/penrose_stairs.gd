@@ -1,6 +1,9 @@
 extends Area3D
 @onready var lantern1 = $Sketchfab_Scene/AreaLantern1/lantern1/SpotLight3D
 @onready var lantern2 = $Sketchfab_Scene/AreaLantern2/lantern2/SpotLight3D
+@onready var lantern3 = $Sketchfab_Scene/AreaLantern3/lantern3/SpotLight3D
+@onready var lantern4 = $Sketchfab_Scene/AreaLantern4/lantern4/SpotLight3D
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -28,3 +31,22 @@ func _on_area_lantern_2_body_entered(body: Node3D) -> void:
 func _on_area_lantern_2_body_exited(body: Node3D) -> void:
 	if body.is_in_group('player'):
 		lantern2.visible = false
+
+
+func _on_area_lantern_3_body_entered(body: Node3D) -> void:
+	if body.is_in_group('player'):
+		lantern3.visible = true
+
+
+func _on_area_lantern_3_body_exited(body: Node3D) -> void:
+	if body.is_in_group('player'):
+		lantern3.visible = false
+
+
+func _on_area_lantern_4_body_entered(body: Node3D) -> void:
+	if body.is_in_group('player'):
+		lantern4.visible = true
+
+func _on_area_lantern_4_body_exited(body: Node3D) -> void:
+	if body.is_in_group('player'):
+		lantern4.visible = false
