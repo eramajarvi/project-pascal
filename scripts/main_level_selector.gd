@@ -27,7 +27,7 @@ func _level1_body_entered(body: Node3D) -> void:
 		
 
 func change_scene_to_level1() -> void:
-	get_tree().change_scene_to_file("res://scenes/levels/level1.tscn")
+	get_tree().change_scene_to_file("res://assets/Secuencias/GatoQuemandose/AntesNivel1.tscn")
 
 
 func _level2_body_entered(body: Node3D) -> void:

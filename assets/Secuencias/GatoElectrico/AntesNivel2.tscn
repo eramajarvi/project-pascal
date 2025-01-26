@@ -1,0 +1,129 @@
+[gd_scene load_steps=15 format=3 uid="uid://cssqorjumiq2y"]
+
+[ext_resource type="Script" path="res://assets/Secuencias/GatoElectrico/antes_nivel_2.gd" id="1_1f6m1"]
+[ext_resource type="Texture2D" uid="uid://3t5lqp03eiwh" path="res://assets/Secuencias/GatoElectrico/ANIMACION ELECTROCUTADO_0000.png" id="1_54w6j"]
+[ext_resource type="Texture2D" uid="uid://degq0wg2vqvw1" path="res://assets/Secuencias/GatoElectrico/ANIMACION ELECTROCUTADO_0001.png" id="2_jd6qx"]
+[ext_resource type="Texture2D" uid="uid://dkkqmtj5dtvo" path="res://assets/Secuencias/GatoElectrico/ANIMACION ELECTROCUTADO_0002.png" id="3_aoe2o"]
+[ext_resource type="Texture2D" uid="uid://caceoquop48nh" path="res://assets/Secuencias/GatoElectrico/ANIMACION ELECTROCUTADO_0003.png" id="4_lyqbc"]
+[ext_resource type="Texture2D" uid="uid://dobpwjx420y23" path="res://assets/Secuencias/GatoElectrico/ANIMACION ELECTROCUTADO_0004.png" id="5_4q034"]
+[ext_resource type="Texture2D" uid="uid://cfarnd2e56lmm" path="res://assets/Secuencias/GatoElectrico/ANIMACION ELECTROCUTADO_0005.png" id="6_rujsn"]
+[ext_resource type="Texture2D" uid="uid://wkf3vh2l8xbo" path="res://assets/Secuencias/GatoElectrico/ANIMACION ELECTROCUTADO_0006.png" id="7_dcukc"]
+[ext_resource type="Texture2D" uid="uid://ccvhri8fyqwvl" path="res://assets/Secuencias/GatoElectrico/ANIMACION ELECTROCUTADO_0007.png" id="8_8a3ra"]
+[ext_resource type="Texture2D" uid="uid://dqek2g4t7tnea" path="res://assets/Secuencias/GatoElectrico/ANIMACION ELECTROCUTADO_0008.png" id="9_0mmvi"]
+[ext_resource type="Texture2D" uid="uid://ceguqrjf4osfj" path="res://assets/Secuencias/GatoElectrico/ANIMACION ELECTROCUTADO_0009.png" id="10_337it"]
+[ext_resource type="Texture2D" uid="uid://hjf2ekp0yf1m" path="res://assets/Secuencias/GatoElectrico/ANIMACION ELECTROCUTADO_0010.png" id="11_i74v1"]
+[ext_resource type="FontFile" uid="uid://3pk7rbg12vvi" path="res://assets/fonts/FuenteCatac-Regular.otf" id="12_17sq7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jt480"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_54w6j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_jd6qx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_aoe2o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_lyqbc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_4q034")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_rujsn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_dcukc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_8a3ra")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_0mmvi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_337it")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_i74v1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[node name="AntesNivel2" type="Node2D"]
+script = ExtResource("1_1f6m1")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -728.0
+offset_top = -414.0
+offset_right = 4320.0
+offset_bottom = 4822.0
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -74.0
+offset_top = -30.0
+offset_right = -74.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_group_ = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Control2" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1170.0
+offset_bottom = 665.0
+metadata/_edit_use_anchors_ = true
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="Control2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Control2/AspectRatioContainer"]
+position = Vector2(20.96, 1.03998)
+scale = Vector2(0.48, 0.48)
+sprite_frames = SubResource("SpriteFrames_jt480")
+autoplay = "default"
+frame_progress = 0.57564
+
+[node name="Label" type="Label" parent="Control2"]
+layout_mode = 2
+anchor_left = -0.0384615
+anchor_top = 0.0360902
+anchor_right = 0.0282051
+anchor_bottom = 0.0360902
+offset_left = 448.0
+offset_top = 363.0
+offset_right = 778.0
+offset_bottom = 472.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_17sq7")
+theme_override_font_sizes/font_size = 28
+text = "Chispa fugaz en tormenta callada,
+burbujas eléctricas, energía atrapada.
+¿Soy partícula o ilusión?
+La corriente es mi canción.
+"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true

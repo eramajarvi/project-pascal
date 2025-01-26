@@ -1,0 +1,162 @@
+[gd_scene load_steps=23 format=3 uid="uid://dvocf4rncxkos"]
+
+[ext_resource type="Texture2D" uid="uid://rsk6plotiivd" path="res://assets/Secuencias/FinalJuego/ANIMACION GATO _0000.png" id="2_j1iyd"]
+[ext_resource type="Texture2D" uid="uid://xa6clu00uf63" path="res://assets/Secuencias/FinalJuego/ANIMACION GATO _0001.png" id="3_xuqmx"]
+[ext_resource type="Texture2D" uid="uid://d310gffp4q6to" path="res://assets/Secuencias/FinalJuego/ANIMACION GATO _0002.png" id="4_tbbci"]
+[ext_resource type="Texture2D" uid="uid://57en07xltjfe" path="res://assets/Secuencias/FinalJuego/ANIMACION GATO _0003.png" id="5_j1fih"]
+[ext_resource type="Texture2D" uid="uid://ox26r3v32p3d" path="res://assets/Secuencias/FinalJuego/ANIMACION GATO _0004.png" id="6_02jdy"]
+[ext_resource type="Texture2D" uid="uid://dmmvbb605rp3s" path="res://assets/Secuencias/FinalJuego/ANIMACION GATO _0005.png" id="7_65bjw"]
+[ext_resource type="Texture2D" uid="uid://b7pq23auhr87c" path="res://assets/Secuencias/FinalJuego/ANIMACION GATO _0006.png" id="8_6sxwg"]
+[ext_resource type="Texture2D" uid="uid://br7jm8ujmug4x" path="res://assets/Secuencias/FinalJuego/ANIMACION GATO _0007.png" id="9_rinck"]
+[ext_resource type="Texture2D" uid="uid://dd74hvxgapymd" path="res://assets/Secuencias/FinalJuego/ANIMACION GATO _0008.png" id="10_6baxr"]
+[ext_resource type="Texture2D" uid="uid://cdd34nc8ulgil" path="res://assets/Secuencias/FinalJuego/ANIMACION GATO _0009.png" id="11_5v02h"]
+[ext_resource type="Texture2D" uid="uid://duyoix11teamt" path="res://assets/Secuencias/FinalJuego/ANIMACION GATO _0010.png" id="12_phgr8"]
+[ext_resource type="Texture2D" uid="uid://hf8yv62epf6d" path="res://assets/Secuencias/FinalJuego/ANIMACION GATO _0011.png" id="13_k0hf3"]
+[ext_resource type="Texture2D" uid="uid://jo8o8igmln3v" path="res://assets/Secuencias/FinalJuego/ANIMACION GATO _0012.png" id="14_xmhvc"]
+[ext_resource type="Texture2D" uid="uid://dbevgmdndavto" path="res://assets/Secuencias/FinalJuego/ANIMACION GATO _0013.png" id="15_yhfu0"]
+[ext_resource type="Texture2D" uid="uid://xu0u7xpct8os" path="res://assets/Secuencias/FinalJuego/ANIMACION GATO _0014.png" id="16_bj5vi"]
+[ext_resource type="Texture2D" uid="uid://dgfh8cd28b605" path="res://assets/Secuencias/FinalJuego/ANIMACION GATO _0015.png" id="17_omtih"]
+[ext_resource type="Texture2D" uid="uid://chfsv7jang60a" path="res://assets/Secuencias/FinalJuego/ANIMACION GATO _0016.png" id="18_q8tnv"]
+[ext_resource type="Texture2D" uid="uid://ib65snpnnbfs" path="res://assets/Secuencias/FinalJuego/ANIMACION GATO _0017.png" id="19_vkwdc"]
+[ext_resource type="Texture2D" uid="uid://d0rxfs3g23f1h" path="res://assets/Secuencias/FinalJuego/ANIMACION GATO _0018.png" id="20_6n4wx"]
+[ext_resource type="Texture2D" uid="uid://dwp2oubfwn224" path="res://assets/Secuencias/FinalJuego/ANIMACION GATO _0019.png" id="21_qi32s"]
+[ext_resource type="FontFile" uid="uid://3pk7rbg12vvi" path="res://assets/fonts/FuenteCatac-Regular.otf" id="22_c3pkb"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nwjrv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_j1iyd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_xuqmx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_tbbci")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_j1fih")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_02jdy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_65bjw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_6sxwg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_rinck")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_6baxr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_5v02h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_phgr8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_k0hf3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_xmhvc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_yhfu0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_bj5vi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_omtih")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_q8tnv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_vkwdc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_6n4wx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_qi32s")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[node name="FinalJuego" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -728.0
+offset_top = -414.0
+offset_right = 4320.0
+offset_bottom = 4822.0
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -74.0
+offset_top = -30.0
+offset_right = -74.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_group_ = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Control2" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1170.0
+offset_bottom = 665.0
+metadata/_edit_use_anchors_ = true
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="Control2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Control2/AspectRatioContainer"]
+position = Vector2(-67, 3.5)
+scale = Vector2(0.48, 0.48)
+sprite_frames = SubResource("SpriteFrames_nwjrv")
+autoplay = "default"
+frame_progress = 0.325737
+
+[node name="Label" type="Label" parent="Control2"]
+layout_mode = 2
+anchor_left = -0.0452991
+anchor_top = -0.00150376
+anchor_right = 0.0102564
+anchor_bottom = -0.00150376
+offset_left = 448.0
+offset_top = 363.0
+offset_right = 778.0
+offset_bottom = 472.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("22_c3pkb")
+theme_override_font_sizes/font_size = 28
+text = "Flotan las burbujas, ardientes y frías,
+dentro llevan mis melancolías.
+Un salto, un paso, al borde estoy,
+¿vivo o muerto? Ni yo sé quién soy."
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
