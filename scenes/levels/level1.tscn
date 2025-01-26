@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://bmnteft0o8yes"]
+[gd_scene load_steps=45 format=3 uid="uid://bmnteft0o8yes"]
 
 [ext_resource type="Script" path="res://assets/levels/level1/level_1.gd" id="1_endjd"]
 [ext_resource type="Shader" path="res://scripts/shaders/sky-3.gdshader" id="2_08jcl"]
@@ -14,6 +14,8 @@
 [ext_resource type="PackedScene" uid="uid://clvqr72qnrjfe" path="res://assets/levels/level1/blocks/geyser.glb" id="12_o0dis"]
 [ext_resource type="PackedScene" uid="uid://gobu4dd3loe5" path="res://assets/levels/level1/blocks/volcano_bubble.tscn" id="13_unxll"]
 [ext_resource type="Script" path="res://assets/levels/fallzone.gd" id="14_punwt"]
+[ext_resource type="Script" path="res://scenes/levels/DoorLevel1.gd" id="15_2e4ii"]
+[ext_resource type="Texture2D" uid="uid://crs3qxmaeyllw" path="res://assets/Materiales/Texturas/cloth.jpg" id="15_mukdc"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_r0wd2"]
 shader = ExtResource("2_08jcl")
@@ -134,6 +136,44 @@ _data = {
 [sub_resource type="BoxShape3D" id="BoxShape3D_d21x0"]
 size = Vector3(1, 0.8, 1)
 
+[sub_resource type="Animation" id="Animation_p1mth"]
+resource_name = "Move_Plataforma3"
+length = 4.5
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4.46667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(28, 1.2, -0.4), Vector3(35.8, 1.2, 0.8)]
+}
+
+[sub_resource type="Animation" id="Animation_wmme3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(28, 1.2, -0.4)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bdv6g"]
+_data = {
+"Move_Plataforma3": SubResource("Animation_p1mth"),
+"RESET": SubResource("Animation_wmme3")
+}
+
 [sub_resource type="Animation" id="Animation_bpc15"]
 length = 2.5
 tracks/0/type = "value"
@@ -231,6 +271,9 @@ size = Vector3(13, 1, 18)
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_h1b0l"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_wcvwv"]
+size = Vector3(1.2, 2, 3)
+
 [node name="Level1" type="Node3D"]
 transform = Transform3D(0.177085, 0, 0.984196, 0, 1, 0, -0.984196, 0, 0.177085, 0, 0, 0)
 script = ExtResource("1_endjd")
@@ -245,10 +288,10 @@ cell_scale = 2.0
 data = {
 "cells": PackedInt32Array(-2, 0, 0, -1, 0, 0, -65536, 65535, 0, -65536, 0, 0, -65535, 0, 0, -65535, 65535, 0, -65535, 65534, 0, -65535, 65533, 0, -65535, 65532, 0, -65536, 65532, 0, -1, 65532, 0, -2, 65532, 0, -3, 65532, 0, -3, 65533, 0, -3, 65534, 0, -3, 65535, 0, -2, 65535, 0, -2, 65534, 0, -2, 65533, 0, -1, 65533, 0, -65536, 65534, 0, -1, 65534, 0, -1, 65535, 0, -65536, 65533, 0, -3, 0, 1441792, 65532, 65534, 1441797, 65531, 65534, 1441797, 65530, 65534, 1441797, 65529, 65534, 1441797, 65528, 65534, 1441797, 65522, 65535, 1441797, 65520, 65535, 1441797, 65515, 65530, 1441797, 65516, 65530, 1048581, -23, 65530, 655360, -23, 65529, 655360, -23, 65531, 655360, -24, 65531, 655360, -24, 65529, 655360, -24, 65530, 655360, 65519, 65535, 1048581, 65518, 65535, 5, 65518, 65534, 5, 65518, 65533, 5, 65517, 65533, 1441797, 65517, 65532, 655365, 65517, 65531, 655365, 65517, 65530, 5, 65521, 65535, 1441797, 65522, 65528, 1441797, 65522, 65527, 1441797, 65522, 65526, 1441797, 65522, 65525, 1441797, 65523, 65525, 1441797, 65524, 65525, 1441797, 65525, 65525, 1441797, 65526, 65525, 1441797, 65527, 65525, 1441797, 65527, 65526, 1441797, 65527, 65534, 1441797, 65514, 65529, 2, 65514, 65530, 1048581, 65515, 65529, 2, 65516, 65529, 2, 65517, 65529, 2, 65514, 65531, 655362, 65515, 65531, 655362, 65516, 65531, 655363, 65518, 65530, 1441794, 65518, 65531, 3, 65518, 65532, 655365, 65516, 65532, 1048578, 65517, 65534, 655363, 65521, 65527, 1048578, 65523, 65527, 1441794, 65521, 65526, 1048578, 65521, 65528, 1048578, 65523, 65528, 1441794, 65524, 65526, 655362, 65525, 65526, 655362, 65525, 65524, 2, 65524, 65524, 2, 65526, 65524, 2, 65523, 65524, 2, 65528, 65535, 655362, 65529, 65535, 655362, 65530, 65535, 655362, 65531, 65535, 655362, 65530, 65533, 2, 65532, 65533, 2, 65531, 65533, 2, 65529, 65533, 2, 65528, 65533, 2, 65527, 65533, 2, 65527, 65535, 655362, 65522, 0, 655362, 65521, 0, 655362, 65520, 0, 655362, 65519, 0, 655362, 65520, 65534, 2, 65519, 65534, 3, 65521, 65534, 2, 65516, 65533, 1048578, 65518, 0, 655362, 65519, 65533, 1441794, 65517, 65535, 1048578, 65519, 65532, 1441794, 65522, 65524, 2, 65523, 65526, 1441795, 65521, 65525, 1048578, 65526, 65526, 655363, 65527, 65524, 2, 65528, 65525, 1441794, 65528, 65526, 1441794, 65532, 65535, 655362, -65533, 65534, 0, -65533, 65535, 0, -65533, 65533, 0, -65532, 65533, 0, -65531, 65533, 0, -65530, 65533, 0, -65529, 65533, 0, -65529, 65534, 0, -65529, 65535, 0, -65530, 65535, 0, -65531, 65535, 0, -65531, 65534, 0, -65532, 65534, 0, -65532, 65535, 0, 8, 65534, 1441797, 9, 65534, 1441797, 10, 65534, 1441797, 11, 65534, 1441797, 12, 65534, 1441797, 13, 65534, 1441797, 14, 65534, 1441797, 18, 1, 1441797, 19, 2, 1441797, 18, 2, 1441797, 20, 2, 1441797, 21, 2, 1048581, 23, 2, 1048581, 22, 2, 1048581, 24, 2, 1048581, -65511, 2, 1048576, -65511, 1, 1048576, -65511, 65535, 1048576, -65511, 0, 1048576, -65511, 65534, 1048576, -65511, 65533, 1048576, -65511, 65532, 1048576, -65511, 3, 1048576, -65511, 4, 1048576, -65511, 5, 1048576, -65511, 6, 1048576, -65511, 7, 1048576, -65510, 7, 1048576, -65509, 7, 1048576, -65508, 7, 1048576, -65507, 7, 1048576, -65506, 7, 1048576, -65505, 7, 1048576, -65505, 6, 1048576, -65505, 5, 1048576, -65505, 4, 1048576, -65505, 3, 1048576, -65505, 2, 1048576, -65505, 1, 1048576, -65505, 0, 1048576, -65505, 65535, 1048576, -65505, 65534, 1048576, -65505, 65533, 1048576, -65505, 65532, 1048576, -65506, 65532, 1048576, -65507, 65532, 1048576, -65508, 65532, 1048576, -65509, 65532, 1048576, -65509, 65533, 1048576, -65508, 65533, 1048576, -65507, 65533, 1048576, -65509, 65534, 1048576, -65508, 65534, 1048576, -65507, 65534, 1048576, -65506, 65534, 1048576, -65506, 65535, 1048576, -65507, 65535, 1048576, -65508, 65535, 1048576, -65508, 0, 1048576, -65509, 0, 1048576, -65507, 0, 1048576, -65506, 0, 1048576, -65509, 65535, 1048576, -65510, 65534, 1048576, -65510, 65535, 1048576, -65509, 1, 1048576, -65510, 1, 1048576, -65508, 1, 1048576, -65507, 1, 1048576, -65506, 1, 1048576, -65507, 2, 1048576, -65508, 3, 1048576, -65509, 3, 1048576, -65509, 2, 1048576, -65507, 3, 1048576, -65506, 3, 1048576, -65506, 4, 1048576, -65507, 4, 1048576, -65507, 5, 1048576, -65508, 5, 1048576, -65509, 5, 1048576, -65508, 4, 1048576, -65510, 4, 1048576, -65510, 6, 1048576, -65507, 6, 1048576, -65510, 65532, 1048576, 8, 65535, 655362, 9, 65535, 655362, 10, 65535, 655362, 11, 65535, 655362, 12, 65535, 655362, 8, 65533, 2, 9, 65533, 2, 10, 65533, 2, 11, 65533, 2, 12, 65533, 2, 13, 65533, 2, 14, 65533, 2, 15, 65534, 1441794, 19, 1, 3, 21, 1, 2, 22, 1, 2, 23, 1, 2, 20, 1, 2, 18, 3, 655362, 20, 3, 655362, 19, 3, 655362, 21, 3, 655362, 22, 3, 655362, 23, 3, 655362, 24, 3, 655362, 24, 1, 2, 17, 2, 1048578, 37, 1, 7, 13, 65535, 655362)
 }
-metadata/_editor_floor_ = Vector3(0, 0, 0)
+metadata/_editor_floor_ = Vector3(0, 1, 0)
 
 [node name="GotasTheCat3D" parent="." groups=["player"] instance=ExtResource("4_nhohl")]
-transform = Transform3D(0.352317, 0, -0.354786, 0, 0.5, 0, 0.354786, 0, 0.352317, -44.375, 2.06492, -9.66084)
+transform = Transform3D(0.352317, 0, -0.354786, 0, 0.5, 0, 0.354786, 0, 0.352317, -4.79945, 2.06492, -3.15865)
 wall_min_slide_angle = 0.174533
 
 [node name="CameraController" type="Node3D" parent="GotasTheCat3D"]
@@ -266,8 +309,8 @@ size = 16.0
 far = 947.79
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.938356, 0.17795, 0.296346, -0.0740497, -0.940892, 0.330514, 0.337645, 0.288196, 0.896069, 1.71423, 5.53765, 10.8137)
-light_energy = 0.516
+transform = Transform3D(-0.938356, 0.17795, 0.296346, -0.0740497, -0.940892, 0.330514, 0.337645, 0.288196, 0.896069, 3.19596, 7.19022, 15.294)
+light_energy = 0.8
 sky_mode = 1
 
 [node name="WormHole" parent="." instance=ExtResource("5_u8l3y")]
@@ -574,6 +617,12 @@ script = ExtResource("8_5emy6")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
 shape = SubResource("BoxShape3D_d21x0")
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PlataformasMovibles/PlataformaMovible3"]
+libraries = {
+"": SubResource("AnimationLibrary_bdv6g")
+}
+autoplay = "Move_Plataforma3"
+
 [node name="DamageBubbleSpawner" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.936233, 1.6, -21.8135)
 script = ExtResource("9_bdfr2")
@@ -630,6 +679,19 @@ script = ExtResource("14_punwt")
 [node name="WormHole2" parent="." instance=ExtResource("5_u8l3y")]
 transform = Transform3D(0.177085, 0, -0.984195, 0, 1, 0, 0.984195, 0, 0.177085, -47.6534, 1, -10.7309)
 
+[node name="StaticBody3D" type="StaticBody3D" parent="." groups=["door"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.69962, 0.9, -3.09128)
+script = ExtResource("15_2e4ii")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 1.2, 9.53674e-07)
+shape = SubResource("BoxShape3D_wcvwv")
+
+[node name="Sprite3D" type="Sprite3D" parent="StaticBody3D"]
+transform = Transform3D(7.45058e-09, 0, 0.4, 0, 0.4, 0, -0.4, 0, 7.45058e-09, 0, 1.2, 0)
+texture = ExtResource("15_mukdc")
+
+[connection signal="attack_door" from="GotasTheCat3D" to="StaticBody3D" method="take_damage"]
 [connection signal="body_entered" from="PlataformasMovibles/PlataformaMovible1/Area3D" to="PlataformasMovibles/PlataformaMovible1" method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="PlataformasMovibles/PlataformaMovible1/Area3D" to="PlataformasMovibles/PlataformaMovible1" method="_on_area_3d_body_exited"]
 [connection signal="body_entered" from="PlataformasMovibles/PlataformaMovible2/Area3D" to="PlataformasMovibles/PlataformaMovible2" method="_on_area_3d_body_entered"]

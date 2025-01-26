@@ -3,6 +3,7 @@ extends Node2D
 # Referencias a nodos
 @onready var timer: Timer = $Timer
 @onready var static_body: StaticBody2D = $"."
+
 func _ready():
 	# Inicia el temporizador
 	timer.start()

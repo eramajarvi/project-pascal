@@ -3,11 +3,20 @@ extends CharacterBody3D
 const SPEED = 3.0
 const JUMP_VELOCITY = 4.5
 
-@onready var animation_player =  $AnimatedSprite3D
+const RAY_LENGTH = 1000
+signal attack_door(target)
 
+@onready var animation_player =  $AnimatedSprite3D
 @onready var raycast: RayCast3D = $RayCast3D
+@export var shadow_decal_scene: PackedScene
 
 var health: int = 3 # Vida inicial del personaje
+
+func _process(delta: float) -> void:
+	# Instance the shadow decal
+	var shadow_decal = shadow_decal_scene.instantiate()
+	add_child(shadow_decal)
+	shadow_decal.global_transform.origin = Vector3(0, 0, 0)
 
 func _physics_process(delta: float) -> void:
 	# Aplicar gravedad.
@@ -41,6 +50,7 @@ func _physics_process(delta: float) -> void:
 
 	# Mover al personaje.
 	move_and_slide()
+
 	
 	if velocity.x < 0:
 		animation_player.play("Walk_animation")
@@ -51,10 +61,20 @@ func _physics_process(delta: float) -> void:
 		animation_player.scale = Vector3(0.16, 0.16, 0.16)
 		
 	elif velocity.z != 0:
-		animation_player.play("Walk_animation") 
+		animation_player.play("Walk_animation")
+		
+	elif Input.is_action_pressed("Ataque"):
+		animation_player.play("attack")
+		animation_player.scale = Vector3(-0.16, 0.16, 0.16) 
 	
 	else:
-		animation_player.play("default") 
+		animation_player.play("default")
+		
+	if raycast.is_colliding():
+		var collider = raycast.get_collider()
+		if collider and collider.is_in_group("door") and Input.is_action_pressed("Ataque"):
+			emit_signal("attack_door", 10)
+	
 		
 func take_damage(amount: int) -> void:
 	var escenaActual = get_tree().current_scene

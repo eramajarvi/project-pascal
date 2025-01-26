@@ -1,14 +1,15 @@
-[gd_scene load_steps=24 format=3 uid="uid://bwrrs67qxxds2"]
+[gd_scene load_steps=26 format=3 uid="uid://bwrrs67qxxds2"]
 
-[ext_resource type="Texture2D" uid="uid://pumdnh5thavr" path="res://assets/sprites/paticas.png" id="1_1wejf"]
+[ext_resource type="Texture2D" uid="uid://b6i5613hrq1ub" path="res://assets/sprites/paticas.png" id="1_1wejf"]
 [ext_resource type="PackedScene" uid="uid://bueeg8ahb2ikv" path="res://scenes/gotas_the_cat.tscn" id="1_d40u3"]
-[ext_resource type="FontFile" uid="uid://bbr8dag5a6cap" path="res://assets/fonts/CharisSILBI.ttf" id="1_t4qpt"]
-[ext_resource type="FontFile" uid="uid://dogky3a4mipuh" path="res://assets/fonts/CharisSILR.ttf" id="2_bhvhp"]
+[ext_resource type="Script" path="res://scenes/creditos.gd" id="1_ij26b"]
+[ext_resource type="FontFile" uid="uid://c856oabdvvwmv" path="res://assets/fonts/CharisSILBI.ttf" id="1_t4qpt"]
+[ext_resource type="FontFile" uid="uid://b1iobu72ua0r" path="res://assets/fonts/CharisSILR.ttf" id="2_bhvhp"]
 [ext_resource type="Script" path="res://scenes/timer_Credits.gd" id="2_jxjry"]
-[ext_resource type="AudioStream" uid="uid://cs2b8i6klm1l7" path="res://assets/music/nin_discipline.mp3" id="4_iwub4"]
-[ext_resource type="Texture2D" uid="uid://if23xdf36qjc" path="res://assets/sprites/Garras.png" id="4_j80lp"]
+[ext_resource type="AudioStream" uid="uid://cpcvgdo2rq31x" path="res://assets/music/nin_discipline.mp3" id="4_iwub4"]
+[ext_resource type="Texture2D" uid="uid://cbo1kc2mls2kf" path="res://assets/sprites/Garras.png" id="4_j80lp"]
 [ext_resource type="PackedScene" uid="uid://bh0eb10np2t2j" path="res://scenes/bubbleGraphics.tscn" id="5_7kjkf"]
-[ext_resource type="Texture2D" uid="uid://cs353xsjf6cwc" path="res://assets/sprites/ggj00-roundlogo-900x900.png" id="5_nunq5"]
+[ext_resource type="Texture2D" uid="uid://bqyqki7goh3ti" path="res://assets/sprites/ggj00-roundlogo-900x900.png" id="5_nunq5"]
 [ext_resource type="Script" path="res://scenes/bubble_movement.gd" id="6_j0myt"]
 
 [sub_resource type="Shader" id="Shader_iunnu"]
@@ -57,12 +58,16 @@ shader_parameter/amplitude = 20.0
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_v060y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xb3xc"]
-size = Vector2(25, 5489)
+size = Vector2(82, 4288)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_irjy1"]
-size = Vector2(1012, 42)
+size = Vector2(1118, 42)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_srf55"]
+radius = 150.0
 
 [node name="Creditos" type="Node2D"]
+script = ExtResource("1_ij26b")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -77,10 +82,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 223.0
-offset_top = 114.0
+offset_left = -258.0
+offset_top = -975.0
 offset_right = 223.0
-offset_bottom = 114.0
+offset_bottom = 930.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
@@ -312,7 +317,7 @@ position = Vector2(-13, 584)
 scale = Vector2(0.546875, 0.546875)
 texture = ExtResource("4_j80lp")
 
-[node name="GotasTheCat" parent="." instance=ExtResource("1_d40u3")]
+[node name="GotasTheCat" parent="." groups=["player"] instance=ExtResource("1_d40u3")]
 position = Vector2(288, 167)
 metadata/_edit_group_ = true
 
@@ -336,7 +341,7 @@ position = Vector2(562, 651)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D1" type="CollisionShape2D" parent="HelperWalls/StaticBody2D"]
-position = Vector2(-35.5, 2134.5)
+position = Vector2(-7, 1534)
 shape = SubResource("RectangleShape2D_xb3xc")
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="HelperWalls"]
@@ -351,7 +356,7 @@ shape = SubResource("RectangleShape2D_xb3xc")
 position = Vector2(-351, -48)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HelperWalls/StaticBody2D2"]
-position = Vector2(374, 4711)
+position = Vector2(427, 4711)
 shape = SubResource("RectangleShape2D_irjy1")
 one_way_collision_margin = 16.0
 
@@ -401,6 +406,15 @@ scale = Vector2(0.3, 0.3)
 script = ExtResource("6_j0myt")
 
 [node name="Ggj00-roundlogo-900x900" type="Sprite2D" parent="."]
-position = Vector2(747, 4621)
+position = Vector2(743, 4575)
 scale = Vector2(0.345556, 0.345556)
 texture = ExtResource("5_nunq5")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(709, 4564)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-86, -70)
+shape = SubResource("CircleShape2D_srf55")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

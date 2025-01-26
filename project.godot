@@ -23,7 +23,8 @@ GameoverRespawner="*res://scenes/gameover_respawner.gd"
 
 [display]
 
-window/stretch/aspect="expand"
+window/stretch/mode="viewport"
+window/stretch/aspect="keep_width"
 window/stretch/scale_mode="integer"
 
 [dotnet]

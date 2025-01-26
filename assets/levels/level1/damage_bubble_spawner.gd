@@ -34,7 +34,6 @@ func spawn_sphere():
 	var VolcanoWithBubblenimation = %AnimationPlayer
 	VolcanoWithBubblenimation.play("bubbleGoingUp")
 	await VolcanoWithBubblenimation.animation_finished
-	#await get_tree().create_timer(2.0).timeout
 		
 	if not sphere_scene or not shadow_decal_scene:
 		return

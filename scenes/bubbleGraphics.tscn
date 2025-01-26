@@ -1,13 +1,16 @@
 [gd_scene load_steps=6 format=3 uid="uid://bh0eb10np2t2j"]
 
 [ext_resource type="Shader" path="res://scripts/shaders/bubbleGraphics.gdshader" id="1"]
-[ext_resource type="Texture2D" uid="uid://btyvngln83p7b" path="res://assets/sprites/BubbleA.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://dg63n7fbpqgxo" path="res://assets/sprites/BubbleA.png" id="2"]
 
 [sub_resource type="ShaderMaterial" id="1"]
 shader = ExtResource("1")
+shader_parameter/refractionMagnitude = 30.0
 
 [sub_resource type="Shader" id="2"]
 code = "shader_type canvas_item;
+
+uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, filter_linear_mipmap;
 
 uniform float timeScale = 20;
 uniform float amplitude = 1000.0f;
