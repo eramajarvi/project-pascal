@@ -6,6 +6,9 @@ const JUMP_VELOCITY = 5.5
 const RAY_LENGTH = 1000
 signal attack_door(target)
 
+@onready var audiomichi = $AudioAtaque
+@onready var audioSalto = $AudioAtaque/AudioSalto
+@onready var audiPasos = $AudioAtaque/AudioPasos
 @onready var animation_player =  $AnimatedSprite3D
 @onready var raycast: RayCast3D = $RayCast3D
 @export var shadow_scene: PackedScene
@@ -26,6 +29,8 @@ func _ready() -> void:
 		
 func _process(delta: float) -> void:
 	shadow_instance.global_transform.origin = Vector3(global_transform.origin.x, global_transform.origin.y, global_transform.origin.z)
+	
+	
 
 func _physics_process(delta: float) -> void:
 	# Aplicar gravedad.
@@ -36,7 +41,8 @@ func _physics_process(delta: float) -> void:
 	# Manejar salto.
 	if Input.is_action_just_pressed("Jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
-		
+		if not audioSalto.playing:
+			audioSalto.play()
 		
 		
 	# Obtener dirección del RayCast3D.
@@ -62,6 +68,14 @@ func _physics_process(delta: float) -> void:
 
 	# Mover al personaje.
 	move_and_slide()
+	
+	if velocity.x or velocity.z != 0:
+		if not audiPasos.playing:
+			audiPasos.play()
+	else:
+		if audiPasos.playing:
+			audiPasos.stop()
+
 
 	
 	if velocity.x < 0:
@@ -77,10 +91,12 @@ func _physics_process(delta: float) -> void:
 		
 	elif Input.is_action_pressed("Ataque"):
 		animation_player.play("attack")
+		audiomichi.play(0.0)
 		animation_player.scale = Vector3(-0.16, 0.16, 0.16) 
 	
 	else:
 		animation_player.play("default")
+		
 		
 	if raycast.is_colliding():
 		var collider = raycast.get_collider()
