@@ -34,7 +34,8 @@ func spawn_sphere():
 	var VolcanoWithBubblenimation = %AnimationPlayer
 	VolcanoWithBubblenimation.play("bubbleGoingUp")
 	await VolcanoWithBubblenimation.animation_finished
-		
+	var soundfuego = $"../VolcanoWithBubble/AudioFuegoVolcan"
+	soundfuego.play(0.0) 	
 	if not sphere_scene or not shadow_decal_scene:
 		return
 	
