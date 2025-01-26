@@ -20,6 +20,7 @@ radius = 1.0
 height = 3.0
 
 [node name="VolcanoDamageDrop" type="Node3D" groups=["damage_drop", "volcanoDamageGroup"]]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 
 [node name="RigidBody3D" type="RigidBody3D" parent="." groups=["damage_drop", "volcanoDamageGroup"]]
 collision_mask = 4

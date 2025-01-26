@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://bmnteft0o8yes"]
+[gd_scene load_steps=60 format=3 uid="uid://bmnteft0o8yes"]
 
 [ext_resource type="Script" path="res://assets/levels/level1/level_1.gd" id="1_endjd"]
 [ext_resource type="Shader" path="res://scripts/shaders/sky-3.gdshader" id="2_08jcl"]
@@ -6,20 +6,24 @@
 [ext_resource type="PackedScene" uid="uid://baepnmdpm01id" path="res://scenes/gotas_the_cat_3d.tscn" id="4_nhohl"]
 [ext_resource type="PackedScene" uid="uid://cc6cwwxxh6yd4" path="res://assets/levels/level1/blocks/player_shadow.tscn" id="5_3eebn"]
 [ext_resource type="PackedScene" uid="uid://ch7n85egx2wlq" path="res://scenes/ambient/worm_hole.tscn" id="5_u8l3y"]
-[ext_resource type="PackedScene" uid="uid://bksu1wetuv7vr" path="res://assets/levels/level1/blocks/rocks.glb" id="6_mu7d5"]
-[ext_resource type="PackedScene" uid="uid://lekhoncjium1" path="res://assets/levels/level1/blocks/platform.glb" id="7_3migc"]
+[ext_resource type="PackedScene" uid="uid://mg8rie4r7nkb" path="res://assets/levels/level1/blocks/rocks.glb" id="6_mu7d5"]
+[ext_resource type="PackedScene" uid="uid://b4rjdx5qsmqcb" path="res://assets/levels/level1/blocks/platform.glb" id="7_3migc"]
 [ext_resource type="Script" path="res://assets/levels/level1/platform-wrapper.gd" id="8_5emy6"]
 [ext_resource type="Script" path="res://assets/levels/level1/damage_bubble_spawner.gd" id="9_bdfr2"]
 [ext_resource type="PackedScene" uid="uid://c7h14k5d6kggr" path="res://assets/levels/level1/blocks/volcano_damage_drop.tscn" id="10_dwtkl"]
 [ext_resource type="PackedScene" uid="uid://vsg8mrevyd5a" path="res://assets/levels/level1/blocks/bubble_shadow.tscn" id="11_54pa6"]
-[ext_resource type="PackedScene" uid="uid://g3mg6c4rvsv1" path="res://assets/levels/level1/blocks/geyser.glb" id="12_o0dis"]
+[ext_resource type="PackedScene" uid="uid://clvqr72qnrjfe" path="res://assets/levels/level1/blocks/geyser.glb" id="12_o0dis"]
 [ext_resource type="PackedScene" uid="uid://gobu4dd3loe5" path="res://assets/levels/level1/blocks/volcano_bubble.tscn" id="13_unxll"]
 [ext_resource type="Script" path="res://assets/levels/fallzone.gd" id="14_punwt"]
 [ext_resource type="Script" path="res://scenes/levels/DoorLevel1.gd" id="15_2e4ii"]
-[ext_resource type="AudioStream" uid="uid://bm6m43y7kisoy" path="res://assets/music/fireSound.wav" id="15_hr4t8"]
-[ext_resource type="Texture2D" uid="uid://dmigrv2ehh36b" path="res://assets/Materiales/Texturas/cloth.jpg" id="15_mukdc"]
-[ext_resource type="AudioStream" uid="uid://du7xsegh1schb" path="res://assets/music/nin-03-ghosts-I.mp3" id="17_vmyqv"]
-[ext_resource type="FontFile" uid="uid://3pk7rbg12vvi" path="res://assets/fonts/FuenteCatac-Regular.otf" id="19_1rsdw"]
+[ext_resource type="AudioStream" uid="uid://dsilgehhn3tt3" path="res://assets/music/fireSound.wav" id="15_hr4t8"]
+[ext_resource type="Texture2D" uid="uid://crs3qxmaeyllw" path="res://assets/Materiales/Texturas/cloth.jpg" id="15_mukdc"]
+[ext_resource type="AudioStream" uid="uid://cpenrimkq66kc" path="res://assets/music/nin-03-ghosts-I.mp3" id="17_vmyqv"]
+[ext_resource type="FontFile" uid="uid://cgvqmmlv8csi8" path="res://assets/fonts/FuenteCatac-Regular.otf" id="19_1rsdw"]
+[ext_resource type="Script" path="res://scenes/levels/damage_bubble_spawner_volcano_2.gd" id="22_0btki"]
+[ext_resource type="Script" path="res://scenes/levels/damage_bubble_spawner_volcano_3.gd" id="22_1ac4p"]
+[ext_resource type="Script" path="res://scenes/levels/damage_bubble_spawner_volcano_4.gd" id="23_ld0qr"]
+[ext_resource type="FontFile" uid="uid://b1iobu72ua0r" path="res://assets/fonts/CharisSILR.ttf" id="24_45bix"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_r0wd2"]
 shader = ExtResource("2_08jcl")
@@ -40,6 +44,46 @@ sky_material = SubResource("ShaderMaterial_r0wd2")
 background_mode = 2
 sky = SubResource("Sky_wpoyl")
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_glppp"]
+radius = 2.0
+
+[sub_resource type="Animation" id="Animation_2inow"]
+resource_name = "moveFinalDoor"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(63.7021, -0.506369, 3.76601), Vector3(63.6223, -0.506369, 8.78011)]
+}
+
+[sub_resource type="Animation" id="Animation_ips7v"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(63.7021, -0.506369, 3.76601)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_g0lmw"]
+_data = {
+"RESET": SubResource("Animation_ips7v"),
+"moveFinalDoor": SubResource("Animation_2inow")
+}
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_n3fdx"]
 size = Vector3(2.06775, 1.86414, 0.411133)
 
@@ -56,7 +100,6 @@ size = Vector3(7.96539, 4.29578, 0.147705)
 size = Vector3(6.31238, 4.83936, 0.13623)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3ohbj"]
-size = Vector3(1, 0.9, 1)
 
 [sub_resource type="Animation" id="Animation_iromb"]
 resource_name = "Move_Plataforma1"
@@ -97,7 +140,7 @@ _data = {
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_w4smc"]
-size = Vector3(1, 0.680151, 1)
+size = Vector3(1, 0.8, 1)
 
 [sub_resource type="Animation" id="Animation_8ay8v"]
 resource_name = "Move_Platforma2"
@@ -240,9 +283,9 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0, 1.5),
-"transitions": PackedFloat32Array(0.870551, 1.68179),
+"transitions": PackedFloat32Array(1.68179, 0.870551),
 "update": 0,
-"values": [Vector3(0, 0.92746, 0), Vector3(0, 12, 0)]
+"values": [Vector3(0, 1.8, 0), Vector3(0, 14.7275, 0)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -264,7 +307,7 @@ _data = {
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6ttox"]
-size = Vector3(1.2, 0.3, 2)
+size = Vector3(1.6, 0.3, 2.5)
 
 [sub_resource type="QuadMesh" id="QuadMesh_xgnkd"]
 flip_faces = true
@@ -305,7 +348,7 @@ data = {
 metadata/_editor_floor_ = Vector3(0, 1, 0)
 
 [node name="GotasTheCat3D" parent="." groups=["player"] instance=ExtResource("4_nhohl")]
-transform = Transform3D(0.352317, 0, -0.354786, 0, 0.5, 0, 0.354786, 0, 0.352317, -14.508, 2.06492, -3.56518)
+transform = Transform3D(0.352317, 0, -0.354786, 0, 0.5, 0, 0.354786, 0, 0.352317, -44.5364, 2.06492, -10.3876)
 wall_min_slide_angle = 0.174533
 shadow_scene = ExtResource("5_3eebn")
 
@@ -330,6 +373,12 @@ sky_mode = 1
 
 [node name="WormHole" parent="." instance=ExtResource("5_u8l3y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 87.0546, 1.44652, 3.94911)
+
+[node name="Area3D" type="Area3D" parent="WormHole"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WormHole/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("SphereShape3D_glppp")
 
 [node name="Rocks" type="Node3D" parent="."]
 
@@ -552,8 +601,37 @@ transform = Transform3D(-8.51699, 2.09134, 0, -2.09134, -8.51699, 0, 0, 0, 3.893
 [node name="rocks75" parent="Rocks" instance=ExtResource("6_mu7d5")]
 transform = Transform3D(-18.3875, -0.811191, 8.15843e-09, 1.16297, -12.8256, -0.0114108, 0.000751007, -0.00828266, 17.6706, 82.6691, 1.80263, 2.96512)
 
+[node name="rocks63" parent="Rocks" instance=ExtResource("6_mu7d5")]
+transform = Transform3D(1.41668, 0, -7.87357, 0, 8, 0, 7.87357, 0, 1.41668, 60.1694, 1, -5.54269)
+
+[node name="rocks76" parent="Rocks" instance=ExtResource("6_mu7d5")]
+transform = Transform3D(-7.23862, 0, -3.40624, 0, 8, 0, 3.40624, 0, -7.23862, 61.0194, 1.8, -0.818555)
+
+[node name="rocks77" parent="Rocks" instance=ExtResource("6_mu7d5")]
+transform = Transform3D(-7.23862, 0, -3.40624, 0, 8, 0, 3.40624, 0, -7.23862, 49.9484, 1.8, 13.2325)
+
+[node name="rocks78" parent="Rocks" instance=ExtResource("6_mu7d5")]
+transform = Transform3D(-7.23862, 0, -3.40624, 0, 8, 0, 3.40624, 0, -7.23862, 53.4825, 1.8, 15.1061)
+
+[node name="rocks79" parent="Rocks" instance=ExtResource("6_mu7d5")]
+transform = Transform3D(-7.23862, 0, -3.40624, 0, 8, 0, 3.40624, 0, -7.23862, 58.5069, 1.8, 14.5101)
+
+[node name="rocks80" parent="Rocks" instance=ExtResource("6_mu7d5")]
+transform = Transform3D(-7.23862, 0, -3.40624, 0, 8, 0, 3.40624, 0, -7.23862, 49.2674, 1.8, -3.24583)
+
+[node name="rocks81" parent="Rocks" instance=ExtResource("6_mu7d5")]
+transform = Transform3D(-7.23862, 0, -3.40624, 0, 8, 0, 3.40624, 0, -7.23862, 53.9509, 1.8, 10.4649)
+
+[node name="rocks82" parent="Rocks" instance=ExtResource("6_mu7d5")]
+transform = Transform3D(-6.5692, 0, 4.56571, 0, 8, 0, -4.56571, 0, -6.5692, 51.6617, 1, 0.592983)
+
 [node name="Door2" parent="." instance=ExtResource("6_mu7d5")]
 transform = Transform3D(-3.65926, 0, 0.159636, 0, 19.6453, 0, -0.0582505, 0, -10.0282, 63.7021, -0.506369, 3.76601)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Door2"]
+libraries = {
+"": SubResource("AnimationLibrary_g0lmw")
+}
 
 [node name="InvisibleWalls" type="Node3D" parent="."]
 
@@ -597,7 +675,7 @@ script = ExtResource("8_5emy6")
 [node name="Area3D" type="Area3D" parent="PlataformasMovibles/PlataformaMovible1"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlataformasMovibles/PlataformaMovible1/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.67572e-06, -0.279162, 2.38419e-07)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.58307e-06, -0.229162, 2.38419e-07)
 shape = SubResource("BoxShape3D_3ohbj")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="PlataformasMovibles/PlataformaMovible1"]
@@ -613,7 +691,7 @@ script = ExtResource("8_5emy6")
 [node name="Area3D" type="Area3D" parent="PlataformasMovibles/PlataformaMovible2"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlataformasMovibles/PlataformaMovible2/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.159925, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
 shape = SubResource("BoxShape3D_w4smc")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="PlataformasMovibles/PlataformaMovible2"]
@@ -638,7 +716,7 @@ libraries = {
 }
 autoplay = "Move_Plataforma3"
 
-[node name="DamageBubbleSpawner" type="Node3D" parent="."]
+[node name="DamageBubbleSpawner-Volcano1" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.936233, 1.2, -21.8135)
 script = ExtResource("9_bdfr2")
 sphere_scene = ExtResource("10_dwtkl")
@@ -648,44 +726,44 @@ plane_size_z = 5.0
 spawn_height = 10.0
 spawn_interval = 2.5
 spheres_per_spawn = 15
-VolcanoScenePath = NodePath("../VolcanoWithBubble/VolcanoBubble")
+VolcanoScenePath = NodePath("VolcanoWithBubble1/VolcanoBubble")
 
-[node name="VolcanoWithBubble" type="Node3D" parent="."]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.1, 0.9, -3)
+[node name="VolcanoWithBubble1" type="Node3D" parent="DamageBubbleSpawner-Volcano1"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.163767, -0.3, 18.8135)
 
-[node name="Sketchfab_Scene" parent="VolcanoWithBubble" instance=ExtResource("12_o0dis")]
+[node name="Sketchfab_Scene" parent="DamageBubbleSpawner-Volcano1/VolcanoWithBubble1" instance=ExtResource("12_o0dis")]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 
-[node name="VolcanoBubble" parent="VolcanoWithBubble" instance=ExtResource("13_unxll")]
+[node name="VolcanoBubble" parent="DamageBubbleSpawner-Volcano1/VolcanoWithBubble1" instance=ExtResource("13_unxll")]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.92746, 0)
 visible = false
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="VolcanoWithBubble/VolcanoBubble"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="DamageBubbleSpawner-Volcano1/VolcanoWithBubble1/VolcanoBubble"]
 unique_name_in_owner = true
 libraries = {
 "": SubResource("AnimationLibrary_h1ypo")
 }
 
-[node name="AudioFuegoVolcan" type="AudioStreamPlayer3D" parent="VolcanoWithBubble"]
+[node name="AudioFuegoVolcan" type="AudioStreamPlayer3D" parent="DamageBubbleSpawner-Volcano1/VolcanoWithBubble1"]
 stream = ExtResource("15_hr4t8")
 volume_db = 80.0
 unit_size = 16.35
 
-[node name="Volcano1Ground" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, -2.6)
+[node name="Volcano1Ground" type="StaticBody3D" parent="DamageBubbleSpawner-Volcano1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.063767, -0.2, 19.2135)
 
-[node name="Area3D" type="Area3D" parent="Volcano1Ground"]
+[node name="Area3D" type="Area3D" parent="DamageBubbleSpawner-Volcano1/Volcano1Ground"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Volcano1Ground/Area3D"]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 1, -1.3, 0)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DamageBubbleSpawner-Volcano1/Volcano1Ground/Area3D"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 1, -1.3, -2.38419e-07)
 shape = SubResource("BoxShape3D_6ttox")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Volcano1Ground/Area3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="DamageBubbleSpawner-Volcano1/Volcano1Ground/Area3D"]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
 mesh = SubResource("QuadMesh_xgnkd")
 skeleton = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Volcano1Ground"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DamageBubbleSpawner-Volcano1/Volcano1Ground"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -1, -0.5)
 shape = SubResource("BoxShape3D_hf65l")
 
@@ -699,15 +777,15 @@ script = ExtResource("14_punwt")
 [node name="WormHole2" parent="." instance=ExtResource("5_u8l3y")]
 transform = Transform3D(0.177085, 0, -0.984195, 0, 1, 0, 0.984195, 0, 0.177085, -47.6534, 1, -10.7309)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="." groups=["door"]]
+[node name="Door" type="StaticBody3D" parent="." groups=["door"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.69962, 0.9, -3.09128)
 script = ExtResource("15_2e4ii")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Door"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 1.2, 9.53674e-07)
 shape = SubResource("BoxShape3D_wcvwv")
 
-[node name="DoorSprite" type="MeshInstance3D" parent="StaticBody3D"]
+[node name="DoorSprite" type="MeshInstance3D" parent="Door"]
 transform = Transform3D(0.6, 0, 7.7486e-08, 0, 3.25, 0, -2.23517e-08, 0, 2.99, 0.42, 1.52, -1.56462e-08)
 mesh = SubResource("BoxMesh_l0i6f")
 
@@ -717,31 +795,236 @@ volume_db = -13.026
 autoplay = true
 parameters/looping = true
 
-[node name="Text1" type="Area3D" parent="."]
+[node name="Textos" type="Node3D" parent="."]
+
+[node name="Text1" type="Area3D" parent="Textos"]
 transform = Transform3D(0.824946, 0, -0.565212, 0, 1, 0, 0.565212, 0, 0.824946, -39.7596, 3.67079, -11.0245)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Text1"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Textos/Text1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.230029, -2.03862, 0.926032)
 shape = SubResource("BoxShape3D_11jj0")
 
-[node name="SoloUnosPocos" type="Label3D" parent="Text1"]
+[node name="SoloUnosPocos" type="Label3D" parent="Textos/Text1"]
 transform = Transform3D(0.872206, 0, -0.489139, 0, 1, 0, 0.489139, 0, 0.872206, 0, 0.192654, 1.48642)
 visible = false
-modulate = Color(0.286275, 0.941176, 0.941176, 1)
-outline_modulate = Color(1, 1, 1, 1)
 text = "text1"
 font = ExtResource("19_1rsdw")
 font_size = 167
-outline_size = 127
+outline_size = 110
 
-[connection signal="attack_door" from="GotasTheCat3D" to="StaticBody3D" method="take_damage"]
+[node name="Text2" type="Area3D" parent="Textos"]
+transform = Transform3D(0.824946, 0, -0.565212, 0, 1, 0, 0.565212, 0, 0.824946, -25.7355, 3.67079, -1.4159)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Textos/Text2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.230029, -2.03862, 0.926032)
+shape = SubResource("BoxShape3D_11jj0")
+
+[node name="EncuentranElCamino" type="Label3D" parent="Textos/Text2"]
+transform = Transform3D(0.872206, 0, -0.489139, 0, 1, 0, 0.489139, 0, 0.872206, 0, 0.192654, 1.48642)
+visible = false
+text = "text1"
+font = ExtResource("19_1rsdw")
+font_size = 167
+outline_size = 110
+
+[node name="Text3" type="Area3D" parent="Textos"]
+transform = Transform3D(0.824946, 0, -0.565212, 0, 1, 0, 0.565212, 0, 0.824946, -14.6143, 3.67079, -3.49377)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Textos/Text3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.230029, -2.03862, 0.926032)
+shape = SubResource("BoxShape3D_11jj0")
+
+[node name="OtrosNoQuieren" type="Label3D" parent="Textos/Text3"]
+transform = Transform3D(0.872206, 0, -0.489139, 0, 1, 0, 0.489139, 0, 0.872206, 0, 0.192654, 1.48642)
+visible = false
+text = "text1"
+font = ExtResource("19_1rsdw")
+font_size = 167
+outline_size = 110
+
+[node name="VolcanoArea" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, 0)
+
+[node name="DamageBubbleSpawner-Volcano2" type="Node3D" parent="VolcanoArea"]
+transform = Transform3D(-0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, -0.866025, 17.4394, 1.2, 26.0897)
+script = ExtResource("22_0btki")
+sphere_scene = ExtResource("10_dwtkl")
+shadow_decal_scene = ExtResource("11_54pa6")
+plane_size_x = 30.0
+plane_size_z = 30.0
+spawn_height = 4.0
+spawn_interval = 0.98
+spheres_per_spawn = 24
+
+[node name="VolcanoWithBubble2" type="Node3D" parent="VolcanoArea/DamageBubbleSpawner-Volcano2"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.163767, -0.3, 18.8135)
+
+[node name="Sketchfab_Scene" parent="VolcanoArea/DamageBubbleSpawner-Volcano2/VolcanoWithBubble2" instance=ExtResource("12_o0dis")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+
+[node name="VolcanoBubble" parent="VolcanoArea/DamageBubbleSpawner-Volcano2/VolcanoWithBubble2" instance=ExtResource("13_unxll")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.92746, 0)
+visible = false
+
+[node name="Volcano2AnimationPlayer" type="AnimationPlayer" parent="VolcanoArea/DamageBubbleSpawner-Volcano2/VolcanoWithBubble2/VolcanoBubble"]
+libraries = {
+"": SubResource("AnimationLibrary_h1ypo")
+}
+
+[node name="AudioFuegoVolcan" type="AudioStreamPlayer3D" parent="VolcanoArea/DamageBubbleSpawner-Volcano2/VolcanoWithBubble2"]
+stream = ExtResource("15_hr4t8")
+volume_db = 80.0
+unit_size = 16.35
+
+[node name="Volcano2Ground" type="StaticBody3D" parent="VolcanoArea/DamageBubbleSpawner-Volcano2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.063767, -0.2, 19.2135)
+
+[node name="Area3D" type="Area3D" parent="VolcanoArea/DamageBubbleSpawner-Volcano2/Volcano2Ground"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="VolcanoArea/DamageBubbleSpawner-Volcano2/Volcano2Ground/Area3D"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 1, -1.3, 0)
+shape = SubResource("BoxShape3D_6ttox")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="VolcanoArea/DamageBubbleSpawner-Volcano2/Volcano2Ground/Area3D"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+mesh = SubResource("QuadMesh_xgnkd")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="VolcanoArea/DamageBubbleSpawner-Volcano2/Volcano2Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -1, -0.5)
+shape = SubResource("BoxShape3D_hf65l")
+
+[node name="DamageBubbleSpawner-Volcano3" type="Node3D" parent="VolcanoArea"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 3.06376, 1.2, 13.3865)
+script = ExtResource("22_1ac4p")
+plane_size_x = 30.0
+plane_size_z = 30.0
+spawn_height = 3.0
+spawn_interval = 1.5
+spheres_per_spawn = 24
+
+[node name="VolcanoWithBubble3" type="Node3D" parent="VolcanoArea/DamageBubbleSpawner-Volcano3"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.163767, -0.3, 18.8135)
+
+[node name="Sketchfab_Scene" parent="VolcanoArea/DamageBubbleSpawner-Volcano3/VolcanoWithBubble3" instance=ExtResource("12_o0dis")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+
+[node name="VolcanoBubble" parent="VolcanoArea/DamageBubbleSpawner-Volcano3/VolcanoWithBubble3" instance=ExtResource("13_unxll")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.92746, 0)
+visible = false
+
+[node name="Volcano3AnimationPlayer" type="AnimationPlayer" parent="VolcanoArea/DamageBubbleSpawner-Volcano3/VolcanoWithBubble3/VolcanoBubble"]
+libraries = {
+"": SubResource("AnimationLibrary_h1ypo")
+}
+
+[node name="AudioFuegoVolcan" type="AudioStreamPlayer3D" parent="VolcanoArea/DamageBubbleSpawner-Volcano3/VolcanoWithBubble3"]
+stream = ExtResource("15_hr4t8")
+volume_db = 80.0
+unit_size = 16.35
+
+[node name="Volcano2Ground" type="StaticBody3D" parent="VolcanoArea/DamageBubbleSpawner-Volcano3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.063767, -0.2, 19.2135)
+
+[node name="Area3D" type="Area3D" parent="VolcanoArea/DamageBubbleSpawner-Volcano3/Volcano2Ground"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="VolcanoArea/DamageBubbleSpawner-Volcano3/Volcano2Ground/Area3D"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 1, -1.3, 0)
+shape = SubResource("BoxShape3D_6ttox")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="VolcanoArea/DamageBubbleSpawner-Volcano3/Volcano2Ground/Area3D"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+mesh = SubResource("QuadMesh_xgnkd")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="VolcanoArea/DamageBubbleSpawner-Volcano3/Volcano2Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -1, -0.5)
+shape = SubResource("BoxShape3D_hf65l")
+
+[node name="DamageBubbleSpawner-Volcano4" type="Node3D" parent="VolcanoArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.06376, 1.2, -14.6135)
+script = ExtResource("23_ld0qr")
+plane_size_x = 30.0
+plane_size_z = 30.0
+spawn_height = 4.0
+spawn_interval = 0.9
+spheres_per_spawn = 24
+
+[node name="VolcanoWithBubble4" type="Node3D" parent="VolcanoArea/DamageBubbleSpawner-Volcano4"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.163767, -0.3, 18.8135)
+
+[node name="Sketchfab_Scene" parent="VolcanoArea/DamageBubbleSpawner-Volcano4/VolcanoWithBubble4" instance=ExtResource("12_o0dis")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 5.4)
+
+[node name="VolcanoBubble" parent="VolcanoArea/DamageBubbleSpawner-Volcano4/VolcanoWithBubble4" instance=ExtResource("13_unxll")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.92746, 0)
+visible = false
+
+[node name="Volcano4AnimationPlayer" type="AnimationPlayer" parent="VolcanoArea/DamageBubbleSpawner-Volcano4/VolcanoWithBubble4/VolcanoBubble"]
+libraries = {
+"": SubResource("AnimationLibrary_h1ypo")
+}
+
+[node name="AudioFuegoVolcan" type="AudioStreamPlayer3D" parent="VolcanoArea/DamageBubbleSpawner-Volcano4/VolcanoWithBubble4"]
+stream = ExtResource("15_hr4t8")
+volume_db = 80.0
+unit_size = 16.35
+
+[node name="Volcano4Ground" type="StaticBody3D" parent="VolcanoArea/DamageBubbleSpawner-Volcano4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.063767, -0.2, 19.2135)
+
+[node name="Area3D" type="Area3D" parent="VolcanoArea/DamageBubbleSpawner-Volcano4/Volcano4Ground"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="VolcanoArea/DamageBubbleSpawner-Volcano4/Volcano4Ground/Area3D"]
+transform = Transform3D(10, 0, -2.26498e-06, 0, 10, 0, 2.26498e-06, 0, 10, 3.00003, -1.3, -0.500005)
+shape = SubResource("BoxShape3D_6ttox")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="VolcanoArea/DamageBubbleSpawner-Volcano4/Volcano4Ground/Area3D"]
+transform = Transform3D(17.4, 0, 0, 0, 10, 0, 0, 0, 26.46, 2.4, 0, 1)
+mesh = SubResource("QuadMesh_xgnkd")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="VolcanoArea/DamageBubbleSpawner-Volcano4/Volcano4Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -1, -0.5)
+shape = SubResource("BoxShape3D_hf65l")
+
+[node name="TimeTracker" type="Label" parent="."]
+offset_left = 974.0
+offset_top = 543.0
+offset_right = 1069.0
+offset_bottom = 623.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("24_45bix")
+theme_override_font_sizes/font_size = 48
+text = "time"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[connection signal="attack_door" from="GotasTheCat3D" to="Door" method="take_damage"]
+[connection signal="body_entered" from="WormHole/Area3D" to="." method="_on_FinalWormHole_body_entered"]
 [connection signal="body_entered" from="PlataformasMovibles/PlataformaMovible1/Area3D" to="PlataformasMovibles/PlataformaMovible1" method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="PlataformasMovibles/PlataformaMovible1/Area3D" to="PlataformasMovibles/PlataformaMovible1" method="_on_area_3d_body_exited"]
 [connection signal="body_entered" from="PlataformasMovibles/PlataformaMovible2/Area3D" to="PlataformasMovibles/PlataformaMovible2" method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="PlataformasMovibles/PlataformaMovible2/Area3D" to="PlataformasMovibles/PlataformaMovible2" method="_on_area_3d_body_exited"]
 [connection signal="body_entered" from="PlataformasMovibles/PlataformaMovible3/Area3D" to="PlataformasMovibles/PlataformaMovible3" method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="PlataformasMovibles/PlataformaMovible3/Area3D" to="PlataformasMovibles/PlataformaMovible3" method="_on_area_3d_body_exited"]
-[connection signal="body_entered" from="Volcano1Ground/Area3D" to="DamageBubbleSpawner" method="_on_area_3d_player_entered"]
-[connection signal="body_entered" from="Volcano1Ground/Area3D" to="DamageBubbleSpawner" method="_on_area_3d_body_entered"]
-[connection signal="body_exited" from="Volcano1Ground/Area3D" to="DamageBubbleSpawner" method="_on_area_3d_body_exited"]
+[connection signal="body_entered" from="DamageBubbleSpawner-Volcano1/Volcano1Ground/Area3D" to="DamageBubbleSpawner-Volcano1" method="_on_area_3d_player_entered"]
+[connection signal="body_entered" from="DamageBubbleSpawner-Volcano1/Volcano1Ground/Area3D" to="DamageBubbleSpawner-Volcano1" method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="DamageBubbleSpawner-Volcano1/Volcano1Ground/Area3D" to="DamageBubbleSpawner-Volcano1" method="_on_area_3d_body_exited"]
 [connection signal="body_entered" from="LevelGround" to="LevelGround/CollisionShape3D" method="_on_level_ground_body_entered"]
+[connection signal="body_entered" from="Textos/Text1" to="." method="_on_text_1_body_entered"]
+[connection signal="body_entered" from="Textos/Text2" to="." method="_on_text_2_body_entered"]
+[connection signal="body_entered" from="Textos/Text3" to="." method="_on_text_3_body_entered"]
+[connection signal="body_entered" from="VolcanoArea/DamageBubbleSpawner-Volcano2/Volcano2Ground/Area3D" to="VolcanoArea/DamageBubbleSpawner-Volcano2" method="_on_area_3d_player_entered"]
+[connection signal="body_entered" from="VolcanoArea/DamageBubbleSpawner-Volcano2/Volcano2Ground/Area3D" to="VolcanoArea/DamageBubbleSpawner-Volcano2" method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="VolcanoArea/DamageBubbleSpawner-Volcano2/Volcano2Ground/Area3D" to="VolcanoArea/DamageBubbleSpawner-Volcano2" method="_on_area_3d_body_exited"]
+[connection signal="body_entered" from="VolcanoArea/DamageBubbleSpawner-Volcano3/Volcano2Ground/Area3D" to="VolcanoArea/DamageBubbleSpawner-Volcano3" method="_on_area_3d_player_entered"]
+[connection signal="body_entered" from="VolcanoArea/DamageBubbleSpawner-Volcano3/Volcano2Ground/Area3D" to="VolcanoArea/DamageBubbleSpawner-Volcano3" method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="VolcanoArea/DamageBubbleSpawner-Volcano3/Volcano2Ground/Area3D" to="VolcanoArea/DamageBubbleSpawner-Volcano3" method="_on_area_3d_body_exited"]
+[connection signal="body_entered" from="VolcanoArea/DamageBubbleSpawner-Volcano4/Volcano4Ground/Area3D" to="VolcanoArea/DamageBubbleSpawner-Volcano4" method="_on_area_3d_player_entered"]
+[connection signal="body_entered" from="VolcanoArea/DamageBubbleSpawner-Volcano4/Volcano4Ground/Area3D" to="VolcanoArea/DamageBubbleSpawner-Volcano4" method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="VolcanoArea/DamageBubbleSpawner-Volcano4/Volcano4Ground/Area3D" to="VolcanoArea/DamageBubbleSpawner-Volcano4" method="_on_area_3d_body_exited"]
+[connection signal="timeout" from="Timer" to="VolcanoArea/DamageBubbleSpawner-Volcano2" method="_on_timer_timeout"]
