@@ -1,0 +1,15 @@
+[gd_resource type="ORMMaterial3D" load_steps=5 format=3 uid="uid://dk8hhuylxwwe0"]
+
+[ext_resource type="Texture2D" uid="uid://cgakh0qbqqkqi" path="res://assets/Materiales/Texturas/Lava/Lava004_1K-JPG_Color.jpg" id="1_ey1up"]
+[ext_resource type="Texture2D" uid="uid://60gd4iex1rmj" path="res://assets/Materiales/Texturas/Lava/Lava004_1K-JPG_Emission.jpg" id="2_ujh35"]
+[ext_resource type="Texture2D" uid="uid://rkf67f2gr2x8" path="res://assets/Materiales/Texturas/Lava/Lava004_1K-JPG_NormalGL.jpg" id="3_ot5hr"]
+[ext_resource type="Texture2D" uid="uid://dvhgagoj7lgjr" path="res://assets/Materiales/Texturas/Lava/Lava004_1K-JPG_Displacement.jpg" id="4_q5sp7"]
+
+[resource]
+albedo_texture = ExtResource("1_ey1up")
+orm_texture = ExtResource("4_q5sp7")
+emission_enabled = true
+emission_texture = ExtResource("2_ujh35")
+normal_enabled = true
+normal_texture = ExtResource("3_ot5hr")
+uv1_triplanar = true
