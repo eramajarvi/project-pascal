@@ -33,7 +33,7 @@ shader_parameter/amplitude = 50.0
 size = Vector2(144, 33)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uudk3"]
-size = Vector2(260, 35)
+size = Vector2(387, 35)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_01uhd"]
 size = Vector2(288, 35)
@@ -283,7 +283,7 @@ position = Vector2(668, 3326)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Labels/james4"]
-position = Vector2(129, 25.5)
+position = Vector2(192.5, 25.5)
 shape = SubResource("RectangleShape2D_uudk3")
 
 [node name="Label" type="Label" parent="Labels/james4"]
