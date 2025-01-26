@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bgfa3bt6f4yw6"]
+
+[ext_resource type="Texture2D" uid="uid://drpr5a3psnhvf" path="res://assets/sprites/antropomorfia/PERSONA 4.png" id="1_no2ub"]
+[ext_resource type="PackedScene" uid="uid://bu81i6vfes2au" path="res://scenes/electricBubble.tscn" id="2_31kli"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_o3sl1"]
+size = Vector3(15.067, 21.4761, 1)
+
+[node name="Persona5" type="Sprite3D"]
+transform = Transform3D(0.0998932, 0.00462174, 0, -0.00462174, 0.0998932, 0, 0, 0, 0.1, 0, 0, 0)
+texture = ExtResource("1_no2ub")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.491913, 0.109863, 0)
+shape = SubResource("BoxShape3D_o3sl1")
+
+[node name="ElectricBubble" parent="." instance=ExtResource("2_31kli")]
+transform = Transform3D(-20.0197, -0.781677, 0, 0.781677, -20.0197, 0, 0, 0, 20.035, 0.75021, 0.760618, 0.5)
