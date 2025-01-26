@@ -1,13 +1,13 @@
 [gd_scene load_steps=27 format=3 uid="uid://dgmw3juox25qr"]
 
 [ext_resource type="Script" path="res://scripts/intro-script.gd" id="1_00tl0"]
-[ext_resource type="Texture2D" uid="uid://2dcnq5ml3br4" path="res://assets/sprites/wall-lu-george-lZtSqRAdVaY-unsplash.jpg" id="1_bbf63"]
-[ext_resource type="Texture2D" uid="uid://bb7aem37x56hu" path="res://assets/sprites/ground-lu-george-lZtSqRAdVaY-unsplash.jpg" id="2_am1er"]
+[ext_resource type="Texture2D" uid="uid://dyvn0r3jv7nv0" path="res://assets/sprites/Pared A.png" id="2_xgfxi"]
+[ext_resource type="Texture2D" uid="uid://c2xv6ch6cv2o" path="res://assets/sprites/Piso.png" id="3_rpfsi"]
 [ext_resource type="PackedScene" uid="uid://baepnmdpm01id" path="res://scenes/gotas_the_cat_3d.tscn" id="3_xh2jo"]
 [ext_resource type="PackedScene" uid="uid://cijiqpxde2iv3" path="res://scenes/ambient/fence_straight.tscn" id="4_dxd7s"]
 [ext_resource type="Shader" path="res://scripts/shaders/sky-2.gdshader" id="5_iia1e"]
-[ext_resource type="Texture2D" uid="uid://bqfomr8b2tjsf" path="res://assets/sprites/Hubble_NGC1637_potw2449a.jpg" id="6_nak5c"]
-[ext_resource type="FontFile" uid="uid://b1iobu72ua0r" path="res://assets/fonts/CharisSILR.ttf" id="7_2gg2b"]
+[ext_resource type="Texture2D" uid="uid://khgggs7rrsgx" path="res://assets/sprites/Hubble_NGC1637_potw2449a.jpg" id="6_nak5c"]
+[ext_resource type="FontFile" uid="uid://dogky3a4mipuh" path="res://assets/fonts/CharisSILR.ttf" id="7_2gg2b"]
 [ext_resource type="Script" path="res://scripts/texto1-intro.gd" id="7_keolf"]
 [ext_resource type="Script" path="res://scripts/texto2-intro.gd" id="9_02ye8"]
 [ext_resource type="Script" path="res://scripts/texto3-intro.gd" id="10_0d584"]
@@ -19,23 +19,25 @@ size = Vector3(19.6643, 1.30774, 0.257202)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vddtv"]
 diffuse_mode = 3
-albedo_texture = ExtResource("1_bbf63")
+albedo_texture = ExtResource("2_xgfxi")
 roughness = 0.4
 subsurf_scatter_enabled = true
 proximity_fade_distance = 2.0
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_vp7g7"]
-size = Vector2(2, 4)
+size = Vector2(9, 8)
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_a7emp"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ueawq"]
 diffuse_mode = 3
-albedo_texture = ExtResource("2_am1er")
+albedo_texture = ExtResource("3_rpfsi")
 roughness = 0.0
 ao_light_affect = 0.1
+uv1_triplanar = true
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_jjs32"]
+size = Vector2(4, 2)
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_t5kdi"]
 plane = Plane(0, 0, 1, 0)
@@ -77,7 +79,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.067749, 0.15387, -0.023815
 shape = SubResource("BoxShape3D_yumej")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Wall"]
-transform = Transform3D(10, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.0560225, 0.128597, 0)
+transform = Transform3D(2.83945, 7.04134e-10, 0.016752, 0.0457458, -4.37057e-08, -1.0398, 0, 1, -4.54571e-08, -2.27718, 3.44276, 0)
 material_override = SubResource("StandardMaterial3D_vddtv")
 mesh = SubResource("PlaneMesh_vp7g7")
 
@@ -88,7 +90,7 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 shape = SubResource("WorldBoundaryShape3D_a7emp")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
-transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 5, 0, 0, 1.364)
+transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 1.4027, 0, 0, 1.44032)
 material_override = SubResource("StandardMaterial3D_ueawq")
 mesh = SubResource("PlaneMesh_jjs32")
 
@@ -100,11 +102,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7)
 shape = SubResource("WorldBoundaryShape3D_t5kdi")
 
 [node name="FrontWall" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 2, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.33843, 2, 0.871334)
 shape = SubResource("BoxShape3D_scagp")
 
 [node name="GotasTheCat3D" parent="." groups=["player"] instance=ExtResource("3_xh2jo")]
-transform = Transform3D(0.999759, 0, -0.021937, 0, 1, 0, 0.021937, 0, 0.999759, -10.8697, 0.895345, 0.839993)
+transform = Transform3D(0.999759, 0, -0.021937, 0, 1, 0, 0.021937, 0, 0.999759, -19.0276, 0.895345, 3.16726)
 
 [node name="CameraController" type="Node3D" parent="GotasTheCat3D"]
 transform = Transform3D(0.999742, 0.00958808, -0.0205617, 0, 0.906307, 0.422618, 0.0226873, -0.422509, 0.906074, -13.9129, 0.895345, 2.5972)
@@ -128,13 +130,13 @@ directional_shadow_mode = 0
 [node name="Fences" type="Node3D" parent="."]
 
 [node name="fence-straight2" parent="Fences" instance=ExtResource("4_dxd7s")]
-transform = Transform3D(-1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, -12, 1.98191e-07, 1.28224)
+transform = Transform3D(-1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, -23.3919, 1.98191e-07, 1.28224)
 
 [node name="fence-straight4" parent="Fences" instance=ExtResource("4_dxd7s")]
-transform = Transform3D(-1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, -12, 1.98191e-07, 7.08029)
+transform = Transform3D(-1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, -23.3919, 1.98191e-07, 7.08029)
 
 [node name="fence-straight3" parent="Fences" instance=ExtResource("4_dxd7s")]
-transform = Transform3D(-1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, -12, 1.98191e-07, 4.06162)
+transform = Transform3D(-1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, -23.3919, 1.98191e-07, 4.06162)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_vllak")

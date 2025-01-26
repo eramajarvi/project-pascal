@@ -3,35 +3,45 @@ extends CharacterBody3D
 const SPEED = 3.0
 const JUMP_VELOCITY = 4.5
 
-var health: int = 3 # Example initial health
+@onready var raycast: RayCast3D = $RayCast3D
+
+var health: int = 3 # Vida inicial del personaje
 
 func _physics_process(delta: float) -> void:
-	# Add the gravity.
+	# Aplicar gravedad.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
-	# Handle jump.
+	# Manejar salto.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
+	# Obtener dirección del RayCast3D.
+	var ray_direction := (raycast.target_position).normalized()
+
+	# Obtener entrada del jugador y ajustar dirección según el RayCast3D.
 	var input_dir := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
-	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	if direction:
+	var direction := Vector3(
+		input_dir.x * ray_direction.x - input_dir.y * ray_direction.z, # Ejes X y Z adaptados al RayCast
+		0,
+		input_dir.x * ray_direction.z + input_dir.y * ray_direction.x
+	).normalized()
+
+	# Actualizar velocidad según dirección.
+	if direction != Vector3.ZERO:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
+	# Mover al personaje.
 	move_and_slide()
-	
-	
+
 func take_damage(amount: int) -> void:
 	health -= amount
 	if health <= 0:
 		die()
-		
+
 func die() -> void:
 	print("jugador murió")

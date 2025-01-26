@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://baepnmdpm01id" path="res://scenes/gotas_the_cat_3d.tscn" id="2_vfhot"]
 [ext_resource type="Shader" path="res://scripts/shaders/sky-3.gdshader" id="3_ht5qw"]
 [ext_resource type="PackedScene" uid="uid://ch7n85egx2wlq" path="res://scenes/ambient/worm_hole.tscn" id="5_mig4p"]
-[ext_resource type="PackedScene" uid="uid://dyygv46281ey6" path="res://assets/blender/tower-square-top.glb" id="6_vpeu4"]
+[ext_resource type="PackedScene" uid="uid://cp6p6olpcllj8" path="res://assets/blender/tower-square-top.glb" id="6_vpeu4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6qqmn"]
 shader = ExtResource("3_ht5qw")
