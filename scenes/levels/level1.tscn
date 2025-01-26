@@ -5,13 +5,13 @@
 [ext_resource type="MeshLibrary" uid="uid://dy3vid1ttudqf" path="res://scenes/levels/level1/gridmapBlocks-level1.tres" id="3_ineyi"]
 [ext_resource type="PackedScene" uid="uid://baepnmdpm01id" path="res://scenes/gotas_the_cat_3d.tscn" id="4_nhohl"]
 [ext_resource type="PackedScene" uid="uid://ch7n85egx2wlq" path="res://scenes/ambient/worm_hole.tscn" id="5_u8l3y"]
-[ext_resource type="PackedScene" uid="uid://mg8rie4r7nkb" path="res://assets/levels/level1/blocks/rocks.glb" id="6_mu7d5"]
-[ext_resource type="PackedScene" uid="uid://b4rjdx5qsmqcb" path="res://assets/levels/level1/blocks/platform.glb" id="7_3migc"]
+[ext_resource type="PackedScene" uid="uid://bksu1wetuv7vr" path="res://assets/levels/level1/blocks/rocks.glb" id="6_mu7d5"]
+[ext_resource type="PackedScene" uid="uid://lekhoncjium1" path="res://assets/levels/level1/blocks/platform.glb" id="7_3migc"]
 [ext_resource type="Script" path="res://assets/levels/level1/platform-wrapper.gd" id="8_5emy6"]
 [ext_resource type="Script" path="res://assets/levels/level1/damage_bubble_spawner.gd" id="9_bdfr2"]
 [ext_resource type="PackedScene" uid="uid://c7h14k5d6kggr" path="res://assets/levels/level1/blocks/volcano_damage_drop.tscn" id="10_dwtkl"]
 [ext_resource type="PackedScene" uid="uid://vsg8mrevyd5a" path="res://assets/levels/level1/blocks/bubble_shadow.tscn" id="11_54pa6"]
-[ext_resource type="PackedScene" uid="uid://clvqr72qnrjfe" path="res://assets/levels/level1/blocks/geyser.glb" id="12_o0dis"]
+[ext_resource type="PackedScene" uid="uid://g3mg6c4rvsv1" path="res://assets/levels/level1/blocks/geyser.glb" id="12_o0dis"]
 [ext_resource type="PackedScene" uid="uid://gobu4dd3loe5" path="res://assets/levels/level1/blocks/volcano_bubble.tscn" id="13_unxll"]
 [ext_resource type="Script" path="res://assets/levels/fallzone.gd" id="14_punwt"]
 
@@ -232,6 +232,7 @@ size = Vector3(13, 1, 18)
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_h1b0l"]
 
 [node name="Level1" type="Node3D"]
+transform = Transform3D(0.177085, 0, 0.984196, 0, 1, 0, -0.984196, 0, 0.177085, 0, 0, 0)
 script = ExtResource("1_endjd")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -247,7 +248,7 @@ data = {
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
 [node name="GotasTheCat3D" parent="." groups=["player"] instance=ExtResource("4_nhohl")]
-transform = Transform3D(0.352342, 0, -0.354761, 0, 0.5, 0, 0.354761, 0, 0.352342, -44.375, 2.06492, -9.66084)
+transform = Transform3D(0.352317, 0, -0.354786, 0, 0.5, 0, 0.354786, 0, 0.352317, -44.375, 2.06492, -9.66084)
 wall_min_slide_angle = 0.174533
 
 [node name="CameraController" type="Node3D" parent="GotasTheCat3D"]

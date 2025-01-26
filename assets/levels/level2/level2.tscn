@@ -4,17 +4,17 @@
 [ext_resource type="MeshLibrary" uid="uid://chfrso0bo8hn7" path="res://assets/levels/level2/gridmapLevel2.tres" id="1_klqym"]
 [ext_resource type="PackedScene" uid="uid://baepnmdpm01id" path="res://scenes/gotas_the_cat_3d.tscn" id="2_0nnnu"]
 [ext_resource type="Shader" path="res://scripts/shaders/grid-ground-shadergdshader.gdshader" id="3_kl6m3"]
-[ext_resource type="Texture2D" uid="uid://bvere2l0msls5" path="res://icon.svg" id="4_773w6"]
+[ext_resource type="Texture2D" uid="uid://ccmkn0jmrmsi1" path="res://icon.svg" id="4_773w6"]
 [ext_resource type="Script" path="res://assets/levels/level2/blocks/shape_cube_half.gd" id="4_pvtcg"]
-[ext_resource type="Texture2D" uid="uid://b0j08ouoj7kv4" path="res://assets/levels/level2/blocks/Textures/colormap.png" id="4_t1rik"]
-[ext_resource type="PackedScene" uid="uid://dmu3q6a8ydcx" path="res://assets/levels/level2/blocks/lantern.glb" id="5_0oyx8"]
+[ext_resource type="Texture2D" uid="uid://duk786a7fcilw" path="res://assets/levels/level2/blocks/Textures/colormap.png" id="4_t1rik"]
+[ext_resource type="PackedScene" uid="uid://c5vtwvm5xqukl" path="res://assets/levels/level2/blocks/lantern.glb" id="5_0oyx8"]
 [ext_resource type="Script" path="res://assets/levels/level2/blocks/shape_cube_half2.gd" id="5_7sktv"]
 [ext_resource type="Material" uid="uid://cmmkx7gmn3aq7" path="res://assets/Materiales/PavingStone_Mat.tres" id="5_bakbw"]
 [ext_resource type="Script" path="res://assets/levels/level2/blocks/shape_cube_half3.gd" id="6_gtups"]
 [ext_resource type="Material" uid="uid://bstdc5521veac" path="res://assets/Materiales/Gravel_Mat.tres" id="7_5qoaa"]
 [ext_resource type="Script" path="res://assets/levels/level2/blocks/impossible_staircase.gd" id="9_u58ly"]
 [ext_resource type="Script" path="res://assets/levels/level2/lastStairLigth.gd" id="13_3gy1i"]
-[ext_resource type="FontFile" uid="uid://clduqdylc60gl" path="res://assets/fonts/FuenteCatac-Regular.otf" id="14_a5tyi"]
+[ext_resource type="FontFile" uid="uid://3pk7rbg12vvi" path="res://assets/fonts/FuenteCatac-Regular.otf" id="14_a5tyi"]
 [ext_resource type="Script" path="res://assets/levels/level2/penrose_stairs.gd" id="14_c8d24"]
 [ext_resource type="Script" path="res://assets/levels/level2/blocks/middleLantern.gd" id="15_srpqr"]
 
@@ -31,6 +31,33 @@ shader_parameter/majorLineThickness = 2.0
 shader_parameter/minorLineThickness = 1.0
 shader_parameter/minorLineAlpha = 0.3
 shader_parameter/centerOffset = Vector3(0, 0, 0)
+
+[sub_resource type="Animation" id="Animation_udeks"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material_override:shader_parameter/unitSize")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:material_override:shader_parameter/centerOffset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_godpl"]
 resource_name = "move"
@@ -59,33 +86,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(1.305, -0.585, 0), Vector3(0.14, -0.22, 0), Vector3(-1.195, -0.22, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_udeks"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:material_override:shader_parameter/unitSize")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [1.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:material_override:shader_parameter/centerOffset")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_u7euo"]
@@ -283,6 +283,21 @@ _data = {
 [sub_resource type="BoxShape3D" id="BoxShape3D_vrcuw"]
 size = Vector3(1, 1.24695, 1)
 
+[sub_resource type="Animation" id="Animation_s5lpl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:light_energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
 [sub_resource type="Animation" id="Animation_bh7wm"]
 resource_name = "shape"
 loop_mode = 2
@@ -297,21 +312,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [0.0, 0.417, 0.139, 2.365, 0.974, 2.504, 0.0]
-}
-
-[sub_resource type="Animation" id="Animation_s5lpl"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:light_energy")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_so3p5"]
@@ -380,6 +380,21 @@ _data = {
 [sub_resource type="BoxShape3D" id="BoxShape3D_tmhx3"]
 size = Vector3(2.07715, 2.32434, 1.09988)
 
+[sub_resource type="Animation" id="Animation_8df3u"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(19.7687, 1.31281, 1.50949)]
+}
+
 [sub_resource type="Animation" id="Animation_ml0n2"]
 resource_name = "shape"
 loop_mode = 2
@@ -396,7 +411,13 @@ tracks/0/keys = {
 "values": [Vector3(19.7687, 1.31281, 1.50949), Vector3(19.7687, 1.31281, 0.947993), Vector3(19.7687, 1.31281, 2.23071)]
 }
 
-[sub_resource type="Animation" id="Animation_8df3u"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wm6qx"]
+_data = {
+"RESET": SubResource("Animation_8df3u"),
+"shape": SubResource("Animation_ml0n2")
+}
+
+[sub_resource type="Animation" id="Animation_ma5b4"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -408,13 +429,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(19.7687, 1.31281, 1.50949)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_wm6qx"]
-_data = {
-"RESET": SubResource("Animation_8df3u"),
-"shape": SubResource("Animation_ml0n2")
+"values": [Vector3(20.6103, 1.70436, 1.50949)]
 }
 
 [sub_resource type="Animation" id="Animation_kuyux"]
@@ -432,21 +447,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(20.6103, 1.70436, 1.50949), Vector3(20.6103, 3.8135, 1.50949)]
-}
-
-[sub_resource type="Animation" id="Animation_ma5b4"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(20.6103, 1.70436, 1.50949)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tccub"]
@@ -560,7 +560,7 @@ size = Vector3(2.57092, 2.04114, 1.33801)
 size = Vector3(2.76514, 1.94421, 1.82996)
 
 [node name="Level2" type="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000411987, 0, 0.000213623)
+transform = Transform3D(0.177085, 0, 0.984196, 0, 1, 0, -0.984196, 0, 0.177085, 0.000411987, 0, 0.000213623)
 script = ExtResource("1_gv0ox")
 
 [node name="GridMap" type="GridMap" parent="."]
