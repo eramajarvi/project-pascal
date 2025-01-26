@@ -1,13 +1,13 @@
 [gd_scene load_steps=13 format=4 uid="uid://cs1yryodrbs0m"]
 
-[ext_resource type="PackedScene" uid="uid://btwhxggbnulal" path="res://assets/levels/level1/blocks/block-grass-large.glb" id="1_3vp7d"]
-[ext_resource type="PackedScene" uid="uid://mg8rie4r7nkb" path="res://assets/levels/level1/blocks/rocks.glb" id="2_cdyff"]
-[ext_resource type="PackedScene" uid="uid://xhrs7upo3bh4" path="res://assets/levels/level1/blocks/fence-straight.glb" id="3_7mgne"]
-[ext_resource type="PackedScene" uid="uid://byasspsegny0l" path="res://assets/levels/level1/blocks/fence-corner.glb" id="4_mo88c"]
-[ext_resource type="PackedScene" uid="uid://cqvgxvhgtqyoc" path="res://assets/levels/level1/blocks/stones.glb" id="5_2aryi"]
-[ext_resource type="Texture2D" uid="uid://dpykqhewv6pk" path="res://assets/levels/level1/blocks/Textures/colormap.png" id="7_7k3bf"]
-[ext_resource type="PackedScene" uid="uid://ciokejyq4sjnb" path="res://assets/levels/level1/blocks/poles.glb" id="7_xxd3u"]
-[ext_resource type="PackedScene" uid="uid://bwfg4u1npcc6n" path="res://assets/levels/level1/blocks/arrow.glb" id="8_2f5uq"]
+[ext_resource type="PackedScene" uid="uid://bvhmuatcrnyk3" path="res://assets/levels/level1/blocks/block-grass-large.glb" id="1_3vp7d"]
+[ext_resource type="PackedScene" uid="uid://bksu1wetuv7vr" path="res://assets/levels/level1/blocks/rocks.glb" id="2_cdyff"]
+[ext_resource type="PackedScene" uid="uid://c4jsejjp5yxjh" path="res://assets/levels/level1/blocks/fence-straight.glb" id="3_7mgne"]
+[ext_resource type="PackedScene" uid="uid://ci0bsk3f8bt2t" path="res://assets/levels/level1/blocks/fence-corner.glb" id="4_mo88c"]
+[ext_resource type="PackedScene" uid="uid://bbfpn23jpw2w0" path="res://assets/levels/level1/blocks/stones.glb" id="5_2aryi"]
+[ext_resource type="Texture2D" uid="uid://cagofp1x63o0s" path="res://assets/levels/level1/blocks/Textures/colormap.png" id="7_7k3bf"]
+[ext_resource type="PackedScene" uid="uid://du1ow68dsb4wb" path="res://assets/levels/level1/blocks/poles.glb" id="7_xxd3u"]
+[ext_resource type="PackedScene" uid="uid://dmmieymb0pwko" path="res://assets/levels/level1/blocks/arrow.glb" id="8_2f5uq"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p5yf1"]
 resource_name = "colormap"

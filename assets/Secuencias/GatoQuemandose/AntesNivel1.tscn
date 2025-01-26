@@ -1,0 +1,119 @@
+[gd_scene load_steps=13 format=3 uid="uid://b1l7tycku01qk"]
+
+[ext_resource type="Texture2D" uid="uid://d0pxoswtwprpg" path="res://assets/Secuencias/GatoQuemandose/Timeline GATO QUEMANDOSE_0008.png" id="1_8s1or"]
+[ext_resource type="Script" path="res://assets/levels/level1/antes_nivel_1.gd" id="1_j7lhc"]
+[ext_resource type="Texture2D" uid="uid://s4jcl2ljcock" path="res://assets/Secuencias/GatoQuemandose/Timeline GATO QUEMANDOSE_0000.png" id="2_1ueqo"]
+[ext_resource type="Texture2D" uid="uid://dvkfa8bs2a3uw" path="res://assets/Secuencias/GatoQuemandose/Timeline GATO QUEMANDOSE_0001.png" id="3_6ij0w"]
+[ext_resource type="Texture2D" uid="uid://du5rggmvkkcf3" path="res://assets/Secuencias/GatoQuemandose/Timeline GATO QUEMANDOSE_0002.png" id="4_ptugx"]
+[ext_resource type="Texture2D" uid="uid://chuco4c2qhk4o" path="res://assets/Secuencias/GatoQuemandose/Timeline GATO QUEMANDOSE_0003.png" id="5_aqtf2"]
+[ext_resource type="Texture2D" uid="uid://0vg83r46xlqp" path="res://assets/Secuencias/GatoQuemandose/Timeline GATO QUEMANDOSE_0004.png" id="6_dy4cg"]
+[ext_resource type="Texture2D" uid="uid://di34xhkkgocu7" path="res://assets/Secuencias/GatoQuemandose/Timeline GATO QUEMANDOSE_0005.png" id="7_a7p7b"]
+[ext_resource type="Texture2D" uid="uid://c3ahs1utdp4n" path="res://assets/Secuencias/GatoQuemandose/Timeline GATO QUEMANDOSE_0006.png" id="8_erqkq"]
+[ext_resource type="Texture2D" uid="uid://cbi3vx165fov4" path="res://assets/Secuencias/GatoQuemandose/Timeline GATO QUEMANDOSE_0007.png" id="9_htvxf"]
+[ext_resource type="FontFile" uid="uid://3pk7rbg12vvi" path="res://assets/fonts/FuenteCatac-Regular.otf" id="10_1p51r"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_31anu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_1ueqo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_6ij0w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ptugx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_aqtf2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_dy4cg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_a7p7b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_erqkq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_htvxf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[node name="AntesNive1" type="Node2D"]
+script = ExtResource("1_j7lhc")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -728.0
+offset_top = -414.0
+offset_right = 4320.0
+offset_bottom = 4822.0
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -74.0
+offset_top = -30.0
+offset_right = -74.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_group_ = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Control2" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1170.0
+offset_bottom = 665.0
+metadata/_edit_use_anchors_ = true
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="Control2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TimelineGatoQuemandose0008" type="Sprite2D" parent="Control2/AspectRatioContainer"]
+position = Vector2(20.96, 1.03998)
+scale = Vector2(0.48, 0.48)
+texture = ExtResource("1_8s1or")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Control2/AspectRatioContainer"]
+position = Vector2(20.96, 1.03998)
+scale = Vector2(0.48, 0.48)
+sprite_frames = SubResource("SpriteFrames_31anu")
+autoplay = "default"
+frame_progress = 0.0220476
+
+[node name="Label" type="Label" parent="Control2"]
+layout_mode = 2
+offset_left = 448.0
+offset_top = 363.0
+offset_right = 778.0
+offset_bottom = 472.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_1p51r")
+theme_override_font_sizes/font_size = 28
+text = "Del abismo surge el llanto,
+líquido ardor, un manto.
+El fuego danza en su prisión,
+¿quién soy en esta combustión?
+"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
