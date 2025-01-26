@@ -11,10 +11,16 @@ config_version=5
 [application]
 
 config/name="project-pascal"
+config/description="Toda mi vida viví en una burbuja, y ahora no se quien me observa.
+Quien me esta observando, si es un externo, y si soy solo yo...
+solo se, que debo intentar, salir de la caja
+que tiene forma de esférica... de burbuja"
 config/version="0.1"
 run/main_scene="res://scenes/menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
-config/icon="res://icon.svg"
+boot_splash/image="res://assets/sprites/GATO MENU PRINCIPAL.png"
+config/icon="res://assets/sprites/BubbleB.png"
+config/windows_native_icon="res://assets/sprites/CATAC.ico"
 
 [autoload]
 
@@ -23,6 +29,7 @@ GameoverRespawner="*res://scenes/gameover_respawner.gd"
 
 [display]
 
+window/size/resizable=false
 window/stretch/mode="viewport"
 window/stretch/aspect="keep_width"
 window/stretch/scale_mode="integer"
