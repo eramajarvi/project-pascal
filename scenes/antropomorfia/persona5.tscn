@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bgfa3bt6f4yw6"]
 
-[ext_resource type="Texture2D" uid="uid://drpr5a3psnhvf" path="res://assets/sprites/antropomorfia/PERSONA 4.png" id="1_no2ub"]
+[ext_resource type="Texture2D" uid="uid://dcjr8ilpctf3r" path="res://assets/sprites/antropomorfia/PERSONA 4.png" id="1_no2ub"]
 [ext_resource type="PackedScene" uid="uid://bu81i6vfes2au" path="res://scenes/electricBubble.tscn" id="2_31kli"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_o3sl1"]

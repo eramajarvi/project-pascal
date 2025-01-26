@@ -7,6 +7,9 @@ extends Node3D
 @onready var platformMoveSpotligth = $Stair3/platformMovementLantern/Area3D/SpotLight3D
 @onready var middleLanternSpotligth = $middleLantern/Area3D/SpotLight3D
 
+@export var entity_scene: PackedScene
+var entidadesLiberadas: int = 0
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -50,3 +53,42 @@ func _on_area_3d_body_exited(body: Node3D) -> void:
 		rightSpotligthLantern1.visible = false
 		leftSpotligthLantern2.visible = false
 		#middleLanternSpotligth.visible = false
+
+
+func player_touched_bubble(body: Node3D) -> void:
+	if body.is_in_group("player"):
+		print("jugador tocó burbuja")
+		entidadesLiberadas += 1
+		print("entidades liberadas: ", entidadesLiberadas)
+		$HUDLabel.text = "entidades liberadas: " + str(entidadesLiberadas)
+		
+
+
+func _on_EntidadTimer_timeout() -> void:
+	var entidad = $EntidadNode3D
+	
+	var entidadSpawnLocation = get_node("SpawnPath/SpawnLocation")
+	entidadSpawnLocation.progress_ratio = randf()
+	
+	var spawn_position = entidadSpawnLocation.global_transform.origin
+	
+	#add_child(entidad)
+	
+	entidad.global_transform.origin = spawn_position
+	entidad.gravity_scale = 0.6
+	
+	# Connect the 'body_entered' signal of the entity to a method in the current scene
+	if entidad.has_signal("body_entered"):
+		pass
+		#print("entidad tiene la señal")
+		#entidad.connect("body_entered", Callable(self, "_on_entidad_body_entered"))
+	
+	#entidad.connect("body_entered", Callable(self, "_on_entidad_body_entered"))
+	
+# Define the method to handle the signal
+func _on_entidad_body_entered(body):
+	emit_signal("body_entered", body)
+	print("Body entered:", body.name)
+	
+	
+	

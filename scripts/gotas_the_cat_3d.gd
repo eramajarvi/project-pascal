@@ -5,6 +5,7 @@ const JUMP_VELOCITY = 5.5
 
 const RAY_LENGTH = 1000
 signal attack_door(target)
+signal touch_entity(target2)
 
 @onready var audiomichi = $AudioAtaque
 @onready var audioSalto = $AudioAtaque/AudioSalto
@@ -102,6 +103,9 @@ func _physics_process(delta: float) -> void:
 		var collider = raycast.get_collider()
 		if collider and collider.is_in_group("door") and Input.is_action_pressed("Ataque"):
 			emit_signal("attack_door", 10)
+			
+		if collider and collider.is_in_group("entidad"):
+			emit_signal("touch_entity", 1)
 	
 		
 func take_damage(amount: int) -> void:

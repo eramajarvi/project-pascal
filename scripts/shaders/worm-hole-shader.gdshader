@@ -3,7 +3,7 @@ render_mode depth_prepass_alpha, cull_front, specular_schlick_ggx, depth_test_di
 
 uniform sampler2D tex_frg_32;
 uniform sampler2D tex_frg_3;
-uniform sampler2D SCREEN_TEXTURE: hint_screen_texture, filter_linear_mipmap; 
+uniform sampler2D SCREEN_TEXTURE: hint_screen_texture, filter_linear_mipmap;
 uniform vec4 MainColor : source_color;
 uniform vec4 BackColor1 : source_color;
 uniform vec4 BackColor2 : source_color;

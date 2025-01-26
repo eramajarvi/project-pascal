@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dr6jr2828d7hv"]
 
 [ext_resource type="Script" path="res://scenes/antropomorfia/persona_1.gd" id="1_s4wy5"]
-[ext_resource type="Texture2D" uid="uid://dc314ogcotwic" path="res://assets/sprites/antropomorfia/PERSONA 2.png" id="2_8cvmx"]
+[ext_resource type="Texture2D" uid="uid://d1idq0fnc3na1" path="res://assets/sprites/antropomorfia/PERSONA 2.png" id="2_8cvmx"]
 [ext_resource type="PackedScene" uid="uid://bu81i6vfes2au" path="res://scenes/electricBubble.tscn" id="2_lapyf"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_o3sl1"]
